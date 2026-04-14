@@ -259,6 +259,22 @@ def discover_norm_files(
 # ---------------------------------------------------------------------------
 
 
+def clear_csv(output_path: Path, fieldnames: List[str]) -> None:
+    """Initialize an empty CSV file with headers and UTF-8 BOM."""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=";")
+        writer.writeheader()
+
+
+def append_csv_rows(results: List[dict], output_path: Path, fieldnames: List[str]) -> None:
+    """Append *results* to an existing CSV file (without rewriting header)."""
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "a", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=";")
+        writer.writerows(results)
+
+
 def write_csv(results: List[dict], output_path: Path, fieldnames: List[str]) -> None:
     """Write *results* to a semicolon-delimited CSV with UTF-8 BOM."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -343,10 +359,15 @@ def _extract_from_norm(
     client: OpenAI,
     model_name: str,
     chunk_size: int,
+    output_path: Path | None = None,
     skip_chunks: int = 0,
     max_chunks: int | None = None,
-) -> List[dict]:
-    """Process one norm file: chunk → LLM → deduplicate → return row dicts."""
+) -> int:
+    """Process one norm file: chunk → LLM → deduplicate → write to CSV.
+    
+    Results are written incrementally to output_path after each chunk.
+    Returns the number of unique entries processed for this norm.
+    """
     print(f"\n{'='*60}")
     print(f"Processing: {norm_name}  ({file_path.name})")
 
@@ -359,8 +380,8 @@ def _extract_from_norm(
     if skip_chunks > 0:
         print(f"  Skipping first {skip_chunks} chunks as requested.")
 
-    all_results: List[dict] = []
     seen: set = set()
+    total_entries = 0
 
     processed_count = 0
     for i, chunk in enumerate(chunks, 1):
@@ -375,16 +396,23 @@ def _extract_from_norm(
         print(f"→ {len(items)} Einträge gefunden")
         processed_count += 1
 
+        chunk_results: List[dict] = []
         for item in items:
             if task.dedup_key is not None:
                 key = task.dedup_key(item)
                 if key in seen:
                     continue
                 seen.add(key)
-            all_results.append(task.to_row(norm_name, item))
+            row = task.to_row(norm_name, item)
+            chunk_results.append(row)
+            total_entries += 1
+        
+        # Write chunk results incrementally if output_path is provided
+        if output_path and chunk_results:
+            append_csv_rows(chunk_results, output_path, task.fieldnames)
 
-    print(f"  → {len(all_results)} unique Einträge for {norm_name}")
-    return all_results
+    print(f"  → {total_entries} unique Einträge for {norm_name}")
+    return total_entries
 
 
 # ---------------------------------------------------------------------------
@@ -487,25 +515,28 @@ def run_extraction(task: ExtractionTask) -> None:
 
     print(f"Will process {len(norm_files)} norm(s).")
 
+    # Initialize output file with headers
+    clear_csv(output_path, task.fieldnames)
+
     client = get_llm_client(api_key=args.api_key, base_url=args.base_url)
 
     # Use chunk size from args
     chunk_size = args.chunk_size
 
-    all_results: List[dict] = []
+    total_results = 0
     for norm_name, file_path in norm_files:
-        results = _extract_from_norm(
+        count = _extract_from_norm(
             norm_name,
             file_path,
             task,
             client,
             model_name=args.model,
             chunk_size=chunk_size,
+            output_path=output_path,
             skip_chunks=args.skip_chunks,
             max_chunks=args.max_chunks,
         )
-        all_results.extend(results)
+        total_results += count
 
-    write_csv(all_results, output_path, task.fieldnames)
     print(f"\n{'='*60}")
-    print(f"Done. {len(all_results)} Einträge written to {output_path}")
+    print(f"Done. {total_results} Einträge written to {output_path}")
