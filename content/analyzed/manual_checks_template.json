@@ -1,0 +1,25 @@
+[
+  {
+    "Norm": "DGA",
+    "Referenz": "Artikel 11 Absatz 1",
+    "Was gemeldet wird": "Anbieter von Datenvermittlungsdiensten müssen sich",
+    "Wer": "Anbieter digitaler Dienste",
+    "Art der Pflicht": "Registrierungspflicht"
+  },
+  {
+    "Norm": "DGA",
+    "Referenz": "(38)",
+    "Art der Pflicht": "Registrierungspflicht",
+    "Wer": "Anbieter digitaler Dienste"
+  },
+  {
+    "Norm": "DSGVO",
+    "Referenz": "Artikel 34 Absatz 1",
+    "Art der Pflicht": "Benachrichtigungspflicht",
+    "Wer": "Verantwortlicher (Datenverarbeitung)",
+    "An wen": "Betroffene Person",
+    "Auslöser Typ": "ereignisgebunden",
+    "Frist Typ": "sofort / unverzüglich",
+    "Was gemeldet wird": "Der Verantwortliche muss betroffene Personen unverzüglich über eine Datenschutzverletzung informieren, wenn diese voraussichtlich mit hohem Risiko für deren Rechte und Freiheiten verbunden ist."
+  }
+]

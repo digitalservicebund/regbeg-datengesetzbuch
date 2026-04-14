@@ -1,0 +1,1703 @@
+            Amtsblatt                                                                                                                       DE
+            der Europäischen Union                                                                                                      Reihe L
+
+                                                                2024/903                                                            22.3.2024
+
+                    VERORDNUNG (EU) 2024/903 DES EUROPÄISCHEN PARLAMENTS UND DES RATES
+                                                            vom 13. März 2024
+              über Maßnahmen für ein hohes Maß an Interoperabilität des öffentlichen Sektors in der Union
+                                      (Verordnung für ein interoperables Europa)
+
+
+      DAS EUROPÄISCHE PARLAMENT UND DER RAT DER EUROPÄISCHEN UNION —
+
+      gestützt auf den Vertrag über die Arbeitsweise der Europäischen Union, insbesondere auf Artikel 172,
+
+      auf Vorschlag der Europäischen Kommission,
+
+      nach Zuleitung des Entwurfs des Gesetzgebungsakts an die nationalen Parlamente,
+
+      nach Stellungnahme des Europäischen Wirtschafts- und Sozialausschusses (1),
+
+      nach Stellungnahme des Ausschusses der Regionen (2),
+
+      gemäß dem ordentlichen Gesetzgebungsverfahren (3),
+
+      in Erwägung nachstehender Gründe:
+
+      (1)     Die Entwicklung der grenzüberschreitenden Interoperabilität von Netz- und Informationssystemen, die für die
+              Erbringung oder Verwaltung öffentlicher Dienste in der Union verwendet werden, muss gestärkt werden, um es
+              öffentlichen Verwaltungen in der Union zu ermöglichen, zusammenzuarbeiten und dafür zu sorgen, dass öffentliche
+              Dienste grenzüberschreitend funktionieren. Die bestehende informelle Zusammenarbeit sollte durch einen klaren
+              Rechtsrahmen ersetzt werden, um die Interoperabilität zwischen den verschiedenen Verwaltungsebenen und
+              Sektoren zu ermöglichen und einen nahtlosen grenzüberschreitenden Datenfluss für wirklich europäische digitale
+              Dienste zu erleichtern, mit denen der Binnenmarkt gestärkt wird, wobei das Subsidiaritätsprinzip zu beachten ist.
+              Die Interoperabilität des öffentlichen Sektors hat auch erhebliche Auswirkungen auf das in den Verträgen verankerte
+              Recht auf freien Verkehr von Waren, Personen, Dienstleistungen und Kapital, da aufwendige Verwaltungsverfahren
+              erhebliche Hindernisse darstellen können, insbesondere für kleine und mittlere Unternehmen (KMU).
+
+      (2)     Durch die Zusammenarbeit hinsichtlich der grenzüberschreitenden Interoperabilität zwischen öffentlichen Stellen
+              können gemeinsame Herausforderungen, insbesondere in den Grenzregionen, bewältigt und ein nahtloser
+              grenzüberschreitender Datenfluss gewährleistet werden.
+
+      (3)     Die Union und die Mitgliedstaaten arbeiten seit mehr als zwei Jahrzehnten daran, die Modernisierung der
+              öffentlichen Verwaltungen durch den digitalen Wandel und die vertiefte Vernetzung, die für einen wahrhaft
+              europäischen digitalen Raum erforderlich sind, zu fördern. In ihrer Mitteilung vom 9. März 2021 mit dem Titel
+              „Digitaler Kompass 2030: der europäische Weg in die digitale Dekade“ hat die Kommission die Notwendigkeit
+              betont, die Digitalisierung öffentlicher Dienste bis 2030 zu beschleunigen, auch indem über alle Verwaltungsebenen
+              und öffentlichen Dienste hinweg für Interoperabilität gesorgt wird. Darüber hinaus legt der Beschluss
+              (EU) 2022/2481 des Europäischen Parlaments und des Rates (4) das klare Ziel fest, bis 2030 wesentliche öffentliche
+              Dienste zu 100 % online bereitzustellen. Darüber hinaus hat die COVID-19-Pandemie die Digitalisierung
+              vorangetrieben und die öffentlichen Verwaltungen dazu veranlasst, sich an das Online-Modell anzupassen, auch im
+              Hinblick auf grenzüberschreitende digitale öffentliche Dienste sowie auf einen intelligenteren und umweltfreund­
+              licheren Einsatz von Technologien im Einklang mit den Klima- und Energiezielen, die im europäischen Grünen Deal
+              und in der Verordnung (EU) 2021/1119 des Europäischen Parlaments und des Rates (5) festgelegt worden sind. Mit
+              der vorliegenden Verordnung soll ein wesentlicher Beitrag zu diesen Zielen der Union geleistet werden, indem ein
+              Rahmen für die strukturierte Zusammenarbeit für die grenzüberschreitende Interoperabilität zwischen der
+              Kommission und den Mitgliedstaaten geschaffen wird, um die Einrichtung digitaler öffentlicher Dienste zu fördern
+              und so dazu beizutragen, die Kosten und den Zeitaufwand für die Bürgerinnen und Bürger, die Unternehmen und
+              den öffentlichen Sektor zu verringern.
+
+      (1) ABl. C 184 vom 25.5.2023, S. 28.
+      (2) ABl. C 257 vom 21.7.2023, S. 28.
+      (3) Standpunkt des Europäischen Parlaments vom 6. Februar 2024 (noch nicht im Amtsblatt veröffentlicht) und Beschluss des Rates vom
+          4. März 2024.
+      (4) Beschluss (EU) 2022/2481 des Europäischen Parlaments und des Rates vom 14. Dezember 2022 über die Aufstellung des
+          Politikprogramms 2030 für die digitale Dekade (ABl. L 323 vom 19.12.2022, S. 4).
+      (5) Verordnung (EU) 2021/1119 des Europäischen Parlaments und des Rates vom 30. Juni 2021 zur Schaffung des Rahmens für die
+          Verwirklichung der Klimaneutralität und zur Änderung der Verordnungen (EG) Nr. 401/2009 und (EU) 2018/1999 („Europäisches
+          Klimagesetz“) (ABl. L 243 vom 9.7.2021, S. 1).
+
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                              1/26
+DE                                                                                                                   ABl. L vom 22.3.2024
+
+
+
+       (4)    Im Hinblick auf die Verbesserung der grenzüberschreitenden Interoperabilität in der Union muss unbedingt
+              hervorgehoben werden, dass Interoperabilität zwar von größter Bedeutung ist, aber für sich genommen nicht
+              ausreicht, um die Zugänglichkeit und nahtlose Gestaltung transeuropäischer digitaler öffentlicher Dienste zu
+              garantieren. Ein umfassendes und nachhaltiges Ökosystem digitaler Infrastrukturen, das über eine angemessene
+              finanzielle Unterstützung verfügt, ist ebenso wichtig, um die im Beschluss (EU) 2022/2481 dargelegten Ziele zu
+              erreichen. Im Einklang mit der Mitteilung der Kommission vom 30. Juni 2021 mit dem Titel „Eine langfristige
+              Vision für die ländlichen Gebiete der EU — Für stärkere, vernetzte, resiliente und florierende ländliche Gebiete bis
+              2040“ sollte der Ausweitung der Konnektivität auf ländliche und abgelegene Gebiete in der Union, vom
+              industriellen Wandel betroffene Gebiete und Gebiete mit schweren und dauerhaften natürlichen oder
+              demografischen Nachteilen, wie die Insel-, Grenz- und Bergregionen, besondere Aufmerksamkeit gewidmet werden,
+              damit sichergestellt ist, dass die Vorteile des digitalen Wandels den etablierten Initiativen der Union zur Verbesserung
+              der regionalen Inklusivität und Konnektivität entsprechen und diese unterstützen.
+
+
+       (5)    Bei der Entwicklung der grenzüberschreitenden Interoperabilität transeuropäischer digitaler öffentlicher Dienste
+              gemäß dieser Verordnung sollte die rechtliche Interoperabilität berücksichtigt werden. Als Impulsgeber für die
+              Entwicklung der organisatorischen, semantischen und technischen Interoperabilität ermöglicht es die rechtliche
+              Interoperabilität, Vorteile der grenzüberschreitenden Interoperabilität im Allgemeinen, einschließlich eines schnellen
+              Zugangs von Bürgerinnen und Bürgern und Unternehmen zu Informationen, schnellerer Verfahren und Dienste und
+              des Abbaus administrativer Hindernisse, zu nutzen. Da eines der Hindernisse für die Interoperabilität, die erneute
+              Nutzung von Lösungen und die Einrichtung grenzüberschreitender Dienste ferner die Sprachbarriere ist, ist
+              außerdem semantische Interoperabilität ein entscheidender Faktor, um eine wirksame Kommunikation in
+              unterschiedlichen mehrsprachigen Umgebungen — auch auf regionaler und lokaler Ebene — zu ermöglichen.
+
+
+       (6)    Transeuropäische digitale öffentliche Dienste sind digitale Dienste, die von Einrichtungen der Union oder
+              öffentlichen Stellen füreinander oder für natürliche oder juristische Personen in der Union erbracht werden und eine
+              Interaktion über die Grenzen der Mitgliedstaaten hinaus, zwischen Einrichtungen der Union oder zwischen
+              Einrichtungen der Union und öffentlichen Stellen über deren Netz- und Informationssysteme erfordern. Zu
+              transeuropäischen digitalen öffentlichen Diensten sollten unter anderem die wesentlichen öffentlichen Dienste im
+              Sinne des Beschlusses (EU) 2022/2481 gehören, die essentielle Dienstleistungen umfassen, die für natürliche
+              Personen für besonders wichtige Ereignisse wie Arbeitssuche oder Studium und für juristische Personen für ihr
+              Geschäftsleben relevant sind. Wesentliche öffentliche Dienste von europaweiter Bedeutung sind darauf ausgerichtet,
+              den Bürgerinnen und Bürgern große Vorteile zu bringen, wenn sie grenzüberschreitend interoperabel werden.
+              Beispiele für transeuropäische digitale öffentliche Dienste sind Dienste, die durch den grenzüberschreitenden
+              Datenaustausch die gegenseitige Anerkennung akademischer Diplome oder von Berufsqualifikationen, den
+              Austausch von Fahrzeugdaten für die Straßenverkehrssicherheit, den Zugang zu Sozialversicherungs- und
+              Gesundheitsdaten — darunter Pandemie- und Impfbescheinigungen —, Zugang zu Single-Window-Systemen sowie
+              den Informationsaustausch in Bezug auf Steuern, Zölle, Vergabe öffentlicher Aufträge, digitale Führerscheine oder
+              Handelsregister ermöglichen, sowie generell all diejenigen Dienste, die den Grundsatz der einmaligen Erfassung für
+              den Zugang zu grenzüberschreitenden Daten und deren Austausch umsetzen.
+
+
+       (7)    Unbeschadet der Zuständigkeit der Mitgliedstaaten, zu bestimmen, was unter öffentlichen Diensten zu verstehen ist,
+              werden Einrichtungen der Union und öffentliche Stellen ermutigt, im Einklang mit der Europäischen Erklärung vom
+              15. Dezember 2022 zu den digitalen Rechten und Grundsätzen für die digitale Dekade (6) bei der Gestaltung und
+              Entwicklung solcher Dienste die Bedürfnisse der Nutzer und die Barrierefreiheit zu berücksichtigen. Außerdem
+              werden Einrichtungen der Union und öffentliche Stellen ermutigt, dafür zu sorgen, dass Menschen mit
+              Behinderungen, ältere Menschen und andere schutzbedürftige Gruppen öffentliche Dienste auf einem Diensteniveau
+              in Anspruch nehmen können, das mit demjenigen für andere Bürgerinnen und Bürger vergleichbar ist.
+
+
+       (8)    Eine neue Governance-Struktur, in deren Zentrum der Beirat für ein interoperables Europa (im Folgenden „Beirat“)
+              steht, sollte eingerichtet werden und ein rechtliches Mandat erhalten, um gemeinsam mit der Kommission die
+              Weiterentwicklung der grenzüberschreitenden Interoperabilität in der Union- einschließlich des Europäischen
+              Interoperabilitätsrahmens (EIF) und anderer gemeinsamer rechtlicher, organisatorischer, semantischer und
+              technischer Interoperabilitätslösungen wie Spezifikationen und Anwendungen — voranzutreiben. Darüber hinaus
+              sollte mit dieser Verordnung ein klares und leicht erkennbares Zeichen für bestimmte Interoperabilitätslösungen (im
+              Folgenden da „Lösungen für ein interoperables Europa“) eingeführt werden. Die Schaffung einer dynamischen
+              Gemeinschaft, die sich um staatliche Technologielösungen kümmert, sollte gefördert werden.
+
+
+       (9)    Die regionalen und lokalen Gebietskörperschaften werden eine aktive Rolle bei der Entwicklung von Interoperabili­
+              tätslösungen spielen. Sie sollten sich bemühen, KMU, Forschungs- und Bildungseinrichtungen und die
+              Zivilgesellschaft einzubeziehen, und die Ergebnisse eines solchen Austauschs teilen.
+
+       (6) ABl. C 23 vom 23.1.2023, S. 1.
+
+
+2/26                                                                                         ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                                        DE
+
+      (10)   Im Interesse eines kohärenten Konzepts für die Interoperabilität des öffentlichen Sektors in der Union und der
+             Unterstützung des Grundsatzes der guten Verwaltungspraxis und des freien Verkehrs personenbezogener und nicht
+             personenbezogener Daten innerhalb der Union sollten die Vorschriften für alle Einrichtungen der Union und
+             öffentlichen Stellen, die verbindliche Anforderungen an transeuropäische digitale öffentliche Dienste vorsehen und
+             somit die Fähigkeit dieser Einrichtungen und Stellen, Daten über ihre Netz- und Informationssysteme
+             auszutauschen, beeinflussen, so weit wie möglich aneinander angeglichen werden. Dieses Ziel betrifft die
+             Kommission und andere Einrichtungen der Union genauso wie öffentliche Stellen in den Mitgliedstaaten auf allen
+             Verwaltungsebenen, sei es national, regional oder lokal. Die Einrichtungen der Union spielen eine wichtige Rolle bei
+             der Erhebung regulatorischer Berichterstattungsdaten aus den Mitgliedstaaten. Daher sollten derartige Daten
+             ebenfalls in den Anwendungsbereich dieser Verordnung fallen.
+
+
+
+      (11)   Das Grundrecht auf den Schutz personenbezogener Daten wird insbesondere durch die Verordnungen
+             (EU) 2016/679 (7) und (EU) 2018/1725 (8) des Europäischen Parlaments und des Rates gewahrt. Die
+             Richtlinie 2002/58/EG des Europäischen Parlaments und des Rates (9) schützt darüber hinaus die Privatsphäre und
+             die Vertraulichkeit der Kommunikation, unter anderem mittels Bedingungen für die Speicherung personenbezogener
+             und nicht personenbezogener Daten auf Endgeräten und den Zugang dazu. Diese Gesetzgebungsakte der Union
+             bieten die Grundlage für eine nachhaltige und verantwortungsvolle Datenverarbeitung, auch dann, wenn Datensätze
+             eine Mischung aus personenbezogenen und nicht personenbezogenen Daten enthalten. Diese Verordnung ergänzt
+             das Unionsrecht zum Schutz personenbezogener Daten und der Privatsphäre, insbesondere der Verordnungen
+             (EU) 2016/679 und (EU) 2018/1725 sowie der Richtlinie 2002/58/EG, und lässt es unberührt. Keine Bestimmung
+             dieser Verordnung sollte dahingehend angewandt oder ausgelegt werden, dass das Recht auf den Schutz
+             personenbezogener Daten oder das Recht auf Privatsphäre und Vertraulichkeit der Kommunikation geschwächt
+             oder eingeschränkt wird.
+
+
+
+      (12)   Die grenzüberschreitende Interoperabilität wird nicht nur über zentrale digitale Infrastrukturen in den
+             Mitgliedstaaten, sondern auch durch einen dezentralen Ansatz ermöglicht. Dafür ist Vertrauen zwischen den
+             öffentlichen Verwaltungen erforderlich, das den Datenaustausch zwischen lokalen Verwaltungen in verschiedenen
+             Mitgliedstaaten ermöglicht, der nicht unbedingt über nationale Knoten laufen muss. Daher müssen gemeinsame
+             Interoperabilitätslösungen entwickelt werden, die auf allen Verwaltungsebenen weiterverwendbar sind. Interoperabi­
+             litätslösungen umfassen verschiedene Formen, die von übergeordneten Instrumenten wie konzeptionellen Rahmen
+             und Leitlinien bis hin zu eher technischen Lösungen wie Referenzarchitekturen, technischen Spezifikationen oder
+             Normen reichen. Darüber hinaus können konkrete Dienste und Anwendungen sowie dokumentierte technische
+             Komponenten wie Quellcodes, einschließlich Artefakte und Modellen künstlicher Intelligenz, Interoperabilitäts­
+             lösungen sein, wenn sie rechtliche, organisatorische, semantische oder technische Aspekte der grenzüber­
+             schreitenden Interoperabilität betreffen. Der Bedarf an grenzüberschreitenden digitalen Interaktionen steigt, was
+             Lösungen erfordert, die diesen Bedarf decken können. Mit dieser Verordnung sollen der Austausch auf allen
+             Verwaltungsebenen erleichtert und gefördert, grenzüberschreitende Hindernisse und Verwaltungsaufwand abgebaut
+             und somit die Effizienz der öffentlichen Dienste in der gesamten Union verbessert werden.
+
+
+
+      (13)   Interoperabilität erleichtert die erfolgreiche Umsetzung politischer Maßnahmen, insbesondere wenn diese in enger
+             Beziehung zum öffentlichen Sektor stehen, wie in den Bereichen Justiz und Inneres, Steuern und Zoll, Verkehr,
+             Energie, Gesundheit, Landwirtschaft und Beschäftigung oder auch bei der Regulierung der Unternehmen und der
+             Wirtschaft. Eine Betrachtung der Interoperabilität lediglich mit Blick auf einzelne Sektoren birgt jedoch die Gefahr,
+             dass auf nationaler oder sektoraler Ebene unterschiedliche oder miteinander nicht kompatible Lösungen eingeführt
+             und dadurch neue elektronische Schranken geschaffen werden, die ein reibungsloses Funktionieren des
+             Binnenmarkts und der damit verbundenen Freiheiten verhindern. Darüber hinaus besteht die Gefahr, dass die
+             Offenheit und Wettbewerbsfähigkeit der Märkte sowie die Erbringung von Diensten von allgemeinem Interesse für
+             Bürgerinnen und Bürger und Unternehmen untergraben werden. Daher sollte diese Verordnung auch die sektorüber­
+             greifende Interoperabilität erleichtern, fördern und darauf Anwendung finden, um so die Beseitigung von
+             Hindernissen, Unvereinbarkeiten und der Fragmentierung digitaler öffentlicher Dienste zu unterstützen.
+
+      (7) Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates vom 27. April 2016 zum Schutz natürlicher Personen bei der
+          Verarbeitung personenbezogener Daten, zum freien Datenverkehr und zur Aufhebung der Richtlinie 95/46/EG (Datenschutz-
+          Grundverordnung) (ABl. L 119 vom 4.5.2016, S. 1).
+      (8) Verordnung (EU) 2018/1725 des Europäischen Parlaments und des Rates vom 23. Oktober 2018 zum Schutz natürlicher Personen bei
+          der Verarbeitung personenbezogener Daten durch die Organe, Einrichtungen und sonstigen Stellen der Union, zum freien
+          Datenverkehr und zur Aufhebung der Verordnung (EG) Nr. 45/2001 und des Beschlusses Nr. 1247/2002/EG (ABl. L 295 vom
+          21.11.2018, S. 39).
+      (9) Richtlinie 2002/58/EG des Europäischen Parlaments und des Rates vom 12. Juli 2002 über die Verarbeitung personenbezogener Daten
+          und den Schutz der Privatsphäre in der elektronischen Kommunikation (Datenschutzrichtlinie für elektronische Kommunikation)
+          (ABl. L 201 vom 31.7.2002, S. 37).
+
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                              3/26
+DE                                                                                                                 ABl. L vom 22.3.2024
+
+
+
+       (14)   Um die Fragmentierung der Interoperabilitätslandschaft in der Union zu beseitigen, sollte ein gemeinsames
+              Verständnis der Interoperabilität in der Union und ein ganzheitliches Herangehen an Interoperabilitätslösungen
+              gefördert werden. Im Rahmen einer strukturierten Zusammenarbeit sollten Maßnahmen unterstützt werden, mit
+              denen die Einführung einer digitaltauglichen politischen Struktur gefördert wird, die dem Konzept der
+              Interoperabilität durch Technikgestaltung folgt. Darüber hinaus sollte sie die effiziente Verwaltung und Nutzung
+              digitaler Diensteinfrastrukturen und ihrer jeweiligen Komponenten durch Einrichtungen der Union und öffentliche
+              Stellen fördern, die die Einrichtung und den Betrieb nachhaltiger und effizienter öffentlicher Dienste ermöglichen,
+              um die Zugänglichkeit bis hin zur untersten administrativen Ebene sicherzustellen.
+
+       (15)   Einrichtungen der Union und öffentliche Stellen können verbindliche Anforderungen an transeuropäische digitale
+              öffentliche Dienste einführen. Um sicherzustellen, dass diese Dienste grenzüberschreitend Daten austauschen
+              können, sollte ein Mechanismus eingerichtet werden, der die Ermittlung rechtlicher, organisatorischer, semantischer
+              und technischer Hindernisse für die grenzüberschreitende Interoperabilität ermöglicht (im Folgenden „Interoperabili­
+              tätsbewertung“). Dieser Mechanismus sollte dafür sorgen, dass Aspekte der grenzüberschreitenden Interoperabilität
+              bei allen Entscheidungen, die sich auf die Gestaltung solcher Dienste auswirken können, angemessen berücksichtigt
+              werden.
+
+       (16)   Für die Festlegung verbindlicher Anforderungen an grenzüberschreitende digitale öffentliche Dienste ist es wichtig,
+              sich im politischen Entscheidungsprozess so früh wie möglich auf den Aspekt der Interoperabilität zu konzentrieren
+              und dabei dem Grundsatz „standardmäßig digital“ und dem Konzept der Interoperabilität durch Technikgestaltung
+              zu folgen. Daher sollte eine Einrichtung der Union oder eine öffentliche Stelle, die beabsichtigt, verbindliche
+              Anforderungen für einen oder mehrere transeuropäische digitale öffentliche Dienste festzulegen, die sich auf die
+              grenzüberschreitende Interoperabilität auswirken, beispielsweise im Zuge der Digitalisierung wesentlicher
+              öffentlicher Dienste gemäß dem Beschluss (EU) 2022/2481, eine Interoperabilitätsbewertung durchführen. Damit
+              gewährleistet ist, dass diese Aufgabe wirksam und effizient durchgeführt wird, kann ein Mitgliedstaat über die
+              internen Ressourcen und die Zusammenarbeit zwischen seinen öffentlichen Stellen entscheiden, die erforderlich
+              sind, um die Durchführung dieser Interoperabilitätsbewertung zu unterstützen.
+
+       (17)   Eine Interoperabilitätsbewertung ist erforderlich, um das Ausmaß der Auswirkungen der geplanten Anforderungen
+              einzuschätzen und Maßnahmen zur Nutzung der Vorteile und Bewältigung der potenziellen Kosten vorzuschlagen.
+              In Situationen, in denen eine Interoperabilitätsbewertung nicht verpflichtend ist, sollte die Einrichtung der Union
+              oder die öffentliche Stelle die Interoperabilitätsbewertung auf freiwilliger Basis durchführen können. Diese
+              Verordnung trägt daher allgemein zur Interoperabilität bei.
+
+       (18)   Verbindliche Anforderungen umfassen alle Verpflichtungen, Verbote, Bedingungen, Kriterien oder Beschränkungen
+              rechtlicher, organisatorischer, semantischer oder technischer Art in einem Gesetz, einer Verwaltungsvorschrift,
+              einem Vertrag, einer öffentlichen Ausschreibung oder einem anderen amtlichen Dokument. Verbindliche
+              Anforderungen wirken sich auf die Art und Weise aus, wie transeuropäische digitale öffentliche Dienste und ihre
+              Netz- und Informationssysteme, die für ihre Bereitstellung genutzt werden, gestaltet, beschafft, entwickelt und
+              umgesetzt werden, und beeinflussen somit die eingehenden oder ausgehenden Datenströme dieser Dienste.
+              Aufgaben wie die Weiterentwicklung, die keine wesentlichen Änderungen, Sicherheitsaktualisierungen oder
+              technischen Aktualisierungen beinhaltet, oder die einfache Beschaffung von Standardausrüstung für Informations-
+              und Kommunikationstechnologien wirken sich jedoch in der Regel nicht auf die grenzüberschreitende
+              Interoperabilität transeuropäischer digitaler öffentlicher Dienste aus und führen daher nicht zu einer obligatorischen
+              Interoperabilitätsbewertung im Sinne dieser Verordnung.
+
+       (19)   Der Ansatz für die Durchführung von Interoperabilitätsbewertungen sollte verhältnismäßig und je nach Ebene und
+              Umfang differenziert sein. Unter bestimmten Umständen kann es sinnvoll und wirtschaftlich sein, dass der
+              Gegenstand einer Interoperabilitätsbewertung weiter gefasst ist und mehr als nur ein einzelnes Projekt umfasst,
+              einschließlich wenn öffentliche Stellen beabsichtigen, eine gemeinsame Anwendungs- oder Verarbeitungsplattform
+              einzurichten. In diesen Fällen sollte nachdrücklich dazu angehalten werden, dass die Interoperabilitätsbewertung
+              über die Verwirklichung der europäischen Interoperabilitätsziele hinausgeht und dass die vollständige Herstellung
+              der Interoperabilität angestrebt wird. Ebenso sollten die Anforderungen an Interoperabilitätsbewertungen, die auf
+              der Ebene der einzelnen Projektdurchführung, etwa in einer lokalen Behörde, durchgeführt werden, pragmatisch
+              sein und einen eng gefassten Schwerpunkt ermöglichen, wobei zu berücksichtigen ist, dass die umfassenderen
+              Vorteile von Interoperabilitätsbewertungen in der Regel in den frühen Phasen der Politikgestaltung und der
+              Entwicklung von Referenzarchitektur, Spezifikationen und Normen erzielt werden. Beim Erlass der Leitlinien zum
+              Inhalt der Interoperabilitätsbewertung sollte der Beirat unter anderem die Kapazitäten regionaler und lokaler
+              öffentlicher Stellen berücksichtigen und übermäßigen Verwaltungsaufwand vermeiden.
+
+       (20)   Bei der Konsultation der unmittelbar betroffenen Personen oder ihrer Vertreter sollte die Einrichtung der Union oder
+              öffentliche Stelle in der Lage sein, etablierte Konsultationsverfahren und aktuelle Daten zu nutzen.
+
+4/26                                                                                        ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                                 DE
+
+      (21)   Bei der Interoperabilitätsbewertung sollten die Auswirkungen der geplanten verbindlichen Anforderungen an
+             transeuropäische digitale öffentliche Dienste auf die grenzüberschreitende Interoperabilität bewertet werden, z. B.
+             unter Berücksichtigung des Ursprungs, der Art, der Besonderheiten und des Ausmaßes dieser Auswirkungen. Das
+             Ergebnis dieser Bewertung sollte bei der Festlegung der geeigneten Maßnahmen, die zur Einrichtung oder Änderung
+             der verbindlichen Anforderungen an transeuropäische digitale öffentliche Dienste getroffen werden müssen,
+             berücksichtigt werden.
+
+
+      (22)   Die Einrichtung der Union oder öffentliche Stelle sollte einen Bericht über das Ergebnis der Interoperabilitäts­
+             bewertung auf öffentlich zugängliche Weise — zumindest jedoch auf einer offiziellen Website in einem maschinen­
+             lesbaren Format — veröffentlichen, die von den zuständigen nationalen Behörden oder den Interoperabilitätskoor­
+             dinatoren für Einrichtungen der Union festgelegt wird. Bei der Veröffentlichung des Berichts sollten keine Rechte des
+             geistigen Eigentums beeinträchtigt oder Geschäftsgeheimnisse offengelegt werden, und die Veröffentlichung sollte
+             eingeschränkt werden, wenn dies aus Gründen der öffentlichen Ordnung oder Sicherheit gerechtfertigt ist. Die
+             Bestimmungen des Unionsrechts über den Schutz personenbezogener Daten sollten eingehalten werden. Die
+             Einrichtung der Union oder öffentliche Stelle sollte das Ergebnis der Interoperabilitätsbewertung elektronisch dem
+             Beirat übermitteln. Auf dieser Grundlage sollte der Beirat Vorschläge zur Verbesserung der grenzüberschreitenden
+             Interoperabilität transeuropäischer digitaler öffentlicher Dienste analysieren und unterbreiten. Die Vorschläge des
+             Beirats sollten im Portal für ein interoperables Europa veröffentlicht werden.
+
+
+      (23)   Eine gemeinsame Checkliste für Berichte über die Interoperabilitätsbewertung ist erforderlich, um den Einrichtungen
+             der Union und öffentlichen Stellen die Durchführung dieser Bewertungen zu erleichtern und den Beirat in die Lage
+             zu versetzen, auf der Grundlage der Ergebnisse Empfehlungen zu erstellen, um die grenzüberschreitende
+             Interoperabilität zu verbessern. Dementsprechend sollten in dem Bericht mit dem Ergebnis des Interoperabilitätsbe­
+             wertungsprozesses die Auswirkungen der bewerteten Anforderung auf die rechtlichen, organisatorischen,
+             semantischen, technischen und die Governance betreffenden Aspekte der grenzüberschreitenden Interoperabilität
+             sowie die Art der Lösung für ein interoperables Europa, die zur Bewältigung dieser Auswirkungen verwendet
+             werden, und die verbleibenden Hindernisse, die noch nicht beseitigt werden, zusammengefasst werden. Die
+             Verwendung dieser gemeinsamen Checkliste sollte durch vom Beirat angenommene Leitlinien näher erläutert
+             werden.
+
+
+      (24)   Die Kommission sollte benutzerfreundliche Mittel zur Verfügung stellen, um die Ergebnisse der Bewertungen zu
+             behandeln und zu übermitteln, einschließlich in einem maschinenlesbaren Format. Ein Online-Tool für die Berichte
+             über die Interoperabilitätsbewertung sollte eine einfache und benutzerfreundliche Schnittstelle für die Erstellung
+             und Veröffentlichung von Berichten bereitstellen. Ein standardisiertes Ergebnis der Berichterstattung in einem
+             maschinenlesbaren Format könnte zu Überwachungszwecken verwendet werden. Dieses Instrument sollte auch die
+             automatisierte Übersetzung erleichtern und in das Portal für ein interoperables Europa integriert werden. Um
+             Interoperabilität und nahtlose Integration zu fördern, sollte das Online-Tool außerdem ein offenes Datenmodell
+             beinhalten und einhalten, das sich aus der gemeinsamen Checkliste ergibt. Die Bereitstellung einer Anwendungspro­
+             grammierschnittstelle ist von entscheidender Bedeutung, um die Integration des Instruments in bestehende
+             Meldeplattformen zu ermöglichen und so den Nutzen und die Effizienz für alle Interessenträger zu maximieren.
+             Zwar sollte die Nutzung des Online-Tools freiwillig sein, doch sollte die Verpflichtung einer Einrichtung der Union
+             oder einer öffentlichen Stelle, einen Bericht mit dem Ergebnis der Interoperabilitätsbewertung auf öffentlich
+             zugängliche Weise zu veröffentlichen, als erfüllt gelten, wenn die erforderlichen Daten übermittelt werden und die
+             Veröffentlichung im Portal für ein interoperables Europa ermöglicht wird.
+
+
+      (25)   Einrichtungen der Union oder öffentliche Stellen, die nach Interoperabilitätslösungen suchen, sollten bei anderen
+             Einrichtungen der Union oder öffentlichen Stellen die von diesen Einrichtungen oder Stellen verwendeten
+             Interoperabilitätslösungen wie bewährte Verfahren, Spezifikationen und Softwarecode zusammen mit der
+             zugehörigen Dokumentation anfragen können. Die Weitergabe sollte zum Normalfall werden. Darüber hinaus
+             sollten sich Einrichtungen der Union oder öffentliche Stellen bemühen, neue Interoperabilitätslösungen zu
+             entwickeln oder bestehende Interoperabilitätslösungen weiterzuentwickeln. Dabei sollten sie Lösungen Vorrang
+             einräumen, die nicht mit restriktiven Lizenzierungsbedingungen verbunden sind, sofern diese Lösungen
+             gleichwertig sind. Jedoch sollte die Weitergabe von Interoperabilitätslösungen nicht dahin gehend verstanden
+             werden, dass Einrichtungen der Union und öffentliche Stellen verpflichtet sind, ihre Rechte des geistigen Eigentums
+             aufzugeben.
+
+
+      (26)   Wenn öffentliche Verwaltungen ihre Lösungen mit anderen öffentlichen Verwaltungen oder der Öffentlichkeit teilen,
+             handeln sie im öffentlichen Interesse. Dies gilt umso mehr für innovative Technologien. So macht beispielsweise ein
+             offener Quellcode Algorithmen transparent, ermöglicht unabhängige Prüfungen und macht Bausteine
+             reproduzierbar. Die Weitergabe von Interoperabilitätslösungen zwischen öffentlichen Verwaltungen sollte die
+             Voraussetzungen für die Verwirklichung eines offenen Ökosystems digitaler Technologien für den öffentlichen
+             Sektor schaffen, was vielfältige Vorteile bringen kann.
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                       5/26
+DE                                                                                                                 ABl. L vom 22.3.2024
+
+
+
+       (27)   Bei der Überwachung der Kohärenz der empfohlenen Interoperabilitätslösungen und bei Vorschlägen für
+              Maßnahmen zur Gewährleistung ihrer Vereinbarkeit mit bestehenden Lösungen, die einem gemeinsamen Zweck
+              dienen, sollte der Beirat berücksichtigen, dass bestehende Lösungen veralten.
+
+       (28)   Der EIF sollte für Kohärenz sorgen und als zentraler Bezugspunkt für das Konzept der Union für die Interoperabilität
+              im öffentlichen Dienst anerkannt werden. Darüber hinaus können spezialisierte Interoperabilitätsrahmen auf den
+              Bedarf bestimmter Sektoren, Bereiche oder Verwaltungsebenen ausgerichtet werden. Solche Rahmen, die nicht
+              verbindlich sind, sollten die Umsetzung von Interoperabilitätslösungen und den Ansatz der konzeptionsinhärenten
+              Interoperabilität weiter fördern.
+
+       (29)   Der EIF sollte unter anderem den Grundsatz der Mehrsprachigkeit im öffentlichen Sektor fördern.
+
+       (30)   Der EIF sollte vom Beirat entwickelt werden. Der Beirat sollte sich aus einem Vertreter jedes Mitgliedstaats und einem
+              Vertreter der Kommission zusammensetzen. Die Mitgliedstaaten stehen somit zusammen mit der Kommission im
+              Mittelpunkt der Entwicklung und Umsetzung des EIF. Der Beirat sollte den EIF erforderlichenfalls aktualisieren.
+
+       (31)   Die spezialisierten Interoperabilitätsrahmen, die zur Ergänzung des EIF aufgestellt werden, sollten die bestehenden
+              sektorspezifischen Rahmen, die auf Unionsebene entwickelt wurden, wie etwa im Gesundheitswesen,
+              berücksichtigen und nicht beeinträchtigen.
+
+       (32)   Interoperabilität ist direkt mit der Verwendung von offenen Spezifikationen und Normen verbunden und davon
+              abhängig. Daher sollte der öffentliche Sektor der Union die Möglichkeit haben, bereichsübergreifende offene
+              Spezifikationen und andere Lösungen zur Förderung der Interoperabilität zu vereinbaren. In dem neuen Rahmen
+              sollte ein klares Verfahren für die künftige Entwicklung und Förderung von empfohlenen Interoperabilitätslösungen
+              vorgesehen sein, die das Zeichen „Lösung für ein interoperables Europa“ tragen. Auf diese Weise wird der öffentliche
+              Sektor besser koordiniert auftreten, um die Bedürfnisse des öffentlichen Sektors sowie die öffentlichen Werte in
+              umfassenderen Diskussionen zu erörtern. Der Beirat sollte sich auf die allgemeinen Kriterien verständigen, die die
+              Interoperabilitätslösungen erfüllen müssen. Der Beirat sollte in der Lage sein, seine Empfehlungen zurückzuziehen.
+              Wenn der Beirat seine Empfehlung zurückzieht, sollte den entsprechenden Interoperabilitätslösungen das Zeichen
+              „Lösung für ein interoperables Europa“ entzogen werden und die Interoperabilitätslösungen falls erforderlich aus
+              dem Portal für ein interoperables Europa gelöscht werden.
+
+       (33)   Zahlreiche Interoperabilitätsspezifikationen, die vom öffentlichen Sektor verwendet werden, könnten aus
+              bestehendem Unionsrecht abgeleitet werden. Es ist daher notwendig, eine Verbindung zwischen allen
+              Spezifikationen für transeuropäische digitale öffentliche Dienste herzustellen, die nach dem Unionsrecht verbindlich
+              sind. Für die Durchführungsbehörden ist es nicht immer einfach, die Anforderungen in dem neuesten und
+              maschinenlesbaren Format zu finden. Eine zentrale Zugangsstelle in Form des Portals für ein interoperables Europa
+              und klare Vorschriften für die Metadaten der mit diesen Anforderungen verbundenen Informationen sollen
+              öffentlichen Stellen dabei helfen, ihre digitalen Diensteinfrastrukturen mit den bestehenden und künftigen
+              Vorschriften in Einklang zu bringen.
+
+       (34)   Das Portal für ein interoperables Europa sollte auf der Grundlage bestehender Initiativen entwickelt und als leicht
+              zugänglicher Bezugspunkt für Interoperabilitätslösungen, Bewertungen, das vorhandene Wissen und die
+              Gemeinschaft eingerichtet werden. Das Portal sollte als Verbindung zu offiziellen Quellen eingerichtet werden und
+              für Beiträge aus der durch die vorliegende Verordnung eingerichteten Gemeinschaft für ein interoperables Europa
+              offen sein.
+
+       (35)   Das Portal für ein interoperables Europa sollte Interoperabilitätslösungen öffentlich zugänglich und auffindbar
+              machen, die den EIF-Grundsätzen der Offenheit, Zugänglichkeit, technischen Neutralität, Weiterverwendbarkeit,
+              Sicherheit und des Schutzes der Privatsphäre entsprechen. Es sollte klar unterschieden werden zwischen Lösungen
+              für ein interoperables Europa, die vom Beirat empfohlen werden, und anderen Interoperabilitätslösungen wie den
+              von öffentlichen Verwaltungen proaktiv zur Weiterverwendung weitergegebenen Lösungen, den mit
+              Unionspolitiken verknüpften Lösungen und einschlägigen Lösungen von nationalen Portalen. Anwendungsfälle im
+              Portal für ein interoperables Europa sollten nach unterstütztem Land oder nach Art des unterstützten öffentlichen
+              Dienstes abfragbar sein. Der Beirat sollte dazu konsultiert werden, wie Lösungen im Portal für ein interoperables
+              Europa kategorisiert werden sollen.
+
+       (36)   Da die Nutzer dank Quelloffenheit die Interoperabilität und Sicherheit von Lösungen aktiv beurteilen und prüfen
+              können, ist es wichtig, dass die Umsetzung von Interoperabilitätslösungen durch Quelloffenheit erleichtert wird. In
+              diesem Zusammenhang sollte die Verwendung von Open-Source-Lizenzen gefördert werden, um die Rechtsklarheit
+              und die gegenseitige Anerkennung von Lizenzen in den Mitgliedstaaten zu verbessern. Mit der Open-Source-Lizenz
+              für die Europäische Union (EUPL) bietet die Kommission bereits eine Lösung für eine solche Lizenzierung. Mit dem
+              Portal für ein interoperables Europa verknüpfte Portale der Mitgliedstaaten, die quelloffene Lizenzen sammeln,
+              sollten die Verwendung der EUPL ermöglichen, wobei die Möglichkeit nicht ausgeschlossen werden soll, dass diese
+              Portale auch die Verwendung anderer quelloffener Lizenzen ermöglichen können.
+
+6/26                                                                                        ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                                       DE
+
+      (37)   Elektronisch erbrachte oder verwaltete öffentliche Dienste in der Union hängen derzeit oft von Anbietern von
+             außerhalb der Union ab. Es liegt im strategischen Interesse der Union, dass sie wesentliche technische Kapazitäten
+             zur Sicherung ihres digitalen Binnenmarkts bewahrt und weiterentwickelt, damit insbesondere die Erbringung der
+             Dienste, der Schutz kritischer Netz- und Informationssysteme und die Erbringung wesentlicher öffentlicher Dienste
+             gewährleistet werden können. Die Unterstützungsmaßnahmen für ein interoperables Europa sollten den
+             öffentlichen Verwaltungen dabei helfen, sich weiterzuentwickeln, und sie in die Lage versetzen, neue Herausfor­
+             derungen und neue Bereiche in grenzüberschreitende Kontexte einzubeziehen. Interoperabilität ist eine
+             Voraussetzung, um eine technologische Bindung an bestimmte Anbieter zu vermeiden, technische Entwicklungen
+             zu ermöglichen und Innovationen zu fördern, was auch die globale Wettbewerbsfähigkeit, die Resilienz und die
+             offene strategische Autonomie der Union stärken dürfte.
+
+      (38)   Es ist notwendig, einen Governance-Mechanismus einzurichten, um die Umsetzung der Unionspolitiken in einer
+             Weise zu erleichtern, die die Interoperabilität gewährleistet. Dieser Mechanismus sollte auf die interoperable digitale
+             Umsetzung von Maßnahmen konzentriert sein, sobald diese in Form von Rechtsakten angenommen wurden, und
+             dazu dienen, bedarfsgerechte Interoperabilitätslösungen zu entwickeln. Der Mechanismus sollte öffentliche Stellen
+             unterstützen. Unterstützungsprojekte für die Politikumsetzung zur Unterstützung öffentlicher Stellen sollten der
+             Kommission vom Beirat vorgeschlagen werden; die Kommission sollte über die Einrichtung der Unterstützungs­
+             projekte entscheiden, wobei dem potenziellen Bedarf an nicht verbindlichen, maschinenausführbaren Versionen der
+             Politik wie Referenzimplementierungsmodellen oder -kodizes Rechnung zu tragen ist, die auf allen
+             Verwaltungsebenen weiterverwendbar sind.
+
+      (39)   Alle Verwaltungsebenen sollten bei der Gestaltung, Konzeption und Durchführung öffentlicher Dienste mit
+             innovativen Organisationen, einschließlich Unternehmen und gemeinnützige Einrichtungen, zusammenarbeiten.
+             Die Unterstützung der GovTech-Zusammenarbeit zwischen öffentlichen Stellen, Forschungs- und Bildungsein­
+             richtungen, Start-up-Unternehmen sowie innovativen KMU und zivilgesellschaftlichen Organisationen (CivicTech)
+             ist ein wirksames Mittel zur Unterstützung von Innovationen im öffentlichen Sektor und Flexibilität und zur
+             Förderung der Nutzung von Interoperabilitätsinstrumenten zwischen den privaten und öffentlichen Sektoren. Die
+             Unterstützung eines offenen GovTech-Ökosystems in der Union, das öffentliche und private Akteure über Grenzen
+             hinweg zusammenbringt und sich auf verschiedene Verwaltungsebenen erstreckt, sollte die Entwicklung innovativer
+             Initiativen zur Konzeption und Einführung von GovTech-Interoperabilitätslösungen ermöglichen.
+
+      (40)   Die Ermittlung gemeinsamer Innovationsbedürfnisse und -prioritäten und die Konzentration auf gemeinsame
+             grenzüberschreitende Arbeiten in den Bereichen GovTech und Erprobung würden den öffentlichen Stellen der
+             Union dabei helfen, Risiken, Erkenntnisse und Ergebnisse von Innovationsmaßnahmengemeinsam zu nutzen. Diese
+             Tätigkeiten werden insbesondere das reichhaltige Reservoir an Start-up-Unternehmen und KMU im
+             Technologiebereich in der Union nutzen. Erfolgreiche GovTech-Projekte und Innovationsmaßnahmen, die im
+             Rahmen von Innovationsmaßnahmen für ein interoperables Europa angeleitet wurden, sollten dazu beitragen, die
+             GovTech-Instrumente und -Interoperabilitätslösungen für die Weiterverwendung auszubauen.
+
+      (41)   Unterstützungsmaßnahmen für ein interoperables Europa könnten von sicheren Räumen für die Erprobung
+             profitieren und gleichzeitig eine verantwortungsvolle Innovation und Integration geeigneter Risikominderungs­
+             maßnahmen und Schutzvorkehrungen gewährleisten. Um einen innovationsfreundlichen, zukunftssicheren und
+             gegenüber Störungen resilienten Rechtsrahmen sicherzustellen, sollte es möglich sein, solche Projekte in Interopera­
+             bilitäts-Reallaboren durchzuführen. Interoperabilitäts-Reallabore sollten aus kontrollierten Testumgebungen
+             bestehen, die die Entwicklung und Erprobung innovativer Lösungen erleichtern, bevor solche Lösungen in die Netz-
+             und Informationssysteme des öffentlichen Sektors integriert werden. Die Einrichtung von Interoperabilitäts-
+             Reallaboren sollte darauf abzielen, die Interoperabilität durch innovative Lösungen zu fördern, indem eine
+             kontrollierte Erprobungs- und Testumgebung geschaffen wird, um die Angleichung der Lösungen an diese
+             Verordnung und anderes Unionsrecht und nationales Recht zu gewährleisten, die Rechtssicherheit für Innovatoren
+             und die zuständigen Behörden zu erhöhen und das Verständnis der Chancen, neu entstehenden Risiken und
+             Auswirkungen der neuen Lösungen zu verbessern. Um eine einheitliche Umsetzung in der gesamten Union und die
+             Erreichung von Größenvorteilen zu gewährleisten, sollten gemeinsame Vorschriften für die Umsetzung von
+             Interoperabilitäts-Reallaboren festgelegt werden. Der Europäische Datenschutzbeauftragte ist befugt, im
+             Zusammenhang mit Interoperabilitäts-Reallaboren gegen Einrichtungen der Union gemäß Artikel 58 Absatz 2
+             Buchstabe i der Verordnung (EU) 2018/1725 Geldbußen zu verhängen.
+
+      (42)   Es ist erforderlich, im Einklang mit Artikel 6 Absatz 4 der Verordnung (EU) 2016/679 und Artikel 5 der Verordnung
+             (EU) 2018/1725 sowie unbeschadet des Artikels 4 Absatz 2 der Richtlinie (EU) 2016/680 des Europäischen
+             Parlaments und des Rates (10) Vorschriften für die Verwendung personenbezogener Daten, die für andere Zwecke
+             erhoben wurden, zur Entwicklung bestimmter Interoperabilitätslösungen im öffentlichen Interesse innerhalb der
+
+      (10) Richtlinie (EU) 2016/680 des Europäischen Parlaments und des Rates vom 27. April 2016 zum Schutz natürlicher Personen bei der
+           Verarbeitung personenbezogener Daten durch die zuständigen Behörden zum Zwecke der Verhütung, Ermittlung, Aufdeckung oder
+           Verfolgung von Straftaten oder der Strafvollstreckung sowie zum freien Datenverkehr und zur Aufhebung des
+           Rahmenbeschlusses 2008/977/JI des Rates (ABl. L 119 vom 4.5.2016, S. 89).
+
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                             7/26
+DE                                                                                                              ABl. L vom 22.3.2024
+
+
+
+              Interoperabilitäts-Reallabore vorzusehen. Alle anderen Pflichten von Verantwortlichen und Rechte betroffener
+              Personen im Rahmen der Verordnungen (EU) 2016/679 und (EU) 2018/1725 und der Richtlinie (EU) 2016/680
+              gelten weiterhin. Insbesondere bildet diese Verordnung keine Rechtsgrundlage im Sinne des Artikels 22 Absatz 2
+              Buchstabe b der Verordnung (EU) 2016/679 oder des Artikels 24 Absatz 2 Buchstabe b der Verordnung
+              (EU) 2018/1725. Die vorliegende Verordnung zielt lediglich darauf ab, die Verarbeitung personenbezogener Daten
+              im Zusammenhang mit dem Interoperabilitäts-Reallabor vorzusehen. Jede andere Verarbeitung personenbezogener
+              Daten, die in den Anwendungsbereich dieser Verordnung fällt, würde eine gesonderte Rechtsgrundlage erfordern.
+
+
+       (43)   Um die Transparenz der Verarbeitung personenbezogener Daten durch Einrichtungen der Union und öffentliche
+              Stellen zu erhöhen, sollte das Portal für ein interoperables Europa gemäß der Verordnung (EU) 2016/679 und der
+              Verordnung (EU) 2018/1725 Zugang zu Informationen über die Verarbeitung personenbezogener Daten im
+              Zusammenhang mit Interoperabilitäts-Reallaboren ermöglichen.
+
+
+       (44)   Es ist notwendig, für ein gutes Verständnis von Interoperabilitätsproblemen zu sorgen, insbesondere bei den
+              Beschäftigten im öffentlichen Sektor. In dieser Hinsicht ist die kontinuierliche Schulung von entscheidender
+              Bedeutung, und die Zusammenarbeit und Koordinierung in diesem Bereich sollte gefördert werden. Über
+              Schulungen zu Lösungen für ein interoperables Europa hinaus sollten alle Initiativen gegebenenfalls auf dem
+              Austausch von Erfahrungen und Lösungen sowie dem Austausch und der Förderung bewährter Verfahren aufbauen
+              oder damit einhergehen. Zu diesem Zweck sollte die Kommission Schulungen und Schulungsmaterialien erarbeiten
+              und die Entwicklung eines Zertifizierungsprogramms zu Interoperabilitätsfragen vorantreiben, um bewährte
+              Verfahren, Qualifikationen für Humanressourcen und eine Kultur der Exzellenz zu fördern. Im Einklang mit den
+              Strategien der Union für digitale Kompetenzen sollte die Kommission dazu beitragen, die allgemeine Verfügbarkeit
+              und Akzeptanz von Schulungen zur Interoperabilität des öffentlichen Sektors auf nationaler, regionaler und lokaler
+              Ebene zu erhöhen. Die Kommission und die Mitgliedstaaten sollten den Aufbau von Kapazitäten — insbesondere in
+              der öffentlichen Verwaltung — fördern, und zwar mit Blick auf die Umschulungen und Weiterbildungen, die für die
+              Durchführung der vorliegenden Verordnung erforderlich sind.
+
+
+       (45)   Um einen Mechanismus zu schaffen, der den Prozess des gegenseitigen Lernens zwischen Einrichtungen der Union
+              und öffentlichen Stellen und den Austausch bewährter Verfahren bei der Umsetzung von Lösungen für ein
+              interoperables Europa in den Mitgliedstaaten erleichtert, müssen Bestimmungen über das Verfahren der
+              gegenseitigen Begutachtung festgelegt werden. Eine gegenseitige Begutachtung sollte wertvolle Erkenntnisse und
+              Empfehlungen für die begutachtete öffentliche Stelle liefern. Dies könnte insbesondere dazu beitragen, den Transfer
+              von Technologien, Instrumenten, Maßnahmen und Verfahren zwischen den Beteiligten der gegenseitigen
+              Begutachtung zu erleichtern. Eine gegenseitige Begutachtung sollte einen gangbaren Weg für den Austausch
+              bewährter Verfahren zwischen Mitgliedstaaten und Einrichtungen der Union bilden, die in Bezug auf die
+              Interoperabilität unterschiedlich weit fortgeschritten sind. Es sollte möglich sein, die gegenseitige Begutachtung
+              soweit erforderlich auf freiwilliger Basis auf Antrag einer Einrichtung der Union oder einer öffentlichen Stelle
+              durchzuführen. Damit das Verfahren der gegenseitigen Begutachtung kosteneffizient ist, zu klaren und schlüssigen
+              Ergebnissen führt und unnötiger Verwaltungsaufwand vermieden wird, sollte die Kommission auf der Grundlage
+              des bestehenden Bedarfs und nach Konsultation des Beirats Leitlinien zur Methodik und zum Inhalt der
+              gegenseitigen Begutachtung herausgeben können.
+
+
+       (46)   Der Beirat sollte die Entwicklung der allgemeinen Ausrichtung der strukturierten Zusammenarbeit für ein
+              interoperables Europa bei der Förderung der digitalen Vernetzung und Interoperabilität öffentlicher Dienste in der
+              Union erleichtern und die strategischen Tätigkeiten und Umsetzungsmaßnahmen im Zusammenhang mit dieser
+              Zusammenarbeit überwachen. Der Beirat sollte seine Aufgaben unter Berücksichtigung der Vorschriften für die
+              grenzüberschreitende Interoperabilität und der bereits umgesetzten Lösungen für bestehende Netz- und
+              Informationssysteme wahrnehmen.
+
+
+       (47)   Bestimmte Einrichtungen der Union wie der Europäische Dateninnovationsrat und der Ausschuss für den
+              europäischen Raum für Gesundheitsdaten wurden eingerichtet und beauftragt, unter anderem die Interoperabilität
+              auf bereichs- oder politikspezifischer Ebene zu verbessern. Allerdings sind keine der bestehenden Einrichtungen mit
+              verbindlichen Anforderungen für transeuropäische digitale öffentliche Dienste betraut. Der Beirat sollte die
+              Einrichtungen der Union unterstützen, die an für die grenzüberschreitende Interoperabilität von transeuropäischen
+              digitalen öffentlichen Diensten relevanten Strategien, Maßnahmen und Lösungen arbeiten, z. B. in Bezug auf die
+              semantische Interoperabilität im Hinblick auf Datenräume sowie die Übertragbarkeit und Weiterverwendbarkeit
+              von Daten. Der Beirat sollte mit allen einschlägigen Einrichtungen der Union zusammenwirken, um die
+              Abstimmung und Synergien zwischen Maßnahmen für eine grenzüberschreitende Interoperabilität und sektorspe­
+              zifischen Maßnahmen sicherzustellen. Zu diesem Zweck kann die Kommission als Vorsitz des Beirats Experten mit
+              spezifischen Kenntnissen zu einem auf der Tagesordnung stehenden Thema einladen, einschließlich Vertreter
+              regionaler und lokaler Behörden sowie Vertreter der Open-Source- und Normungsgemeinschaften.
+
+8/26                                                                                      ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                               DE
+
+      (48)   Die Förderung der Interoperabilität des öffentlichen Sektors erfordert die aktive Einbeziehung und das Engagement
+             von Experten, Praktikern, Nutzern und interessierten Bürgerinnen und Bürgern in allen Mitgliedstaaten. Dies
+             umfasst alle Verwaltungsebenen — die nationale, regionale und lokale Ebene — und bezieht internationale Partner,
+             Forschungs- und Bildungseinrichtungen sowie einschlägige Gemeinschaften und den Privatsektor mit ein. Um ihr
+             Fachwissen, ihre Fähigkeiten und ihre Kreativität nutzbar zu machen, sollte die Gemeinschaft für ein interoperables
+             Europa, ein spezielles Forum, dazu beitragen, Rückmeldungen, nutzerseitige und operative Anforderungen zu
+             kanalisieren, Bereiche für eine weitere Entwicklung zu ermitteln und Prioritäten für die Interoperabilitätszusam­
+             menarbeit der Union zu bestimmen. Durch die Einrichtung der Gemeinschaft für ein interoperables Europa sollte
+             die Koordinierung und Zusammenarbeit zwischen den wichtigsten strategischen und operativen Interoperabilität­
+             sakteuren unterstützt werden.
+
+
+      (49)   Die Gemeinschaft für ein interoperables Europa sollte allen interessierten Kreisen offenstehen. Der Zugang zur
+             Gemeinschaft für ein interoperables Europa sollte so einfach wie möglich gestaltet werden, wobei unnötige
+             Hindernisse und Verwaltungsaufwand zu vermeiden sind. Die Gemeinschaft für ein interoperables Europa sollte
+             öffentliche und private Interessenträger, einschließlich Bürgerinnen und Bürger, mit Fachwissen auf dem Gebiet der
+             grenzüberschreitenden Interoperabilität und mit unterschiedlichem Hintergrund, z. B. Hochschulen, Forschung und
+             Innovation, Bildung, Normung und Spezifikationen, Unternehmen und öffentliche Verwaltung auf allen Ebenen,
+             zusammenbringen. Die aktive Beteiligung an der Gemeinschaft für ein interoperables Europa, einschließlich durch
+             die Ermittlung von Unterstützungsmaßnahmen und Finanzierungsmöglichkeiten, sollte gefördert werden.
+
+
+      (50)   Um die wirksame und effiziente Durchführung dieser Verordnung sicherzustellen, müssen die für ihre Durchführung
+             zuständigen nationalen Behörden benannt werden. In vielen Mitgliedstaaten sind bereits bestimmte Einrichtungen
+             mit der Entwicklung der Interoperabilität betraut worden. Solche Einrichtungen sollten die Rolle der zuständigen
+             Behörde gemäß dieser Verordnung übernehmen können und falls es in einem Mitgliedstaat mehrere nationale
+             zuständige Behörden gibt, sollte eine von ihnen darüber hinaus als einheitliche Anlaufstelle benannt werden.
+
+
+      (51)   Als wichtigstes Instrument der Union für die Koordinierung öffentlicher Investitionen in Interoperabilitätslösungen
+             und die Festlegung des Fahrplans für die Durchführung dieser Verordnung sollte eine Agenda für ein interoperables
+             Europa ausgearbeitet werden. Sie sollte einen umfassenden Überblick über die Finanzierungsmöglichkeiten und
+             Finanzierungszusagen in dem Bereich vermitteln und gegebenenfalls die entsprechenden Unionsprogramme
+             einbeziehen. Dies sollte auf allen Verwaltungsebenen dazu beitragen, Synergien zu schaffen, die finanzielle
+             Unterstützung im Zusammenhang mit der Entwicklung der Interoperabilität zu koordinieren und Doppelarbeit zu
+             vermeiden.
+
+
+      (52)   Es sollten Informationen eingeholt werden, um Leitlinien für die wirksame und effiziente Durchführung dieser
+             Verordnung vorzugeben, einschließlich der Vorlage von Informationen zur Unterstützung der Arbeit des Beirats,
+             sowie Beiträge für die Bewertung dieser Verordnung gemäß der Interinstitutionellen Vereinbarung vom 13. April
+             2016 über bessere Rechtsetzung (11). Die Kommission sollte die Durchführung dieser Verordnung daher
+             überwachen und bewerten. Die Bewertung sollte auf den folgenden fünf Kriterien der Effizienz, der Wirksamkeit,
+             der Relevanz, der Kohärenz und des Mehrwerts basieren, mit besonderem Schwerpunkt auf den Auswirkungen der
+             Verordnung auf die grenzüberschreitende Interoperabilität transeuropäischer digitaler öffentlicher Dienste als
+             Wegbereiter für nahtlose und zugängliche digitale öffentliche Dienste, der Verringerung des Verwaltungsaufwands
+             und der Notwendigkeit zusätzlicher Maßnahmen und Strategien auf Unionsebene. Die Bewertung sollte außerdem
+             die Grundlage für Folgenabschätzungen und mögliche weitere Maßnahmen bilden. Darüber hinaus sollte die
+             Kommission nach Konsultation des Beirats die Methodik, die Verfahren und die Indikatoren für die Überwachung
+             erarbeiten. Der Überwachungsmechanismus sollte so konzipiert sein, dass der Verwaltungsaufwand für die
+             Mitgliedstaaten so gering wie möglich gehalten wird, indem bestehende Datenquellen so weit wie möglich
+             weiterverwendet werden und indem Synergien mit bestehenden Überwachungsmechanismen wie dem Index für die
+             digitale Wirtschaft und Gesellschaft, der eGovernment-Benchmark und den Zielpfaden des durch den Beschluss
+             (EU) 2022/2481 aufgestellten Politikprogramms 2030 für die digitale Dekade geschaffen werden.
+
+
+      (53)   Die Kommission sollte einen jährlichen Bericht über die Interoperabilität in der Union übermitteln und ihn dem
+             Europäischen Parlament und dem Rat vorlegen. Dieser Bericht sollte im Einklang mit den in der vorliegenden
+             Verordnung aufgeführten Überwachungsthemen Aufschluss geben über die bisherigen Fortschritte in Bezug auf die
+             grenzüberschreitende Interoperabilität transeuropäischer digitaler öffentlicher Dienste und sollte die Hindernisse
+             und Triebkräfte für die Umsetzung enthalten sowie die im Laufe der Zeit erzielten Ergebnisse darlegen. In Bezug auf
+             Indikatoren, für die keine Daten verfügbar sind, sollten die Mitgliedstaaten die Daten rechtzeitig über den Beirat
+             bereitstellen, um eine wirksame Erstellung des Berichts zu gewährleisten. Die Qualität des Berichts hängt von der
+             rechtzeitigen Verfügbarkeit der Daten ab.
+
+      (11) ABl. L 123 vom 12.5.2016, S. 1.
+
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                     9/26
+DE                                                                                                                    ABl. L vom 22.3.2024
+
+
+
+        (54)   Zur Gewährleistung einheitlicher Bedingungen für die Durchführung dieser Verordnung sollten der Kommission
+               Durchführungsbefugnisse zur Festlegung der Vorschriften und Bedingungen für die Einrichtung und den Betrieb
+               von Interoperabilitäts-Reallaboren übertragen werden. Diese Befugnisse sollten im Einklang mit der Verordnung
+               (EU) Nr. 182/2011 des Europäischen Parlaments und des Rates (12) ausgeübt werden.
+
+        (55)   Da das Ziel dieser Verordnung, nämlich die Stärkung des Binnenmarkts durch die Förderung der grenzüber­
+               schreitenden Interoperabilität transeuropäischer digitaler öffentlicher Dienste, von den Mitgliedstaaten nicht
+               ausreichend verwirklicht werden kann, sondern vielmehr wegen ihres Umfangs und ihrer Wirkungen auf
+               Unionsebene besser zu verwirklichen ist, kann die Union im Einklang mit dem in Artikel 5 des Vertrags über die
+               Europäische Union (EUV) verankerten Subsidiaritätsprinzip tätig werden. Entsprechend dem in demselben Artikel
+               genannten Grundsatz der Verhältnismäßigkeit geht diese Verordnung nicht über das für die Verwirklichung dieses
+               Zieles erforderliche Maß hinaus.
+
+        (56)   Die Anwendung dieser Verordnung sollte drei Monate nach dem Tag ihres Inkrafttretens beginnen, damit die
+               Mitgliedstaaten und die Einrichtungen der Union ausreichend Zeit haben, sich darauf vorzubereiten. Dieser
+               Aufschub ist erforderlich, um den Beirat und die Gemeinschaft für ein interoperables Europa einzurichten und um
+               die Interoperabilitätskoordinatoren zu benennen. Darüber hinaus sollte diese Verordnung ausreichend Zeit
+               vorsehen, damit die Mitgliedstaaten und die Einrichtungen der Union sich auf die wirksame Durchführung der
+               Interoperabilitätsbewertungen vorbereiten können und damit jeder Mitgliedstaat eine oder mehrere nationale
+               zuständige Behörden und eine einheitliche Anlaufstelle benennen kann. Daher sollte die Geltung der Bestimmungen
+               über Interoperabilitätsbewertungen, nationale zuständige Behörden und einheitliche Anlaufstellen neun Monate
+               nach dem Tag des Inkrafttretens dieser Verordnung beginnen.
+
+        (57)   Der Europäische Datenschutzbeauftragte wurde gemäß Artikel 42 Absatz 1 der Verordnung (EU) 2018/1725
+               konsultiert und gab am 13. Januar 2023 eine Stellungnahme ab (13) —
+
+
+
+        HABEN FOLGENDE VERORDNUNG ERLASSEN:
+
+
+
+
+                                                                  Kapitel 1
+
+                                                        Allgemeine Bestimmungen
+
+
+
+                                                                   Artikel 1
+
+                                                  Gegenstand und Anwendungsbereich
+
+        (1)     Diese Verordnung enthält Maßnahmen zur Förderung der grenzüberschreitenden Interoperabilität transeuropäischer
+        digitaler öffentlicher Dienste und trägt somit zur Interoperabilität der zugrunde liegenden Netz- und Informationssysteme
+        bei, indem gemeinsame Vorschriften und ein Steuerungsrahmen festgelegt werden.
+
+        (2)   Diese Verordnung gilt für Einrichtungen der Union und öffentliche Stellen, die transeuropäische digitale öffentliche
+        Dienste regeln, bereitstellen, verwalten oder erbringen.
+
+        (3)    Diese Verordnung gilt unbeschadet der Zuständigkeit der Mitgliedstaaten für die Festlegung dessen, was unter
+        öffentlichen Diensten zu verstehen ist, oder unbeschadet ihrer Fähigkeit, Verfahrensvorschriften für diese Dienste oder zur
+        Erbringung, Verwaltung oder Durchführung dieser Dienste festzulegen.
+
+        (4)   Diese Verordnung lässt die Zuständigkeiten der Mitgliedstaaten für Tätigkeiten im Bereich der öffentlichen Sicherheit,
+        der Verteidigung und der nationalen Sicherheit unberührt.
+
+        (5)   Diese Verordnung führt nicht zur Bereitstellung von Informationen, deren Offenlegung den wesentlichen Interessen
+        der Mitgliedstaaten im Bereich der öffentlichen Sicherheit, der Verteidigung oder der nationalen Sicherheit zuwiderlaufen
+        würde.
+
+        (12) Verordnung (EU) Nr. 182/2011 des Europäischen Parlaments und des Rates vom 16. Februar 2011 zur Festlegung der allgemeinen
+             Regeln und Grundsätze, nach denen die Mitgliedstaaten die Wahrnehmung der Durchführungsbefugnisse durch die Kommission
+             kontrollieren (ABl. L 55 vom 28.2.2011, S. 13).
+        (13) ABl. C 60 vom 17.2.2023, S. 17.
+
+
+10/26                                                                                         ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                                    DE
+
+                                                                 Artikel 2
+
+
+                                                        Begriffsbestimmungen
+
+      Für die Zwecke dieser Verordnung bezeichnet der Ausdruck
+
+      1.   „grenzüberschreitende Interoperabilität“ die Fähigkeit von Einrichtungen der Union und öffentlichen Stellen der
+           Mitgliedstaaten, durch Daten-, Informations- und Wissensaustausch mittels digitaler Prozesse — unter Einhaltung der
+           mit einer derartigen grenzüberschreitenden Interaktion verbundenen rechtlichen, organisatorischen, semantischen
+           und technischen Anforderungen — miteinander zu interagieren;
+
+      2.   „transeuropäische digitale öffentliche Dienste“ digitale Dienste, die von Einrichtungen der Union oder öffentlichen
+           Stellen füreinander oder für natürliche oder juristische Personen in der Union erbracht werden und eine Interaktion
+           über die Grenzen der Mitgliedstaaten hinaus, zwischen Einrichtungen der Union oder zwischen Einrichtungen der
+           Union und öffentlichen Stellen über deren Netz- und Informationssysteme erfordern;
+
+      3.   „Netz- und Informationssystem“ ein Netz- und Informationssystem im Sinne des Artikels 6 Nummer 1 der Richtlinie
+           (EU) 2022/2555 des Europäischen Parlaments und des Rates (14);
+
+      4.   „Interoperabilitätslösung“ eine weiterverwendbare Ressource, die rechtliche, organisatorische, semantische oder
+           technische Anforderungen zur Ermöglichung grenzüberschreitender Interoperabilität betrifft, beispielsweise
+           konzeptionelle Rahmen, Leitlinien, Referenzarchitekturen, technische Spezifikationen, Normen, Dienste und
+           Anwendungen sowie dokumentierte technische Komponenten, wie etwa Quellcode;
+
+      5.   „Einrichtungen der Union“ die Organe, Einrichtungen und sonstigen Stellen der Union, die durch den EUV, den Vertrag
+           über die Arbeitsweise der Europäischen Union oder den Vertrag zur Gründung der Europäischen Atomgemeinschaft
+           oder auf deren Grundlage geschaffen wurden;
+
+      6.   „öffentliche Stelle“ eine öffentliche Stelle im Sinne von Artikel 2 Nummer 1 der Richtlinie (EU) 2019/1024 des
+           Europäischen Parlaments und des Rates (15);
+
+      7.   „Daten“ Daten im Sinne von Artikel 2 Nummer 1 der Verordnung (EU) 2022/868 des Europäischen Parlaments und
+           des Rates (16);
+
+      8.   „maschinenlesbares Format“ ein maschinenlesbares Format im Sinne von Artikel 2 Nummer 13 der Richtlinie
+           (EU) 2019/1024;
+
+      9.   „GovTech“ die technologiegestützte Zusammenarbeit zwischen Akteuren des öffentlichen und des privaten Sektors zur
+           Unterstützung des digitalen Wandels im öffentlichen Sektor;
+
+      10. „Norm“ eine Norm im Sinne von Artikel 2 Nummer 1 der Verordnung (EU) Nr. 1025/2012 des Europäischen
+          Parlaments und des Rates (17);
+
+      11. „technische IKT-Spezifikation“ eine technische IKT-Spezifikation im Sinne von Artikel 2 Nummer 5 der Verordnung
+          (EU) Nr. 1025/2012;
+
+      12. „Open-Source-Lizenz“ eine Lizenz, bei der die Weiterverwendung, Weitergabe und Änderung von Software auf der
+          Grundlage einer einseitigen Erklärung des Rechteinhabers für alle Verwendungen gestattet ist, die bestimmten
+          Bedingungen unterliegen kann, und bei der der Quellcode der Software den Nutzern unterschiedslos zur Verfügung
+          gestellt wird;
+
+      13. „höchste Managementebene“ eine Führungskraft, ein Management-, Koordinierungs- oder Aufsichtsgremium auf der
+          höchsten Verwaltungsebene, unter Berücksichtigung der Governance-Regelungen für die höchsten Ebenen in den
+          einzelnen Einrichtungen der Union;
+
+      (14) Richtlinie (EU) 2022/2555 des Europäischen Parlaments und des Rates vom 14. Dezember 2022 über Maßnahmen für ein hohes
+           gemeinsames Cybersicherheitsniveau in der Union, zur Änderung der Verordnung (EU) Nr. 910/2014 und der Richtlinie
+           (EU) 2018/1972 sowie zur Aufhebung der Richtlinie (EU) 2016/1148 (NIS-2-Richtlinie) (ABl. L 333 vom 27.12.2022, S. 80).
+      (15) Richtlinie (EU) 2019/1024 des Europäischen Parlaments und des Rates vom 20. Juni 2019 über offene Daten und die
+           Weiterverwendung von Informationen des öffentlichen Sektors (ABl. L 172 vom 26.6.2019, S. 56).
+      (16) Verordnung (EU) 2022/868 des Europäischen Parlaments und des Rates vom 30. Mai 2022 über europäische Daten-Governance und
+           zur Änderung der Verordnung (EU) 2018/1724 (Daten-Governance-Rechtsakt) (ABl. L 152 vom 3.6.2022, S. 1).
+      (17) Verordnung (EU) Nr. 1025/2012 des Europäischen Parlaments und des Rates vom 25. Oktober 2012 zur europäischen Normung, zur
+           Änderung der Richtlinien 89/686/EWG und 93/15/EWG des Rates sowie der Richtlinien 94/9/EG, 94/25/EG, 95/16/EG, 97/23/EG,
+           98/34/EG, 2004/22/EG, 2007/23/EG, 2009/23/EG und 2009/105/EG des Europäischen Parlaments und des Rates und zur
+           Aufhebung des Beschlusses 87/95/EWG des Rates und des Beschlusses Nr. 1673/2006/EG des Europäischen Parlaments und des
+           Rates (ABl. L 316 vom 14.11.2012, S. 12).
+
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                          11/26
+DE                                                                                                                 ABl. L vom 22.3.2024
+
+
+
+        14. „Interoperabilitäts-Reallabor“ eine kontrollierte Umgebung, die von einer Einrichtung der Union oder einer
+            öffentlichen Stelle für Entwicklung, Training, Erprobung und Validierung innovativer Interoperabilitätslösungen —
+            falls anwendbar, unter realen Bedingungen — eingerichtet wurde und die grenzüberschreitende Interoperabilität
+            transeuropäischer digitaler öffentlicher Dienste für einen begrenzten Zeitraum unter Regulierungsaufsicht unterstützt;
+
+        15. „verbindliche Anforderung“ eine Verpflichtung, ein Verbot, eine Bedingung, ein Kriterium oder eine Beschränkung
+            rechtlicher, organisatorischer, semantischer oder technischer Art, die bzw. das von einer Einrichtung der Union oder
+            einer öffentlichen Stelle in Bezug auf einen oder mehrere transeuropäische digitale öffentliche Dienste festgelegt wird
+            und sich auf die grenzüberschreitende Interoperabilität auswirkt.
+
+
+
+
+                                                                 Artikel 3
+
+
+                                                      Interoperabilitätsbewertung
+
+
+        (1)   Vor einer Entscheidung über neue oder wesentlich geänderte verbindliche Anforderungen führt eine Einrichtung der
+        Union oder eine öffentliche Stelle eine Interoperabilitätsbewertung durch.
+
+
+        Wurde in Bezug auf verbindliche Anforderungen bereits eine Interoperabilitätsbewertung durchgeführt oder werden die
+        verbindlichen Anforderungen durch Lösungen umgesetzt, die von Einrichtungen der Union bereitgestellt werden, so ist die
+        betreffende öffentliche Stelle nicht verpflichtet, eine weitere Interoperabilitätsbewertung in Bezug auf die betreffenden
+        Anforderungen durchzuführen. Für eine Reihe von verbindlichen Anforderungen kann eine einzige Interoperabilitäts­
+        bewertung durchgeführt werden.
+
+
+        Die betreffende Einrichtung der Union oder öffentliche Stelle kann die Interoperabilitätsbewertung auch in anderen Fällen
+        durchführen.
+
+
+        (2)   Im Rahmen einer Interoperabilitätsbewertung wird in geeigneter Weise Folgendes ermittelt und bewertet:
+
+        a) die Auswirkungen der verbindlichen Anforderungen auf die grenzüberschreitende Interoperabilität, unter Verwendung
+           des in Artikel 6 genannten Europäischen Interoperabilitätsrahmens als Unterstützungsinstrument;
+
+        b) die Interessenträger, für die die verbindlichen Anforderungen von Belang sind;
+
+        c) die in Artikel 7 genannten Lösungen für ein interoperables Europa, die die Umsetzung der verbindlichen Anforderungen
+           unterstützen.
+
+
+        Die Einrichtung der Union oder die öffentliche Stelle veröffentlicht in einem maschinenlesbaren Format, durch das eine
+        automatische Übersetzung erleichtert wird, einen Bericht über das Ergebnis der Interoperabilitätsbewertung, einschließlich
+        der im Anhang aufgeführten Punkte, auf einer offiziellen Website. Sie übermittelt diesen Bericht auf elektronischem Wege
+        dem nach Artikel 15 eingerichteten Beirat für ein interoperables Europa (im Folgenden „Beirat“). Die Verpflichtung gemäß
+        dem vorliegenden Absatz schränkt die bestehenden Vorschriften der Mitgliedstaaten über den Zugang zu Dokumenten
+        nicht ein. Durch die Veröffentlichung dieses Berichts dürfen weder Rechte des geistigen Eigentums oder Geschäftsge­
+        heimnisse noch die öffentliche Ordnung oder Sicherheit gefährdet werden.
+
+
+        (3)   Die Einrichtungen der Union und die öffentlichen Stellen können entscheiden, welche Stelle die für die
+        Durchführung der Interoperabilitätsbewertung erforderliche Unterstützung leistet. Die Kommission stellt technische
+        Werkzeuge zur Unterstützung der Interoperabilitätsbewertung bereit, einschließlich eines Online-Tools zur Erleichterung
+        der Fertigstellung des Berichts und seiner Veröffentlichung auf dem in Artikel 8 genannten Portal für ein interoperables
+        Europa.
+
+
+        (4)    Die betreffende Einrichtung der Union oder öffentliche Stelle konsultiert die direkt betroffenen Nutzer der Dienste —
+        einschließlich der Bürgerinnen und Bürger — oder deren Vertreter. Diese Konsultation lässt den Schutz gewerblicher oder
+        öffentlicher Interessen oder die Sicherheit solcher Dienste unberührt.
+
+
+        (5)   Bis zum 12. Januar 2025 nimmt der Beirat die in Artikel 15 Absatz 5 Buchstabe a genannten Leitlinien an.
+
+12/26                                                                                       ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                                  DE
+
+                                                                   Artikel 4
+
+
+            Weitergabe und Weiterverwendung von Interoperabilitätslösungen zwischen Einrichtungen der Union und
+                                                   öffentlichen Stellen
+
+      (1)    Eine Einrichtung der Union oder öffentliche Stelle stellt anderen solchen Stellen auf deren Antrag hin Interoperabili­
+      tätslösungen zur Verfügung, die einen transeuropäischen digitalen öffentlichen Dienst unterstützen, einschließlich der
+      technischen Dokumentation und, falls anwendbar, der Versionsgeschichte des dokumentierten Quellcodes und der
+      Verweise auf verwendete offene Standards oder technische Spezifikationen.
+
+      Die Pflicht zur Weitergabe gilt nicht für die folgenden Interoperabilitätslösungen, nämlich diejenigen:
+
+      a) die Prozesse unterstützen, die nicht unter den gesetzlich oder anderweitig verbindlich festgelegten öffentlichen Auftrag
+         der betreffenden Einrichtung der Union öffentlichen Stelle fallen oder, in Ermangelung solcher Rechtsvorschriften,
+         nicht unter den durch die allgemeine Verwaltungspraxis in den betreffenden Einrichtungen der Union oder dem
+         betreffenden Mitgliedstaat festgelegten öffentlichen Auftrag fallen, vorausgesetzt, dass der Umfang des öffentlichen
+         Auftrags transparent ist und überprüft wird;
+
+      b) an denen Dritte Rechte des geistigen Eigentums innehaben, mit denen die Möglichkeit für eine Weitergabe der Lösung
+         zwecks Weiterverwendung beschränkt wird;
+
+      c) bei denen der Zugang ausgeschlossen oder beschränkt ist aufgrund:
+
+            i) vertraulicher Informationen über den Schutz kritischer Infrastrukturen im Sinne von Artikel 2 Buchstabe d der
+               Richtlinie 2008/114/EG des Rates (18);
+
+            ii) des Schutzes der Verteidigungsinteressen oder der öffentlichen Sicherheit einschließlich nationaler kritischer
+                Infrastrukturen.
+
+      (2)     Damit die weiterverwendende Stelle die Interoperabilitätslösung autonom verwalten kann, legt die weitergebende
+      Stelle etwaige Bedingungen fest, die für die Weiterverwendung der Lösung gelten, einschließlich etwaiger Garantien, die der
+      weiterverwendenden Stelle in Bezug auf Zusammenarbeit, Unterstützung und Wartung gegeben werden. Diese
+      Bedingungen können den Ausschluss der Haftung der weitergebenden Stelle im Falle eines Missbrauchs der Interoperabili­
+      tätslösung durch die weiterverwendende Stelle umfassen. Vor der Annahme der Interoperabilitätslösung legt die weiterver­
+      wendende Stelle der weitergebenden Stelle auf Anfrage eine Bewertung der Lösung vor, in der sie darlegt, wie sie in der Lage
+      ist, die Cybersicherheit und die Weiterentwicklung der weiterverwendeten Interoperabilitätslösung autonom zu verwalten.
+
+      (3)     Die Verpflichtung nach Absatz 1 kann dadurch erfüllt werden, dass die betreffenden Inhalte im Portal für ein
+      interoperables Europa oder in einem damit verbundenen Portal, Katalog oder Speicher veröffentlicht werden. In diesem
+      Fall gilt Absatz 2 nicht für die weitergebende Stelle. Auf Antrag der weitergebenden Stelle veröffentlicht die Kommission
+      die betreffenden Inhalte im Portal für ein interoperables Europa.
+
+      (4)    Eine Einrichtung der Union oder eine öffentliche Stelle oder ein Dritter, die bzw. der eine Interoperabilitätslösung
+      weiterverwendet, kann diese Lösung an die eigenen Bedürfnisse anpassen, soweit nicht Rechte des geistigen Eigentums
+      Dritter die Anpassung der Interoperabilitätslösung einschränken. Ist die Interoperabilitätslösung gemäß Absatz 3 öffentlich
+      zugänglich gemacht worden, so wird auch die angepasste Interoperabilitätslösung in gleicher Weise öffentlich zugänglich
+      gemacht.
+
+      (5)    Die weitergebende Stelle und die weiterverwendende Stelle können eine Vereinbarung über die Aufteilung der Kosten
+      einer künftigen Weiterentwicklung der Interoperabilitätslösung schließen.
+
+      (6)    Bei der Entscheidung über die Umsetzung von Interoperabilitätslösungen räumen die Einrichtungen der Union und
+      die öffentlichen Stellen der Umsetzung von Interoperabilitätslösungen, die keine restriktiven Lizenzbedingungen enthalten,
+      wie etwa quelloffene Lösungen, den Vorrang ein, sofern diese Interoperabilitätslösungen in Bezug auf Funktionalität,
+      Gesamtkosten, Nutzerorientierung, Cybersicherheit oder andere relevante objektive Kriterien gleichwertig sind. Die
+      Kommission leistet Unterstützung bei der Ermittlung solcher Interoperabilitätslösungen gemäß Artikel 9.
+
+      (7)      Der Beirat erlässt Leitlinien für die Weitergabe von Interoperabilitätslösungen.
+
+      (18) Richtlinie 2008/114/EG des Rates vom 8. Dezember 2008 über die Ermittlung und Ausweisung europäischer kritischer
+           Infrastrukturen und die Bewertung der Notwendigkeit, ihren Schutz zu verbessern (ABl. L 345 vom 23.12.2008, S. 75).
+
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                        13/26
+DE                                                                                                                          ABl. L vom 22.3.2024
+
+
+
+                                                                     Kapitel 2
+
+                                                   Europäische Interoperabilitätslösungen
+
+
+
+                                                                      Artikel 5
+
+                                                             Allgemeine Grundsätze
+
+        (1)    Die Kommission veröffentlicht Lösungen für ein interoperables Europa und den EIF im Portal für ein interoperables
+        Europa in elektronischer Form in offenen, maschinenlesbaren, für Menschen mit Behinderungen in Übereinstimmung mit
+        den Richtlinien (EU) 2016/2102 (19) und (EU) 2019/882 (20) des Europäische Parlaments und des Rates zugänglichen,
+        auffindbaren und weiterverwendbaren Formaten, falls anwendbar, zusammen mit ihrem dokumentierten Quellcode und
+        ihren Metadaten. Auf dem Portal für ein interoperables Europa werden maschinell übersetzte Fassungen der Lösungen für
+        ein interoperables Europa in allen Amtssprachen der Organe der Union veröffentlicht.
+
+        (2)   Der Beirat überwacht die Gesamtkohärenz der empfohlenen Interoperabilitätslösungen und schlägt gegebenenfalls
+        Maßnahmen vor, um deren Kompatibilität mit anderen Interoperabilitätslösungen, die einem gemeinsamen Zweck dienen,
+        zu gewährleisten; er unterstützt gegebenenfalls die Komplementarität mit neuer Technik oder den Übergang zu neuer
+        Technik.
+
+
+
+                                                                      Artikel 6
+
+                         Europäischer Interoperabilitätsrahmen und spezialisierte Interoperabilitätsrahmen
+
+        (1)  Der Beirat entwickelt einen Europäischen Interoperabilitätsrahmen (EIF). Er legt den EIF der Kommission zur
+        Annahme vor. Nimmt die Kommission den EIF an, so veröffentlicht sie ihn im Amtsblatt der Europäischen Union.
+
+        (2)    Der EIF enthält ein Modell und eine Reihe von Empfehlungen zur rechtlichen, organisatorischen, semantischen und
+        technischen Interoperabilität sowie für ihre Steuerung für alle Stellen und Einrichtungen, die in den Anwendungsbereich
+        dieser Verordnung fallen, damit sie mithilfe ihrer Netz- und Informationssysteme einfacher miteinander zusammenwirken
+        können. Der EIF wird bei der in Artikel 3 und im Anhang genannten Interoperabilitätsbewertung berücksichtigt.
+
+        (3)    Die Kommission kann nach Konsultation des Beirats andere Interoperabilitätsrahmen (im Folgenden „spezialisierte
+        Interoperabilitätsrahmen“) annehmen, die auf die besonderen Bedürfnisse bestimmter Sektoren oder Verwaltungsebenen
+        ausgerichtet sind. Spezialisierte Interoperabilitätsrahmen beruhen auf dem EIF. Der Beirat prüft die Übereinstimmung der
+        spezialisierten Interoperabilitätsrahmen mit dem EIF. Die Kommission veröffentlicht die spezialisierten Interoperabili­
+        tätsrahmen im Portal für ein interoperables Europa.
+
+        (4)  Entwickelt ein Mitgliedstaat einen nationalen Interoperabilitätsrahmen und andere einschlägige nationale
+        Maßnahmen, Strategien oder Leitlinien, so berücksichtigt er den EIF dabei weitestgehend.
+
+
+
+                                                                      Artikel 7
+
+                                                   Lösungen für ein interoperables Europa
+
+        (1)     Der Beirat empfiehlt Interoperabilitätslösungen für die grenzüberschreitende Interoperabilität von transeuropäischen
+        digitalen öffentlichen Diensten. Wenn der Beirat eine Interoperabilitätslösung empfiehlt, trägt diese Lösung das Zeichen
+        „Lösung für ein interoperables Europa“ und wird im Portal für ein interoperables Europa veröffentlicht, wobei eindeutig
+        zwischen Lösungen für ein interoperables Europa und anderen Lösungen unterschieden wird. Wenn der Beirat seine
+        Empfehlung zurückzieht, wird das Zeichen „Lösung für ein interoperables Europa“ entfernt und die Lösung gegebenenfalls
+        aus dem Portal für ein interoperables Europa entfernt.
+
+        (19) Richtlinie (EU) 2016/2102 des Europäischen Parlaments und des Rates vom 26. Oktober 2016 über den barrierefreien Zugang zu den
+             Websites und mobilen Anwendungen öffentlicher Stellen (ABl. L 327 vom 2.12.2016, S. 1).
+        (20) Richtlinie (EU) 2019/882 des Europäischen Parlaments und des Rates vom 17. April 2019 über die Barrierefreiheitsanforderungen für
+             Produkte und Dienstleistungen (ABl. L 151 vom 7.6.2019, S. 70).
+
+
+14/26                                                                                              ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                                  DE
+
+      (2)   Die Lösungen für ein interoperables Europa müssen den Grundsätzen der Offenheit und der Weiterverwendung
+      entsprechen und die in Artikel 15 Absatz 5 Buchstabe i genannten Kriterien erfüllen.
+
+
+
+                                                                  Artikel 8
+
+                                                   Portal für ein interoperables Europa
+
+      (1)    Die Kommission betreibt ein Portal als zentrale Zugangsstelle für Informationen über die grenzüberschreitende
+      Interoperabilität transeuropäischer digitaler öffentlicher Dienste (im Folgenden „Portal für ein interoperables Europa“). Das
+      Portal für ein interoperables Europa muss für alle Bürgerinnen und Bürger, auch für Menschen mit Behinderungen,
+      unentgeltlich elektronisch zugänglich sein. Das Portal für ein interoperables Europa muss zumindest folgende Funktionen
+      aufweisen:
+      a) Gewährung des Zugangs zu Lösungen für ein interoperables Europa, auf benutzerfreundliche Weise und zumindest
+         nach Mitgliedstaat und öffentlichen Diensten abfragbar;
+      b) Gewährung des Zugangs zu anderen Interoperabilitätslösungen als Lösungen für ein interoperables Europa, wie etwa
+         solchen, die
+            i)   nach Artikel 4 Absatz 3 weitergegeben werden,
+            ii) in anderen Politikbereichen der Union vorgesehen sind,
+            iii) auf anderen Portalen, in anderen Katalogen oder Registern, die mit dem Portal für ein interoperables Europa
+                 verbunden sind, veröffentlicht sind;
+      c) Gewährung des Zugangs zu technischen IKT-Spezifikationen, auf die gemäß Artikel 13 der Verordnung (EU)
+         Nr. 1025/2012 Bezug genommen werden kann;
+      d) Gewährung des Zugangs zu Informationen über die Verarbeitung personenbezogener Daten im Zusammenhang mit
+         den in den Artikeln 11 und 12 genannten Interoperabilitäts-Reallaboren, sofern ein hohes Risiko für die Rechte und
+         Freiheiten der betroffenen Personen gemäß Artikel 35 Absatz 1 der Verordnung (EU) 2016/679 und Artikel 39 der
+         Verordnung (EU) 2018/1725 festgestellt wurde, sowie Zugang zu Informationen über Reaktionsmechanismen zur
+         umgehenden Minderung dieser Risiken, einschließlich, soweit erforderlich der Offenlegung der Datenschutz-
+         Folgenabschätzung;
+      e) Förderung des Wissensaustauschs zwischen den Mitgliedern der in Artikel 16 genannten Gemeinschaft für ein
+         interoperables Europa, z. B. durch Bereitstellung eines Rückmeldungssystems für Meinungsäußerungen zu den vom
+         Beirat vorgeschlagenen Maßnahmen oder für Interessenbekundungen bezüglich der Teilnahme an Maßnahmen im
+         Zusammenhang mit der Durchführung dieser Verordnung;
+      f) Auflistung bewährter Verfahren und des Wissensaustauschs zur Unterstützung der Interoperabilität, falls anwendbar
+         einschließlich Leitlinien für die Vergabe öffentlicher Aufträge, Cybersicherheit, IT-Integration und Daten-Governance;
+      g) Gewährung des Zugangs zu den Daten, die sich aus der nach Artikel 20 durchgeführten Überwachung in Bezug auf die
+         Interoperabilität ergeben;
+      h) Schaffung der Möglichkeit für Bürgerinnen und Bürger, für Unternehmen — insbesondere KMU — sowie für
+         Organisationen der Zivilgesellschaft, zu den veröffentlichten Inhalten Rückmeldung zu geben.
+
+      (2)   Der Beirat kann vorschlagen, dass die Kommission im Portal für ein interoperables Europa andere Interoperabilitäts­
+      lösungen veröffentlicht oder Verweise darauf in das Portal für ein interoperables Europa einstellt.
+
+      (3)        Die über das Portal für ein interoperables Europa zugänglichen Lösungen
+      a) dürfen keinen Rechten Dritter unterliegen, die ihre Verteilung und Verwendung verhindern;
+      b) dürfen keine personenbezogenen Daten oder vertraulichen Informationen enthalten;
+      c) müssen einen hohen Grad der Übereinstimmung mit den Lösungen für ein interoperables Europa aufweisen, was durch
+         die Veröffentlichung der Ergebnisse der in Artikel 3 und im Anhang genannten Interoperabilitätsbewertung
+         nachgewiesen werden kann;
+      d) müssen einer Lizenz unterliegen, die zumindest die Weiterverwendung der Lösung durch andere Einrichtungen der
+         Union oder öffentliche Stellen ermöglicht, oder als Open-Source-Lizenz erteilt werden;
+      e) müssen unter der Verantwortung des Eigentümers der Interoperabilitätslösung regelmäßig gewartet werden.
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                        15/26
+DE                                                                                                                  ABl. L vom 22.3.2024
+
+
+
+        (4)     Stellt eine Einrichtung der Union oder öffentliche Stelle ein Portal, einen Katalog oder einen Speicher mit ähnlichen
+        Funktionen bereit, so trifft sie die erforderlichen und verhältnismäßigen Maßnahmen, um die Interoperabilität mit dem
+        Portal für ein interoperables Europa zu gewährleisten. Soweit solche Portale quelloffene Lösungen sammeln, ermöglichen
+        sie die Verwendung der Open-Source-Lizenz für die Europäische Union.
+
+        (5)   Die Kommission kann Leitlinien zur Interoperabilität anderer Portale, Kataloge oder Register mit ähnlichen
+        Funktionen wie den in Absatz 4 genannten herausgeben.
+
+
+
+                                                                 Kapitel 3
+
+                                      Unterstützungsmaßnahmen für ein interoperables Europa
+
+
+                                                                  Artikel 9
+
+                                           Unterstützungsprojekte für die Politikumsetzung
+
+        (1)   Der Beirat kann vorschlagen, dass die Kommission Projekte zur Unterstützung öffentlicher Stellen bei der digitalen
+        Umsetzung der Unionspolitik einrichtet, die der Gewährleistung der grenzüberschreitenden Interoperabilität transeuro­
+        päischer digitaler öffentlicher Dienste dienen (im Folgenden „Unterstützungsprojekte für die Politikumsetzung“).
+
+        (2)   Das Unterstützungsprojekt für die Politikumsetzung legt Folgendes dar:
+        a) die bestehenden Lösungen für ein interoperables Europa, die für die digitale Umsetzung der politischen Anforderungen
+           als erforderlich betrachtet werden;
+        b) fehlende Interoperabilitätslösungen, die für die digitale Umsetzung der politischen Anforderungen als erforderlich
+           betrachtet werden und noch zu entwickeln sind;
+        c) sonstige empfohlene Unterstützungsmaßnahmen wie Schulungen, Erfahrungsaustausch oder gegenseitige
+           Begutachtungen (Peer-Reviews) sowie Möglichkeiten der finanziellen Hilfe zur Unterstützung der Umsetzung von
+           Interoperabilitätslösungen.
+
+        (3)   Nach Konsultation des Beirats legt die Kommission den Umfang, den Zeitplan, die erforderliche Einbeziehung von
+        bestimmten Sektoren und Verwaltungsebenen sowie die Arbeitsmethoden des Unterstützungsprojekts fest. Falls die
+        Kommission bereits eine Interoperabilitätsbewertung gemäß Artikel 3 durchgeführt und veröffentlicht hat, wird das
+        Ergebnis dieser Bewertung bei der Einrichtung des Unterstützungsprojekts berücksichtigt.
+
+        (4)    Zur Untermauerung des Unterstützungsprojekts für die Politikumsetzung kann der Beirat die Einrichtung eines
+        Interoperabilitäts-Reallabors gemäß Artikel 11 vorschlagen.
+
+        (5)   Die Ergebnisse eines Unterstützungsprojekts für die Politikumsetzung sowie die im Rahmen des Projekts
+        entwickelten Interoperabilitätslösungen sind frei verfügbar und werden im Portal für ein interoperables Europa öffentlich
+        zugänglich gemacht.
+
+
+
+                                                                 Artikel 10
+
+                                                        Innovationsmaßnahmen
+
+        (1)   Der Beirat kann vorschlagen, dass die Kommission Innovationsmaßnahmen einrichtet, um die Entwicklung und
+        Einführung innovativer Interoperabilitätslösungen in der Union zu unterstützen (im Folgenden „Innovationsmaßnahmen“).
+
+        (2)    Innovationsmaßnahmen müssen zur Entwicklung bestehender oder neuer Lösungen für ein interoperables Europa
+        beitragen und können GovTech-Akteure einbeziehen.
+
+        (3)     Zur Unterstützung der Entwicklung von Innovationsmaßnahmen kann der Beirat die Einrichtung eines Interopera­
+        bilitäts-Reallabors vorschlagen.
+
+        (4)   Die Kommission macht die Ergebnisse der Innovationsmaßnahmen im Portal für ein interoperables Europa frei
+        verfügbar.
+
+16/26                                                                                        ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                               DE
+
+                                                              Artikel 11
+
+                                          Einrichtung von Interoperabilitäts-Reallaboren
+
+      (1)     Interoperabilitäts-Reallabore werden unter der Verantwortung der beteiligten Einrichtungen der Union oder der
+      beteiligten öffentlichen Stellen betrieben. Interoperabilitäts-Reallabore, bei denen die Verarbeitung personenbezogener
+      Daten durch öffentliche Stellen eingeschlossen ist, werden unter der Aufsicht der nationalen Datenschutzbehörden sowie
+      anderer einschlägiger nationaler, regionaler oder lokaler Aufsichtsbehörden betrieben. Interoperabilitäts-Reallabore, bei
+      denen die Verarbeitung personenbezogener Daten durch Einrichtungen der Union eingeschlossen ist, werden unter der
+      Aufsicht des Europäischen Datenschutzbeauftragten betrieben.
+
+      (2)    Die Einrichtung eines in Absatz 1 genannten Interoperabilitäts-Reallabors muss zu folgenden Zielen beitragen:
+      a) Förderung der Innovation und Erleichterung der Entwicklung und Einführung innovativer digitaler Interoperabilitäts­
+         lösungen für öffentliche Dienste;
+      b) Erleichterung der grenzüberschreitenden Zusammenarbeit zwischen nationalen, regionalen und lokalen zuständigen
+         Behörden und Erzielung von Synergien bei der Erbringung öffentlicher Dienste;
+      c) Erleichterung der Entwicklung eines offenen europäischen GovTech-Ökosystems, einschließlich der Zusammenarbeit
+         mit KMU, mit Forschungs- und Bildungseinrichtungen und mit Start-up-Unternehmen;
+      d) Verbesserung des Bewusstseins der Behörden für die Chancen oder Hemmnisse der grenzüberschreitenden
+         Interoperabilität innovativer Interoperabilitätslösungen, einschließlich rechtlicher Schranken;
+      e) Leistung eines Beitrags zur Entwicklung oder Aktualisierung von Lösungen für ein interoperables Europa;
+      f) Leistung eines Beitrags zum faktengestützten regulatorischen Lernen;
+      g) Verbesserung der Rechtssicherheit und Förderung des Austauschs bewährter Verfahren durch Zusammenarbeit mit den
+         am Interoperabilitäts-Reallabor beteiligten Behörden, um für die Einhaltung dieser Verordnung sowie gegebenenfalls die
+         Einhaltung anderen Unionsrechts und nationalen Rechts zu sorgen.
+
+      (3)    Um einen harmonisierten Ansatz zu gewährleisten und die Umsetzung von Interoperabilitäts-Reallaboren zu
+      unterstützen, kann die Kommission unbeschadet anderen Unionsrechts Leitlinien und Präzisierungen herausgeben.
+
+      (4)    Die Kommission genehmigt nach Konsultation des Beirats auf gemeinsamen Antrag von mindestens drei Beteiligten
+      die Einrichtung eines Interoperabilitäts-Reallabors. Gegebenenfalls sind in dem Antrag Informationen wie etwa der Zweck
+      der Verarbeitung personenbezogener Daten, die beteiligten Akteure und ihre Aufgaben, die Kategorien der betreffenden
+      personenbezogenen Daten und ihre Quellen und die vorgesehene Speicherfrist anzugeben. Die Konsultation ersetzt nicht
+      die vorherige Konsultation gemäß Artikel 36 der Verordnung (EU) 2016/679 und Artikel 40 der Verordnung
+      (EU) 2018/1725. Wird das Interoperabilitäts-Reallabor für Interoperabilitätslösungen zur Unterstützung der grenzüber­
+      schreitenden Interoperabilität transeuropäischer digitaler öffentlicher Dienste von einer oder mehreren Einrichtungen der
+      Union — auch unter Beteiligung öffentlicher Stellen —, eingerichtet, so ist dafür keine Genehmigung erforderlich.
+
+
+
+                                                              Artikel 12
+
+                                           Beteiligung an Interoperabilitäts-Reallaboren
+
+      (1)    Soweit der Betrieb der Interoperabilitäts-Reallabore eine Verarbeitung personenbezogener Daten erfordert oder
+      anderweitig der Aufsicht anderer nationaler, regionaler oder lokaler Behörden unterliegt, die den Zugang zu Daten
+      gewähren oder unterstützen, sorgen die beteiligten Einrichtungen der Union oder öffentlichen Stellen dafür, dass nationale
+      Datenschutzbehörde sowie andere nationale, regionale oder lokale Behörden in den Betrieb des Interoperabilitäts-
+      Reallabors einbezogen werden. Die Beteiligten können, falls anwendbar, die Beteiligung anderer GovTech-Akteure wie etwa
+      nationaler oder europäischer Normungsorganisationen, notifizierter Stellen, Forschungs- und Versuchslabors,
+      Innovationszentren und Unternehmen, die innovative Interoperabilitätslösungen testen wollen — insbesondere von KMU
+      und Start-up-Unternehmen — am Interoperabilitäts-Reallabor erlauben.
+
+      (2)    Die Beteiligung am Interoperabilitäts-Reallabor ist auf einen Zeitraum begrenzt, der der Komplexität und dem
+      Ausmaß des Projekts angemessen ist, der zwei Jahre ab Einrichtung des Interoperabilitäts-Reallabors nicht überschreitet.
+      Die Beteiligung kann um bis zu ein Jahr verlängert werden, wenn dies zur Erreichung des Zwecks der Verarbeitung
+      erforderlich ist.
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                     17/26
+DE                                                                                                                ABl. L vom 22.3.2024
+
+
+
+        (3)   Die Beteiligung am Interoperabilitäts-Reallabor muss auf einem spezifischen Plan beruhen, der von den Beteiligten
+        unter Berücksichtigung, soweit zutreffend, der Hinweise anderer nationaler zuständiger Behörden oder des Europäischen
+        Datenschutzbeauftragten ausgearbeitet wird. Dieser Plan enthält zumindest Folgendes:
+
+        a) eine Beschreibung der Beteiligten und ihrer Rollen, der geplanten innovativen Interoperabilitätslösung und ihrer
+           Zweckbestimmung sowie des Entwicklungs-, Erprobungs- und Validierungsprozesses;
+
+        b) die besonderen Regulierungsfragen, um die es geht, und die Vorgaben, die von den für die Beaufsichtigung des
+           Interoperabilitäts-Reallabors zuständigen Behörden erwartet werden;
+
+        c) die besonderen Modalitäten der Zusammenarbeit zwischen den Beteiligten und den Behörden sowie allen anderen am
+           Interoperabilitäts-Reallabor beteiligten Akteuren;
+
+        d) einen Risikomanagement- und -überwachungsmechanismus zur Ermittlung, Vermeidung und Minderung von Risiken;
+
+        e) die wichtigsten Meilensteine, die von den Beteiligten erreicht werden müssen, damit die Interoperabilitätslösung als
+           betriebsbereit betrachtet werden kann;
+
+        f) die Bewertungs- und Berichterstattungspflichten und mögliche Folgemaßnahmen;
+
+        g) – sofern es unbedingt erforderlich und verhältnismäßig ist, personenbezogene Daten zu verarbeiten — die Angabe der
+           Gründe für die entsprechende Verarbeitung, der Kategorien der betreffenden personenbezogenen Daten, der Zwecke
+           der Verarbeitung, zu denen die personenbezogenen Daten bestimmt sind, sowie der an der Verarbeitung beteiligten
+           Verantwortlichen und Auftragsverarbeiter und ihrer Rolle.
+
+        (4)   Die Beteiligung an den Interoperabilitäts-Reallaboren lässt die Aufsichts- und Abhilfebefugnisse der für die
+        Beaufsichtigung des Reallabors zuständigen Behörden unberührt.
+
+        (5)    Die Beteiligten des Interoperabilitäts-Reallabors haften nach dem geltenden Unionsrecht und nationalen Recht für
+        alle Schäden, die im Zuge ihrer Beteiligung am Interoperabilitäts-Reallabor entstehen.
+
+        (6)   Personenbezogene Daten dürfen im Interoperabilitäts-Reallabor für andere als die ihrer ursprünglichen rechtmäßigen
+        Erhebung zugrunde liegenden Zwecke verarbeitet werden, wenn alle folgenden Bedingungen erfüllt sind:
+
+        a) die innovative Interoperabilitätslösung wird entwickelt, um das öffentliche Interesse im Zusammenhang mit einem
+           hohen Maß an Effizienz und Qualität der öffentlichen Verwaltung und der öffentlichen Dienste zu wahren;
+
+        b) die Datenverarbeitung ist auf das für das Funktionieren der im Interoperabilitäts-Reallabor zu entwickelnden oder zu
+           erprobenden Interoperabilitätslösung erforderliche Maß beschränkt und dies kann nicht durch die Verarbeitung
+           anonymisierter, synthetischer oder sonstiger nicht personenbezogener Daten wirksam erreicht werden;
+
+        c) es bestehen wirksame Überwachungsmechanismen, um festzustellen, ob während des Betriebs des Interoperabilitäts-
+           Reallabors hohe Risiken für die Rechte und Freiheiten der betroffenen Personen im Sinne des Artikels 35 Absatz 1 der
+           Verordnung (EU) 2016/679 und des Artikels 39 der Verordnung (EU) 2018/1725 auftreten können, sowie ein
+           Reaktionsmechanismus, um dieses Risiko umgehend zu mindern und erforderlichenfalls die Verarbeitung zu beenden;
+
+        d) personenbezogene Daten, die verarbeitet werden sollen, befinden sich in einer funktional getrennten, isolierten und
+           geschützten Datenverarbeitungsumgebung unter der Kontrolle der Beteiligten, und nur gebührend befugte Personen
+           haben Zugriff auf diese Daten;
+
+        e) es erfolgt keine Übermittlung oder Übertragung verarbeiteter personenbezogener Daten und auch kein anderweitiger
+           Zugriff darauf durch nicht am Interoperabilitäts-Reallabor beteiligte Parteien und auch keine Weitergabe an Dritte, die
+           nicht an dem Interoperabilitäts-Reallabor beteiligt sind, es sei denn, diese Offenlegung erfolgt gemäß der Verordnung
+           (EU) 2016/679 oder gegebenenfalls der Verordnung (EU) 2018/1725 und mit der Zustimmung aller Beteiligten;
+
+        f) die Verarbeitung personenbezogener Daten berührt nicht die Anwendung der Rechte der betroffenen Personen gemäß
+           den Rechtsvorschriften der Union über den Schutz personenbezogener Daten, insbesondere Artikel 22 der Verordnung
+           (EU) 2016/679 und Artikel 24 der Verordnung (EU) 2018/1725;
+
+        g) alle personenbezogenen Daten werden mit angemessenen technischen und organisatorischen Maßnahmen geschützt
+           und gelöscht, sobald die Beteiligung an dem Interoperabilitäts-Reallabor beendet oder das Ende der Speicherfrist für die
+           personenbezogenen Daten erreicht ist;
+
+        h) die Protokolle der Verarbeitung personenbezogener Daten werden für die Dauer der Beteiligung am Interoperabilitäts-
+           Reallabor aufbewahrt, es sei denn, nach den Rechtsvorschriften der Union oder den nationalen Rechtsvorschriften ist
+           etwas anderes bestimmt;
+
+18/26                                                                                      ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                              DE
+
+      i) eine vollständige und detaillierte Beschreibung des Prozesses und der Gründe für das Trainieren, Testen und Validieren
+         der Interoperabilitätslösung wird zusammen mit den Testergebnissen als Teil der technischen Dokumentation
+         aufbewahrt und dem Beirat übermittelt;
+      j) eine kurze Zusammenfassung der im Interoperabilitäts-Reallabor entwickelten Interoperabilitätslösung, einschließlich
+         ihrer Ziele und erwarteten Ergebnisse, die im Portal für ein interoperables Europa veröffentlicht wird.
+
+      (7)    Das Unionsrecht und nationale Recht, in dem die Grundlagen für eine für die Zwecke der Entwicklung, des Testens
+      und des Trainings innovativer Interoperabilitätslösungen notwendige Verarbeitung personenbezogener Daten festgelegt
+      sind, und jegliche andere Rechtsgrundlage, im Einklang mit Unionsrecht zum Schutz personenbezogener Daten, bleiben
+      von Absatz 1 unberührt.
+
+      (8)     Die Beteiligten übermitteln dem Beirat und der Kommission regelmäßige Zwischenberichte und einen
+      Abschlussbericht über die Ergebnisse der Interoperabilitäts-Reallabore, einschließlich bewährter Verfahren, gewonnener
+      Erkenntnisse, Sicherheitsmaßnahmen und Empfehlungen zu deren Betrieb, sowie gegebenenfalls über die Weiterent­
+      wicklung dieser Verordnung und anderer Rechtsvorschriften der Union, die innerhalb des Interoperabilitäts-Reallabors
+      kontrolliert werden. Der Beirat gibt gegenüber der Kommission eine Stellungnahme zu den Ergebnissen des Interopera­
+      bilitäts-Reallabors ab und nennt darin gegebenenfalls die erforderlichen Maßnahmen für die Umsetzung neuer Interoperabi­
+      litätslösungen zur Förderung der grenzüberschreitenden Interoperabilität von Netz- und Informationssystemen, die
+      verwendet werden, um transeuropäische digitale öffentliche Dienste bereitzustellen oder zu verwalten.
+
+      (9)    Die Kommission sorgt dafür, dass Informationen über die Interoperabilitäts-Reallabore im Portal für ein
+      interoperables Europa abrufbar sind.
+
+      (10)   Bis zum 12. April 2025 erlässt die Kommission Durchführungsrechtsakte, welche die ausführlichen Vorschriften
+      und Bedingungen für die Einrichtung und den Betrieb der Interoperabilitäts-Reallabore, die Kriterien für die
+      Auswahlfähigkeit und das Verfahren für die Beantragung und Auswahl des Interoperabilitäts-Reallabors, für die Beteiligung
+      daran und den Ausstieg daraus sowie die Rechte und Pflichten der Beteiligten darlegen. Diese Durchführungsrechtsakten
+      werden gemäß dem in Artikel 22 Absatz 2 genannten Prüfverfahren erlassen.
+
+
+
+                                                             Artikel 13
+
+                                                             Schulung
+
+      (1)    Die Kommission stellt mit Unterstützung des Beirats Schulungsmaterial zur Anwendung des EIF und zu Lösungen
+      für ein interoperables Europa — einschließlich freier und Open-Source-Lösungen — bereit. Einrichtungen der Union und
+      öffentliche Stellen stellen ihrem Personal, das mit strategischen oder operativen Aufgaben betraut ist, die sich auf
+      transeuropäische digitale öffentliche Dienste auswirken, geeignete Schulungsprogramme zu Interoperabilitätsfragen zur
+      Verfügung.
+
+      (2)   Die Kommission organisiert Schulungen zu Interoperabilitätsfragen auf Unionsebene, um die Zusammenarbeit und
+      den Austausch bewährter Verfahren zwischen dem Personal der Einrichtungen der Union und öffentlichen Stellen zu
+      verbessern, die sich insbesondere auf regionaler und lokaler Ebene an Bedienstete des öffentlichen Sektors richten. Die
+      Kommission macht die Schulungen unentgeltlich online öffentlich zugänglich.
+
+      (3)  Die Kommission fördert die Entwicklung eines Zertifizierungsprogramms für Fragen der Interoperabilität, um
+      bewährte Verfahren, die Qualifikation von Humanressourcen und eine Kultur der Exzellenz zu fördern.
+
+
+
+                                                             Artikel 14
+
+                                             Gegenseitige Begutachtung (Peer-Review)
+
+      (1)    Es wird ein freiwilliger Mechanismus für die gegenseitige Begutachtung eingerichtet, der die Zusammenarbeit
+      zwischen öffentlichen Stellen vereinfachen soll, um diese bei der Umsetzung von Lösungen für ein interoperables Europa
+      zur Unterstützung transeuropäischer digitaler öffentlicher Dienste zu unterstützen und ihnen bei der Durchführung der
+      Interoperabilitätsbewertungen gemäß Artikel 3 zu helfen.
+
+      (2)    Eine gegenseitige Begutachtung wird von Interoperabilitätssachverständigen aus anderen Mitgliedstaaten als dem
+      Mitgliedstaat durchgeführt, in dem die begutachtete öffentliche Stelle ihren Sitz hat.
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                    19/26
+DE                                                                                                                 ABl. L vom 22.3.2024
+
+
+
+        (3)    Sämtliche durch eine gegenseitige Begutachtung erlangten Informationen dürfen nur zu dem Zweck dieser
+        gegenseitigen Begutachtung verwendet werden. Die an der gegenseitigen Begutachtung beteiligten Interoperabilitätssach­
+        verständigen geben keine sensiblen oder vertraulichen Informationen, die sie Laufe der Begutachtung erlangen, an Dritte
+        weiter. Die betreffenden Mitgliedstaaten stellen sicher, dass ein jegliches Risiko eines Interessenkonflikts im
+        Zusammenhang mit den benannten Interoperabilitätssachverständigen unverzüglich den anderen Mitgliedstaaten und der
+        Kommission mitgeteilt wird.
+
+        (4)    Innerhalb eines Monats nach Abschluss der gegenseitigen Begutachtung erstellen und präsentieren die Interoperabili­
+        tätssachverständigen, die die gegenseitige Begutachtung durchführen, einen Bericht über die gegenseitige Begutachtung, den
+        sie der betreffenden öffentlichen Stelle und dem Beirat übermitteln. Die Kommission veröffentlicht einen Bericht im Portal
+        für ein interoperables Europa, wenn der Mitgliedstaat, in dem die öffentliche Stelle ihren Sitz hat, die Gegenstand der
+        gegenseitigen Begutachtung ist, dies genehmigt.
+
+        (5)   Die Kommission kann nach Konsultation des Beirats Leitlinien zur Methodik und zum Inhalt der gegenseitigen
+        Begutachtung annehmen.
+
+
+
+                                                                  Kapitel 4
+
+                                        Governance der grenzüberschreitenden Interoperabilität
+
+
+
+                                                                  Artikel 15
+
+                                                    Beirat für ein interoperables Europa
+
+        (1)    Der Beirat für ein interoperables Europa (im Folgenden „Beirat“) wird hiermit eingerichtet. Er erleichtert die
+        strategische Zusammenarbeit und bietet Beratung zur Anwendung der vorliegenden Verordnung.
+
+        (2)     Der Beirat setzt sich aus einem Vertreter jedes Mitgliedstaats und einem Vertreter der Kommission zusammen.
+
+        (3)   Der Ausschuss der Regionen, die EU-Cybersicherheitsagentur (ENISA) und die Europäischen Kompetenzzentrum für
+        Cybersicherheitsforschung benennen jeweils einen Sachverständigen, der zur Teilnahme als Beobachter eingeladen wird.
+
+        (4)   Den Vorsitz im Beirat führt die Kommission. Der Vorsitz kann Sachverständigen, die von Einrichtungen der Union,
+        Regionen, Organisationen und Bewerberländern benannt werden, Beobachterstatus im Beirat gewähren. Der Vorsitz kann
+        auf Ad-hoc-Basis Sachverständige mit besonderer Sachkenntnis zu einem Tagesordnungspunkt zur Teilnahme einladen.
+        Die Kommission führt die Sekretariatsgeschäfte des Beirats.
+
+        Die Mitglieder des Beirats bemühen sich nach Kräften, Beschlüsse einvernehmlich zu fassen. Bei Abstimmungen wird mit
+        einfacher Mehrheit der Mitglieder entschieden. Mitglieder, die eine Stimme gegen einen Vorschlag abgegeben oder sich
+        enthalten haben, können verlangen, dass den Stellungnahmen, Empfehlungen oder Berichten eine Zusammenfassung der
+        Gründe für ihren Standpunkt beigefügt wird.
+
+        (5)     Der Beirat hat folgende Aufgaben:
+        a) Annahme von Leitlinien bezüglich des Inhalts der Interoperabilitätsbewertung gemäß Artikel 3 Absatz 5 und für die im
+           Anhang dieser Verordnung enthaltene gemeinsame Checkliste sowie erforderlichenfalls die Aktualisierung dieser
+           Leitlinien;
+        b) Analyse der gemäß Artikel 3 Absatz 2 gesammelten Informationen und Vorlage von darauf basierenden Vorschlägen
+           zur Verbesserung der grenzüberschreitenden Interoperabilität transeuropäischer digitaler öffentlicher Dienste;
+        c) Annahme von Leitlinien zur Weitergabe der in Artikel 4 genannten Interoperabilitätslösungen;
+        d) Unterbreitung von Vorschlägen für Maßnahmen zur Förderung der Weitergabe und Weiterverwendung von Interopera­
+           bilitätslösungen;
+        e) Entwicklung und erforderlichenfalls Aktualisierung des EIF und Übermittlung entsprechender Vorschläge an die
+           Kommission;
+        f)    Unterstützung der Umsetzung der Interoperabilitätsrahmen der Mitgliedstaaten und der Einrichtungen der Union sowie
+              anderer einschlägiger politischer Maßnahmen, Strategien oder Leitlinien der Union und der Mitgliedstaaten,
+              einschließlich des Grundsatzes „standardmäßig digital“ und des Konzepts der Interoperabilität durch Technikgestaltung;
+
+20/26                                                                                       ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                                  DE
+
+      g) Bewertung der Übereinstimmung der spezialisierten Interoperabilitätsrahmen mit dem EIF und Beantwortung von
+         Konsultationsersuchen der Kommission zu solchen Rahmen;
+      h) Annahme der in Artikel 19 genannten Agenda für ein interoperables Europa;
+      i)    Vorlage von Empfehlungen für Lösungen für ein interoperables Europa und Rücknahme solcher Empfehlungen auf der
+            Grundlage vereinbarter Kriterien;
+      j)    Verfolgung der Gesamtkohärenz der empfohlenen Interoperabilitätslösungen auf nationaler, regionaler und lokaler
+            Ebene, einschließlich der Informationen über ihre Metadaten und Kategorisierung;
+      k) Unterbreitung von Maßnahmenvorschlägen an die Kommission, um nötigenfalls die Kompatibilität von Interoperabili­
+         tätslösungen mit anderen Interoperabilitätslösungen, die einem gemeinsamen Zweck dienen, zu gewährleisten und
+         dabei gegebenenfalls die Komplementarität mit neuer Technik oder den Übergang zu neuer Technik zu unterstützen;
+      l)    Unterbreitung von Vorschlägen, dass die Kommission die in Artikel 8 Absatz 2 genannten Interoperabilitätslösungen
+            im Portal für ein interoperables Europa veröffentlicht oder Verweise auf diese Interoperabilitätslösungen in das Portal
+            für ein interoperables Europa einstellt;
+      m) Unterbreitung von Vorschlägen an die Kommission für die Einrichtung von Unterstützungsprojekten für die
+         Politikumsetzung und von Innovationsmaßnahmen sowie anderen einschlägigen Maßnahmen, einschließlich
+         finanzieller Unterstützung;
+      n) Ermittlung bewährter Verfahren für die Integration von Interoperabilitätslösungen bei der Vergabe öffentlicher Aufträge
+         und Ausschreibungen;
+      o) Überprüfung von Berichten über Innovationsmaßnahmen, über die Verwendung von Interoperabilitäts-Reallaboren
+         und über die gegenseitigen Begutachtungen und erforderlichenfalls Vorlage von Vorschlägen für Folgemaßnahmen;
+      p) Vorlage von Vorschlägen für Maßnahmen zur Verbesserung der Interoperabilitätsfähigkeiten öffentlicher Stellen, z. B.
+         im Hinblick auf Schulungen;
+      q) Unterbreitung von Vorschlägen an einschlägige Normungsorganisationen und -gremien in Bezug auf Maßnahmen, die
+         zu europäischen Normungstätigkeiten beitragen, insbesondere durch die in der Verordnung (EU) Nr. 1025/2012
+         festgelegten Verfahren;
+      r)    Vorlage von Vorschlägen für Maßnahmen in Bezug auf die Zusammenarbeit mit internationalen Einrichtungen und
+            Forschungs- und Bildungseinrichtungen, die zur Entwicklung von Interoperabilität beitragen könnten, insbesondere
+            mit internationalen Gemeinschaften, die sich mit quelloffenen Lösungen, offenen Normen oder technischen
+            Spezifikationen und anderen Plattformen befassen;
+      s)    Koordinierung mit dem in der Verordnung (EU) 2022/868 genannten Europäischen Dateninnovationsrat in Bezug auf
+            Interoperabilitätslösungen für die gemeinsamen europäischen Datenräume sowie mit anderen Einrichtungen der
+            Union, die sich mit Interoperabilitätslösungen für den öffentlichen Sektor befassen;
+      t)    regelmäßige Information und Abstimmung mit den in Artikel 18 genannten Interoperabilitätskoordinatoren und —
+            sofern relevant — mit der Gemeinschaft für ein interoperables Europa in Fragen im Zusammenhang mit transeuro­
+            päischen digitalen öffentlichen Diensten, einschließlich relevanter von der Union finanzierter Projekte und Netzwerke;
+      u) Beratung der Kommission in Bezug auf die Überwachung und die Berichterstattung im Zusammenhang mit der
+         Anwendung dieser Verordnung;
+      v) rasche Unterbreitung der erforderlichen Beiträge und Daten, die für die wirksame Vorlage der Berichte gemäß
+         Artikel 20 erforderlich sind, an die Kommission.
+
+      (6)   Der Beirat kann Arbeitsgruppen einsetzen, um spezifische Fragen im Zusammenhang mit der Wahrnehmung seiner
+      Aufgaben zu untersuchen. In die Arbeitsgruppen werden Mitglieder der Gemeinschaft für ein interoperables Europa
+      einbezogen.
+
+      (7)     Der Beirat gibt sich eine Geschäftsordnung.
+
+
+                                                                Artikel 16
+
+                                             Gemeinschaft für ein interoperables Europa
+
+      (1)    Eine Gemeinschaft für ein interoperables Europa leistet auf Ersuchen des Beirats mit Fachwissen und Beratung einen
+      Beitrag zu den Tätigkeiten des Beirats.
+
+      (2)    Öffentliche und private Interessenträger sowie Organisationen der Zivilgesellschaft und Akteure aus dem
+      Hochschulbereich mit Wohnsitz oder satzungsmäßigem Sitz in einem Mitgliedstaat können sich im Portal für ein
+      interoperables Europa als Mitglied der Gemeinschaft für ein interoperables Europa eintragen lassen.
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                        21/26
+DE                                                                                                               ABl. L vom 22.3.2024
+
+
+
+        (3)    Nach der Bestätigung der Eintragung wird die Mitgliedschaft im Portal für ein interoperables Europa öffentlich
+        zugänglich gemacht. Die Mitgliedschaft ist nicht befristet. Sie kann jedoch vom Beirat aus verhältnismäßigen und
+        gerechtfertigten Gründen jederzeit widerrufen werden, insbesondere wenn ein Mitglied nicht mehr in der Lage ist, einen
+        Beitrag zur Gemeinschaft für ein interoperables Europa zu leisten, oder wenn es den Status des Mitglieds der Gemeinschaft
+        für ein interoperables Europa missbraucht hat.
+
+        (4)   Die Mitglieder der Gemeinschaft für ein interoperables Europa können u. a. dazu eingeladen werden,
+
+        a) zu den Inhalten des Portals für ein interoperables Europa beizutragen,
+
+        b) Fachwissen bezüglich der Entwicklung von Interoperabilitätslösungen einzubringen,
+
+        c) sich an den Arbeitsgruppen und anderen Tätigkeiten zu beteiligen,
+
+        d) sich an den in den Artikeln 9 bis 14 genannten Unterstützungsmaßnahmen zu beteiligen,
+
+        e) die Verwendung von Interoperabilitätsnormen und -rahmen zu fördern.
+
+        (5)   Der Beirat organisiert eine jährliche Online-Versammlung der Gemeinschaft für ein interoperables Europa.
+
+        (6)   Der Beirat nimmt den Verhaltenskodex für die Gemeinschaft für ein interoperables Europa an. Der Verhaltenskodex
+        wird im Portal für ein interoperables Europa veröffentlicht.
+
+
+
+
+                                                                Artikel 17
+
+
+                                   Nationale zuständige Behörden und einheitliche Anlaufstellen
+
+        (1)   Jeder Mitgliedstaat benennt eine oder mehrere zuständige Behörden, die für die Anwendung dieser Verordnung
+        verantwortlich sind. Die Mitgliedstaaten benennen eine ihrer zuständigen Behörden als einheitliche Anlaufstelle.
+
+        (2)   Die einheitliche Anlaufstelle hat folgende Aufgaben:
+
+        a) Koordinierung innerhalb des Mitgliedstaats in allen Fragen im Zusammenhang mit dieser Verordnung,
+
+        b) Unterstützung öffentlicher Stellen in dem Mitgliedstaat bei der Einrichtung oder Anpassung der Verfahren, mit denen sie
+           die in Artikel 3 und dem Anhang genannten Interoperabilitätsbewertungen durchführen,
+
+        c) Förderung der Weitergabe und Weiterverwendung von Interoperabilitätslösungen über das Portal für ein interoperables
+           Europa oder ein anderes einschlägiges Portal,
+
+        d) Bereitstellung landesspezifischen Wissens im Portal für ein interoperables Europa,
+
+        e) Koordinierung und Förderung der aktiven Einbeziehung eines breiten Spektrums nationaler, regionaler und lokaler
+           Stellen in die in den Artikeln 9 bis 14 genannten Unterstützungsprojekte für die Politikumsetzung und
+
+        f) Unterstützung öffentlicher Stellen in den Mitgliedstaaten bei ihrer Zusammenarbeit mit den einschlägigen öffentlichen
+           Stellen in anderen Mitgliedstaaten zu den unter diese Verordnung fallenden Themen.
+
+        (3)   Die Mitgliedstaaten stellen sicher, dass die zuständigen Behörden über angemessene Befugnisse und Ressourcen
+        verfügen, um die ihnen übertragenen Aufgaben wirksam und effizient erfüllen zu können.
+
+        (4)   Die Mitgliedstaaten schaffen die erforderlichen Strukturen für die Zusammenarbeit zwischen allen an der
+        Durchführung dieser Verordnung beteiligten nationalen Behörden. Solche Strukturen können auf bestehenden Aufträgen
+        und Verfahren in diesem Bereich beruhen.
+
+        (5)   Jeder Mitgliedstaat meldet der Kommission unverzüglich die Benennung seiner einheitlichen Anlaufstelle, deren
+        Aufgaben und alle späteren Änderungen daran und unterrichtet die Kommission über andere nationale Behörden, die für
+        die Interoperabilitätspolitik mitverantwortlich sind. Jeder Mitgliedstaat macht die Benennung seiner einheitlichen
+        Anlaufstelle öffentlich bekannt. Die Kommission veröffentlicht die Liste der benannten einheitlichen Anlaufstellen.
+
+22/26                                                                                      ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                               DE
+
+                                                              Artikel 18
+
+                                 Interoperabilitätskoordinatoren für die Einrichtungen der Union
+
+      Jede Einrichtung der Union, die transeuropäische digitale öffentliche Dienste regelt, bereitstellt oder verwaltet, benennt
+      einen Interoperabilitätskoordinator, der unter der Aufsicht ihrer höchsten Managementebene steht und dafür sorgt, dass
+      diese Einrichtung der Union einen Beitrag zur Durchführung dieser Verordnung leistet.
+
+      Der Interoperabilitätskoordinator unterstützt die gesamte Einrichtung der Union bei der Einrichtung oder Anpassung ihrer
+      internen Interoperabilitätsbewertungsverfahren.
+
+
+
+                                                              Kapitel 5
+
+                                     Planung und Überwachung für ein interoperables Europa
+
+
+                                                              Artikel 19
+
+                                                 Agenda für ein interoperables Europa
+
+      (1)     Nach der Durchführung einer öffentlichen Konsultation über das Portal für ein interoperables Europa, an der sich
+      unter anderem die Mitglieder der Gemeinschaft für ein interoperables Europa und die Interoperabilitätskoordinatoren
+      beteiligen, nimmt der Beirat jedes Jahr eine strategische Agenda zur Planung und Koordinierung der Prioritäten für die
+      Entwicklung der grenzüberschreitenden Interoperabilität von transeuropäischen digitalen öffentlichen Diensten an (im
+      Folgenden „Agenda für ein interoperables Europa“). Die Agenda für ein interoperables Europa trägt den langfristigen
+      Digitalisierungsstrategien der Union, den bestehenden Finanzierungsprogrammen der Union und der laufenden
+      Umsetzung der Unionspolitik Rechnung.
+
+      (2)    Die Agenda für ein interoperables Europa enthält Folgendes:
+      a) eine Bedarfsanalyse bezüglich der Entwicklung von Interoperabilitätslösungen,
+      b) eine Liste laufender und geplanter Unterstützungsmaßnahmen für ein interoperables Europa,
+      c) eine Liste vorgeschlagener Folgemaßnahmen zu Innovationsmaßnahmen, einschließlich Maßnahmen zur Unterstützung
+         quelloffener Interoperabilitätslösungen,
+      d) Angaben zu Synergien mit anderen einschlägigen Programmen und Initiativen der Union und der Mitgliedstaaten,
+      e) Hinweise auf verfügbare finanzielle Möglichkeiten zur Unterstützung der enthaltenen Prioritäten.
+
+      (3)    Aus der Agenda für ein interoperables Europa erwachsen keine finanziellen Verpflichtungen und kein zusätzlicher
+      Verwaltungsaufwand. Die Kommission veröffentlicht die Agenda für ein interoperables Europa nach ihrer Annahme im
+      Portal für ein interoperables Europa und informiert regelmäßig über den aktuellen Stand ihrer Umsetzung.
+
+
+                                                              Artikel 20
+
+                                                    Überwachung und Bewertung
+
+      (1)   Die Kommission überwacht die Fortschritte bei der Entwicklung transeuropäischer digitaler öffentlicher Dienste zur
+      Unterstützung einer faktengestützten Politikgestaltung und der erforderlichen Maßnahmen in der Union auf nationaler,
+      regionaler und lokaler Ebene. Die Überwachung beruht vorrangig auf der Weiterverwendung bestehender unionsweiter,
+      nationaler und internationaler Überwachungsdaten sowie auf einer automatisierten Datenerfassung. Die Kommission
+      konsultiert den Beirat bei der Ausarbeitung der Methodik, der Indikatoren und des Ablaufs bezüglich der Überwachung.
+
+      (2) Im Hinblick auf Themen, die für die Durchführung dieser Verordnung von besonderem Interesse sind, überwacht die
+      Kommission
+      a) Fortschritte bei der grenzüberschreitenden Interoperabilität transeuropäischer digitaler öffentlicher Dienste in der
+         Union,
+      b) Fortschritte bei der Umsetzung des EIF durch die Mitgliedstaaten,
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                     23/26
+DE                                                                                                                ABl. L vom 22.3.2024
+
+
+
+        c) die Einführung von Interoperabilitätslösungen für verschiedene öffentliche Dienste in den Mitgliedstaaten,
+        d) die Entwicklung quelloffener Interoperabilitätslösungen für öffentliche Dienste, für Innovation im öffentlichen Sektor
+           und für die Zusammenarbeit mit GovTech-Akteuren, einschließlich KMU und Start-up-Unternehmen, im Bereich der
+           grenzüberschreitenden interoperablen öffentlichen Dienste, die eine elektronische Erbringung oder Verwaltung in der
+           Union ermöglichen,
+        e) die Verbesserung der Interoperabilitätskompetenzen im öffentlichen Sektor.
+
+        (3)   Die Überwachungsergebnisse werden von der Kommission im Portal für ein interoperables Europa veröffentlicht.
+        Soweit möglich, werden sie in einem maschinenlesbaren Format veröffentlicht.
+
+        (4)   Die Kommission legt dem Europäischen Parlament und dem Rat einen jährlichen Bericht über die Interoperabilität in
+        der Union vor. In diesem Bericht werden
+        a) die Fortschritte bei der grenzüberschreitenden Interoperabilität transeuropäischer digitaler öffentlicher Dienste in der
+           Union dargelegt,
+        b) erhebliche Umsetzungshindernisse und Triebkräfte für grenzüberschreitende interoperable öffentliche Dienste in der
+           Union ermittelt,
+        c) die im Laufe der Zeit erzielten Ergebnisse in Bezug auf die Umsetzung des EIF, die Einführung von Interoperabilitäts­
+           lösungen, die Verbesserung der Interoperabilitätskompetenzen, die Entwicklung quelloffener Interoperabilitätslösungen
+           für öffentliche Dienste, die Steigerung der Innovation im öffentlichen Sektor und die Zusammenarbeit mit GovTech-
+           Akteuren dargelegt.
+
+        (5)    Bis zum 12. Januar 2028 und danach alle vier Jahre legt die Kommission dem Europäischen Parlament und dem Rat
+        einen Bericht über die Anwendung dieser Verordnung mit den Schlussfolgerungen ihrer Bewertung vor. In dem Bericht
+        wird insbesondere auf die Notwendigkeit der Schaffung verbindlicher Interoperabilitätslösungen eingegangen.
+
+        (6)   In dem in Absatz 5 genannten Bericht wird insbesondere Folgendes bewertet:
+        a) die Auswirkungen dieser Verordnung auf die grenzüberschreitende Interoperabilität als Wegbereiter für nahtlose und
+           zugängliche digitale öffentliche Dienste in der Union,
+        b) die Steigerung der Effizienz, unter anderem durch die Verringerung des Verwaltungsaufwands bei Online-Transaktionen,
+           die aus der grenzüberschreitenden Interoperabilität für Bürgerinnen und Bürger und Unternehmen, insbesondere bei
+           KMU und Start-up-Unternehmen, resultiert,
+        c) die Notwendigkeit zusätzlicher Strategien, Maßnahmen oder Tätigkeiten, die auf Unionsebene erforderlich sind.
+
+        (7)  Wenn der Zeitpunkt der in Absatz 4 und 5 genannten Berichte übereinstimmt, kann die Kommission beide Berichte
+        kombinieren.
+
+
+
+                                                                Kapitel 6
+
+                                                         Schlussbestimmungen
+
+
+
+                                                                Artikel 21
+
+                                                                 Kosten
+
+        (1)   Vorbehaltlich der Verfügbarkeit von Finanzmitteln deckt der Gesamthaushaltsplan der Union die Kosten
+        a) der Entwicklung und Wartung des Portals für ein interoperables Europa,
+        b) der Entwicklung, Wartung und Förderung von Lösungen für ein interoperables Europa,
+        c) der Unterstützungsmaßnahmen für ein interoperables Europa.
+
+        (2)    Die in Absatz 1 genannten Kosten werden im Einklang mit den geltenden Bestimmungen des einschlägigen
+        Basisrechtsakts getragen.
+
+24/26                                                                                      ELI: http://data.europa.eu/eli/reg/2024/903/oj
+ABl. L vom 22.3.2024                                                                                                               DE
+
+                                                              Artikel 22
+
+                                                        Ausschussverfahren
+
+      (1)   Die Kommission wird von einem Ausschuss unterstützt. Dieser Ausschuss ist ein Ausschuss im Sinne der
+      Verordnung (EU) Nr. 182/2011.
+
+      (2)    Wird auf diesen Absatz Bezug genommen, so gilt Artikel 5 der Verordnung (EU) Nr. 182/2011.
+
+
+                                                              Artikel 23
+
+                                                            Inkrafttreten
+
+      (1)    Diese Verordnung tritt am zwanzigsten Tag nach ihrer Veröffentlichung im Amtsblatt der Europäischen Union in Kraft.
+
+      (2)    Sie gilt ab dem 12. Juli 2024.
+
+      Artikel 3 Absätze 1 bis 4 und Artikel 17 gelten jedoch ab dem 12. Januar 2025.
+
+
+
+                    Diese Verordnung ist in allen ihren Teilen verbindlich und gilt unmittelbar in jedem
+                    Mitgliedstaat.
+
+
+                    Geschehen zu Straßburg am 13. März 2024.
+
+
+                     Im Namen des Europäischen Parlaments                              Im Namen des Rates
+                               Die Präsidentin                                           Die Präsidentin
+                               R. METSOLA                                                 H. LAHBIB
+
+
+
+
+ELI: http://data.europa.eu/eli/reg/2024/903/oj                                                                                     25/26
+DE                                                                                                              ABl. L vom 22.3.2024
+
+
+
+                                                                ANHANG
+
+                 GEMEINSAME CHECKLISTE FÜR BERICHTE ÜBER DIE INTEROPERABILITÄTSBEWERTUNG
+
+        Die folgenden Punkte sind in den in Artikel 3 genannten Berichten enthalten.
+        1. Allgemeine Angaben
+           — Einrichtung der Union oder öffentliche Stelle, die den Bericht und andere einschlägige Informationen vorlegt
+           — Betreffende Initiative, betreffendes Projekt oder betreffende Maßnahme
+        2. Anforderungen
+           — Betreffende transeuropäische digitale öffentliche Dienste
+           — Bewertete verbindliche Anforderungen
+           — Betroffene öffentliche und private Interessenträger
+           — Festgestellte Auswirkungen auf die grenzüberschreitende Interoperabilität
+        3. Ergebnisse
+           — Lösungen für ein interoperables Europa, die genutzt werden sollen
+           — Sofern zutreffend, andere einschlägige Interoperabilitätslösungen, einschließlich Maschine-Maschine-Schnittstellen
+           — Verbleibende Hindernisse für die grenzüberschreitende Interoperabilität
+
+
+
+
+26/26                                                                                    ELI: http://data.europa.eu/eli/reg/2024/903/oj
+

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pflichten Similarity Heatmap</title>
+  <style>
+    /* ── Reset & Variables ── */
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #64748b;
+      --accent: #2563eb;
+      --header-h: 56px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header (Fixed & Compact) ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-h);
+      padding: 0 1.5rem;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    header h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex: 1;
+    }
+
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    input[type="range"] {
+      accent-color: var(--accent);
+      cursor: pointer;
+      width: 100px;
+    }
+
+    #threshold-val {
+      font-weight: 600;
+      color: var(--accent);
+      min-width: 2.2rem;
+    }
+
+    /* ── Dropdown Controls ── */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .dropbtn:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 0.5rem;
+      min-width: 220px;
+      max-height: 400px;
+      overflow-y: auto;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      padding: 0.75rem;
+      display: none;
+      z-index: 1100;
+    }
+
+    .dropdown.open .dropdown-content {
+      display: block;
+    }
+
+    #norm-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .norm-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+
+    .norm-item:hover {
+      background: var(--surface);
+    }
+
+    .norm-item input {
+      cursor: pointer;
+    }
+
+    /* ── Stats & Legend ── */
+    #legend {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    #legend-gradient {
+      width: 80px;
+      height: 8px;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── Comparison Table (General) ── */
+    .comparison-table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 0.5rem; }
+    .comparison-table th, .comparison-table td { padding: 0.5rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .comparison-table thead th { font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; border-bottom: 2px solid var(--border); background: #ffffff; }
+    .prop-name { font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+    .val-text { font-size: 0.85rem; font-weight: 500; color: var(--text); line-height: 1.3; }
+    .val-block { font-size: 0.85rem; font-style: italic; color: #334155; line-height: 1.4; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+    .prop-col { width: 120px; }
+
+    #stats-bar {
+      margin-top: var(--header-h);
+      padding: 0.4rem 1.5rem;
+      background: var(--surface);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    #stats-bar b {
+      color: var(--text);
+    }
+
+    /* ── Main ── */
+    #main {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #chart-wrap {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    /* ── Tooltip ── */
+    #tooltip {
+      position: fixed;
+      pointer-events: none;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      width: 580px;
+      max-width: 650px;
+      z-index: 2000;
+      display: none;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    #tooltip .score {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .tooltip-hint {
+      margin-top: 0.75rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Help Menu ── */
+    #help-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.15s;
+      margin-left: auto;
+    }
+
+    #help-btn:hover {
+      background: #f1f5f9;
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    #help-pane {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 0.5rem;
+      width: 220px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      z-index: 1200;
+      display: none;
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    #help-pane.show {
+      display: block;
+    }
+
+    #help-pane h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    #help-pane ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    #help-pane b {
+      color: var(--accent);
+    }
+
+    /* ── Details Pane (Pinned) ── */
+    #details-pane {
+      position: fixed;
+      top: calc(var(--header-h) + 0.75rem);
+      right: 0.75rem;
+      width: 600px;
+      max-height: calc(100vh - var(--header-h) - 4rem);
+      overflow-y: auto;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px) saturate(180%);
+      -webkit-backdrop-filter: blur(12px) saturate(180%);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: 12px;
+      padding: 1.5rem;
+      z-index: 2500;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      display: none;
+      animation: slideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    #details-pane.show {
+      display: block;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    #details-pane .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s;
+    }
+
+    #details-pane .close-btn:hover {
+      background: #f1f5f9;
+      color: var(--text);
+    }
+
+    #details-pane .pane-header {
+      margin-bottom: 1.5rem;
+      padding-right: 3rem;
+    }
+
+    #details-pane .pane-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    #details-pane .pane-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    #details-pane .pair-comparison {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    #details-pane .pair-comparison .half {
+      flex: 1;
+    }
+
+    #details-pane .pair-comparison .half:not(:first-child) {
+      padding-left: 1.5rem;
+      border-left: 1px solid var(--border);
+    }
+
+    /* ── Loading ── */
+    #loading {
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    .spinner {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #e2e8f0;
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" style="text-decoration: none; font-size: 1.2rem; color: var(--text-muted); margin-right: -0.5rem; display: flex; align-items: center; transition: color 0.15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">&larr;</a>
+    <h1>Pflichten Similarity</h1>
+
+    <div class="controls">
+      <div class="control-group">
+        <label>Schwellenwert</label>
+        <input id="threshold-slider" type="range" min="0" max="1" step="0.01" value="0.85" />
+        <span id="threshold-val">0.85</span>
+      </div>
+
+      <div class="dropdown" id="norm-dropdown">
+        <button class="dropbtn" id="drop-toggle">Normen auswählen ▼</button>
+        <div class="dropdown-content">
+          <div id="norm-list"></div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>Farbmischung</label>
+        <input id="color-mix-toggle" type="checkbox" checked />
+      </div>
+
+      <button class="dropbtn" id="reset-zoom">Zoom zurücksetzen</button>
+    </div>
+
+    <div id="legend">
+      <span>0%</span>
+      <canvas id="legend-gradient" width="80" height="8"></canvas>
+      <span>100%</span>
+    </div>
+
+    <div style="position: relative;">
+      <button id="help-btn">ⓘ</button>
+      <div id="help-pane">
+        <h3>Navigation</h3>
+        <ul>
+          <li><b>Verschieben:</b> Ziehe mit der Maus oder dem Trackpad, um die Karte zu positionieren.</li>
+          <li><b>Zoomen:</b> Scrolle mit dem Mausrad oder nutze die Zwei-Finger-Geste auf dem Trackpad.</li>
+          <li><b>Anpinnen:</b> Klicke auf ein Feld, um die Details dauerhaft in einem Fenster anzuzeigen.</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div id="stats-bar">
+    <span>Pflichten: <b id="stat-n">–</b></span>
+    <span>Normen: <b id="stat-norms">–</b></span>
+    <span>Match-Paare: <b id="stat-pairs">–</b></span>
+  </div>
+
+  <div id="main">
+    <div id="chart-wrap">
+      <div id="loading">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tooltip"></div>
+  <div id="details-pane"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script>
+    const MATRIX_URL = "data/similarity_matrix.csv";
+    const CSV_BASE_URL = "data/Meldepflichten_LLM_";
+    const CELL_SIZE = 4;
+    const MARGIN = { top: 70, right: 30, bottom: 30, left: 90 };
+    const NORM_COLORS = ["#2563eb", "#d97706", "#059669", "#dc2626", "#7c3aed", "#db2777", "#4b5563", "#0891b2"];
+
+    let threshold = 0.85;
+    let colorMixEnabled = true;
+    let rawData = null;
+    let selectedNorms = new Set();
+    const colorScale = d3.scaleSequential().domain([0, 1]).interpolator(d3.interpolateRgb("#ffffff", "#4b5563"));
+    const diagColor = "#f1f5f9";
+    const sameLawColor = "#f8fafc"; // Neutral gray for same-law blocks
+
+
+    // ── UI Handling ── //
+    const dropToggle = document.getElementById("drop-toggle");
+    const dropdown = document.getElementById("norm-dropdown");
+    dropToggle.onclick = (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle("open");
+    };
+    document.addEventListener("click", () => dropdown.classList.remove("open"));
+    dropdown.querySelector(".dropdown-content").onclick = (e) => e.stopPropagation();
+
+    const helpBtn = document.getElementById("help-btn");
+    const helpPane = document.getElementById("help-pane");
+    helpBtn.onclick = (e) => {
+      e.stopPropagation();
+      helpPane.classList.toggle("show");
+    };
+    document.addEventListener("click", (e) => {
+      if (!helpPane.contains(e.target) && e.target !== helpBtn) {
+        helpPane.classList.remove("show");
+      }
+    });
+
+    function drawLegend() {
+      const canvas = document.getElementById("legend-gradient");
+      const ctx = canvas.getContext("2d");
+      for (let i = 0; i < canvas.width; i++) {
+        ctx.fillStyle = colorScale(i / canvas.width);
+        ctx.fillRect(i, 0, 1, canvas.height);
+      }
+    }
+    drawLegend();
+
+    // ── Logic ── //
+    async function loadData() {
+      const matrixText = await fetch(MATRIX_URL).then(r => r.text());
+      const matrixRows = d3.csvParse(matrixText);
+      const labels = matrixRows.map(r => r[""]);
+      const n = labels.length;
+      const getNorm = lbl => lbl.split(":")[0];
+      const norms = [...new Set(labels.map(getNorm))].filter(x => x && !x.startsWith("row_"));
+
+      const csvData = await Promise.all(norms.map(async norm => {
+        try {
+          const response = await fetch(`${CSV_BASE_URL}${norm}.csv`);
+          if (!response.ok) {
+            console.warn(`[WARN] Failed to load CSV for ${norm}: ${response.status} ${response.statusText}`);
+            return { norm, rows: [] };
+          }
+          const text = await response.text();
+          const cleanText = text.replace(/^\uFEFF/, ""); // Strip BOM if present
+          return { norm, rows: d3.dsvFormat(";").parse(cleanText) };
+        } catch (e) {
+          console.error(`[ERROR] Fetch error for ${norm}:`, e);
+          return { norm, rows: [] };
+        }
+      }));
+
+      const normFileMap = Object.fromEntries(csvData.map(d => [d.norm, d.rows]));
+      const meta = {};
+      const normCounters = {};
+
+      labels.forEach(lbl => {
+        const norm = getNorm(lbl);
+        if (norm.startsWith("row_")) return;
+        if (typeof normCounters[norm] === "undefined") normCounters[norm] = 0;
+        const localIdx = normCounters[norm]++;
+        const rows = normFileMap[norm] || [];
+        if (rows[localIdx]) {
+          meta[lbl] = { ...rows[localIdx], _localIdx: localIdx };
+        }
+      });
+
+      const values = new Float32Array(n * n);
+      matrixRows.forEach((row, i) => {
+        labels.forEach((lbl, j) => { values[i * n + j] = parseFloat(row[lbl]) || 0; });
+      });
+
+      return { labels, values, n, meta };
+    }
+
+    function render({ labels, values, n, meta }) {
+      const loader = document.getElementById("loading");
+      if (loader) loader.style.display = "none";
+
+      const getNorm = lbl => lbl.split(":")[0];
+      const norms = [...new Set(labels.map(getNorm))];
+      const normIdx = Object.fromEntries(norms.map((nm, i) => [nm, i]));
+      const normColor = nm => NORM_COLORS[normIdx[nm] % NORM_COLORS.length];
+
+      const sortedIdx = d3.range(n).sort((a, b) => d3.ascending(getNorm(labels[a]), getNorm(labels[b])) || d3.ascending(labels[a], labels[b]));
+      const sortedLabels = sortedIdx.map(i => labels[i]);
+
+      document.getElementById("stat-n").textContent = n;
+      document.getElementById("stat-norms").textContent = norms.length;
+      const countP = () => {
+        let p = 0;
+        for (let i = 0; i < n; i++)
+          for (let j = i + 1; j < n; j++)
+            if (values[sortedIdx[i] * n + sortedIdx[j]] >= threshold) p++;
+        return p;
+      };
+      document.getElementById("stat-pairs").textContent = countP();
+
+      const wrap = document.getElementById("chart-wrap");
+      wrap.querySelectorAll("svg").forEach(s => s.remove());
+
+      const size = n * CELL_SIZE;
+      const totalW = size + MARGIN.left + MARGIN.right;
+      const totalH = size + MARGIN.top + MARGIN.bottom;
+
+      const svg = d3.select(wrap).append("svg")
+        .attr("viewBox", `0 0 ${totalW} ${totalH}`)
+        .style("width", "100%").style("height", "100%");
+
+      const zoomG = svg.append("g");
+      const g = zoomG.append("g").attr("transform", `translate(${MARGIN.left},${MARGIN.top})`);
+
+      const zoom = d3.zoom().scaleExtent([0.3, 40]).on("zoom", ev => zoomG.attr("transform", ev.transform));
+      svg.call(zoom);
+      document.getElementById("reset-zoom").onclick = () => svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
+
+      // Axes
+      const bands = (sortedLbls => {
+        const b = []; let start = 0, cur = getNorm(sortedLbls[0]);
+        for (let i = 1; i <= sortedLbls.length; i++) {
+          const nm = i < sortedLbls.length ? getNorm(sortedLbls[i]) : null;
+          if (nm !== cur) { b.push({ norm: cur, start, end: i }); cur = nm; start = i; }
+        }
+        return b;
+      })(sortedLabels);
+
+      bands.forEach(({ norm, start, end }) => {
+        const pos = start * CELL_SIZE, len = (end - start) * CELL_SIZE, col = normColor(norm);
+        g.append("rect").attr("x", pos).attr("y", -MARGIN.top).attr("width", len).attr("height", MARGIN.top).attr("fill", col + "1a");
+        g.append("rect").attr("x", -MARGIN.left).attr("y", pos).attr("width", MARGIN.left).attr("height", len).attr("fill", col + "1a");
+        g.append("text").attr("x", pos + len / 2).attr("y", -MARGIN.top / 2).attr("text-anchor", "middle").attr("font-size", "20px").attr("font-weight", "600").attr("fill", col).text(norm);
+        g.append("text").attr("x", -MARGIN.left / 2).attr("y", pos + len / 2).attr("text-anchor", "middle").attr("font-size", "20px").attr("font-weight", "600").attr("fill", col).attr("transform", `rotate(-90, ${-MARGIN.left / 2}, ${pos + len / 2})`).text(norm);
+      });
+
+      // Canvas
+      const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
+      fo.setAttribute("width", size); fo.setAttribute("height", size);
+      const cnv = document.createElement("canvas");
+      cnv.width = size; cnv.height = size; cnv.style.imageRendering = "pixelated";
+      fo.appendChild(cnv);
+      g.node().appendChild(fo);
+      const ctx = cnv.getContext("2d");
+
+      function drawCells() {
+        ctx.clearRect(0, 0, size, size);
+        for (let i = 0; i < n; i++) {
+          const normI = getNorm(sortedLabels[i]);
+          for (let j = 0; j < n; j++) {
+            const v = values[sortedIdx[i] * n + sortedIdx[j]];
+            const normJ = getNorm(sortedLabels[j]);
+
+            if (normI === normJ) {
+              // Same law comparison (gray out)
+              ctx.fillStyle = (i === j) ? diagColor : sameLawColor;
+            } else {
+              // Cross-law comparison
+              if (colorMixEnabled) {
+                const c1 = normColor(normI);
+                const c2 = normColor(normJ);
+                const mixed = d3.interpolateRgb(c1, c2)(0.5);
+                // Adjust intensity based on similarity. 
+                // We use a white background and interpolate to the mixed color.
+                // Added a small offset (0.1) so low similarities aren't purely white.
+                const alpha = v < threshold ? v * 0.3 : v;
+                ctx.fillStyle = d3.interpolateRgb("#ffffff", mixed)(alpha);
+              } else {
+                ctx.fillStyle = (v < threshold ? colorScale(v * 0.3) : colorScale(v));
+              }
+            }
+            ctx.fillRect(j * CELL_SIZE, i * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+          }
+        }
+        ctx.strokeStyle = "#ffffff66"; ctx.lineWidth = 0.2;
+        for (let i = 0; i < n; i++) {
+          const normI = getNorm(sortedLabels[i]);
+          for (let j = i + 1; j < n; j++) {
+            const normJ = getNorm(sortedLabels[j]);
+            // Only highlight if it's a cross-law comparison (or if you want to highlight all matches)
+            // But usually we're only interested in cross-law matches now.
+            if (normI !== normJ && values[sortedIdx[i] * n + sortedIdx[j]] >= threshold) {
+              ctx.strokeRect(j * CELL_SIZE, i * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+            }
+          }
+        }
+      }
+      drawCells();
+
+      bands.forEach(({ end }) => {
+        if (end >= n) return;
+        const pos = end * CELL_SIZE;
+        g.append("line").attr("x1", pos).attr("y1", 0).attr("x2", pos).attr("y2", size).attr("stroke", "#e2e8f0").attr("stroke-width", 0.5);
+        g.append("line").attr("x1", 0).attr("y1", pos).attr("x2", size).attr("y2", pos).attr("stroke", "#e2e8f0").attr("stroke-width", 0.5);
+      });
+
+      const tooltip = document.getElementById("tooltip");
+      const detailsPane = document.getElementById("details-pane");
+      const overlay = g.append("rect").attr("width", size).attr("height", size).attr("fill", "transparent");
+
+      const renderTable = (m1, m2, name1, name2, fullInfo = false) => {
+        const skip = ["_localIdx"];
+        const blocks = ["Was gemeldet wird", "Zitat"];
+        const subset = ["Norm", "Referenz", "Art der Pflicht", "Wer", "An wen", "Was gemeldet wird"];
+        
+        // Single display (diagonal) if m2 is null
+        const isDiagonal = !m2;
+        const allKeys = isDiagonal ? Object.keys(m1) : Array.from(new Set([...Object.keys(m1), ...Object.keys(m2)]));
+        const topKeys = ["Norm", "Referenz"];
+        const displayKeys = [...topKeys, ...allKeys.filter(k => !topKeys.includes(k) && !skip.includes(k) && (fullInfo || subset.includes(k)))];
+
+        let html = `<table class="comparison-table"><thead><tr><th class="prop-col">Merkmal</th><th>${name1}</th>`;
+        if (!isDiagonal) html += `<th>${name2}</th>`;
+        html += `</tr></thead><tbody>`;
+
+        displayKeys.forEach(k => {
+          const v1 = m1[k] || "-";
+          const v2 = isDiagonal ? null : (m2[k] || "-");
+          const isBlock = blocks.includes(k);
+
+          html += `<tr><td class="prop-col"><div class="prop-name">${k}</div></td>`;
+          html += `<td><div class="${isBlock ? 'val-block' : 'val-text'}">${v1}</div></td>`;
+          if (!isDiagonal) html += `<td><div class="${isBlock ? 'val-block' : 'val-text'}">${v2}</div></td>`;
+          html += `</tr>`;
+        });
+
+        html += `</tbody></table>`;
+        return html;
+      };
+
+      overlay.on("mousemove", (ev) => {
+        const [mx, my] = d3.pointer(ev);
+        const ci = Math.floor(my / CELL_SIZE), cj = Math.floor(mx / CELL_SIZE);
+        if (ci < 0 || ci >= n || cj < 0 || cj >= n) { tooltip.style.display = "none"; return; }
+        const lblI = sortedLabels[ci], lblJ = sortedLabels[cj], score = (ci === cj) ? null : values[sortedIdx[ci] * n + sortedIdx[cj]];
+        const mI = meta[lblI] || {}, mJ = meta[lblJ] || {};
+
+        tooltip.innerHTML = (ci === cj)
+          ? `<div class="score">Diagonale</div>${renderTable(mI, null, "Pflicht", "", false)}<div class="tooltip-hint">Klicken für mehr Informationen</div>`
+          : `<div class="score">Ähnlichkeit: ${(score * 100).toFixed(1)}%</div>${renderTable(mI, mJ, "Zeile", "Spalte", false)}<div class="tooltip-hint">Klicken für mehr Informationen</div>`;
+
+        tooltip.style.display = "block";
+        const gap = 15;
+        const ttWidth = tooltip.offsetWidth;
+        const ttHeight = tooltip.offsetHeight;
+
+        // Use mouse position thresholds to decide orientation (prevents jittering)
+        const flipX = ev.clientX > window.innerWidth * 0.6;
+        const flipY = ev.clientY > window.innerHeight * 0.7;
+
+        let left = flipX ? (ev.clientX - ttWidth - gap) : (ev.clientX + gap);
+        let top = flipY ? (ev.clientY - ttHeight - gap) : (ev.clientY + gap);
+
+        // Final safety clamp
+        left = Math.max(5, Math.min(left, window.innerWidth - ttWidth - 5));
+        top = Math.max(5, Math.min(top, window.innerHeight - ttHeight - 5));
+
+        tooltip.style.left = left + "px";
+        tooltip.style.top = top + "px";
+      }).on("mouseleave", () => tooltip.style.display = "none")
+        .on("click", (ev) => {
+          const [mx, my] = d3.pointer(ev);
+          const ci = Math.floor(my / CELL_SIZE), cj = Math.floor(mx / CELL_SIZE);
+          if (ci < 0 || ci >= n || cj < 0 || cj >= n) return;
+
+          const lblI = sortedLabels[ci], lblJ = sortedLabels[cj], score = (ci === cj) ? null : values[sortedIdx[ci] * n + sortedIdx[cj]];
+          const mI = meta[lblI] || {}, mJ = meta[lblJ] || {};
+
+          detailsPane.innerHTML = `
+          <div style="position: absolute; top: 1rem; right: 1rem; display: flex; gap: 0.5rem;">
+            <button class="close-btn" style="position: static;" onclick="
+              const p1 = encodeURIComponent('${lblI}');
+              const p2 = encodeURIComponent('${lblJ}');
+              const i1 = ${mI._localIdx !== undefined ? mI._localIdx : 'null'};
+              const i2 = ${mJ._localIdx !== undefined ? mJ._localIdx : 'null'};
+              const score = ${(score !== null) ? (score * 100).toFixed(1) : 'null'};
+              let url = 'similarity_comparison.html?p1=' + p1 + '&p2=' + p2;
+              if (i1 !== null) url += '&i1=' + i1;
+              if (i2 !== null) url += '&i2=' + i2;
+              if (score !== null) url += '&score=' + score;
+              window.open(url, '_blank');
+            ">In neuem Tab öffnen ↗</button>
+            <button class="close-btn" style="position: static;" onclick="document.getElementById('details-pane').classList.remove('show')">Schließen</button>
+          </div>
+          <div class="pane-header">
+            <div class="pane-title">${(ci === cj) ? 'Pflicht-Details' : 'Vergleich-Details'}</div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">
+              ${(ci === cj) ? 'Einzelansicht auf der Diagonale' : `Ähnlichkeit: <b>${(score * 100).toFixed(1)}%</b>`}
+            </div>
+          </div>
+          <div class="pane-content">
+            ${(ci === cj) ? renderTable(mI, null, "Pflicht", "", true) : renderTable(mI, mJ, "Zeile", "Spalte", true)}
+          </div>
+        `;
+
+          detailsPane.classList.add("show");
+        });
+
+
+
+      const slider = document.getElementById("threshold-slider");
+      const tVal = document.getElementById("threshold-val");
+      slider.oninput = () => {
+        threshold = parseFloat(slider.value);
+        tVal.textContent = (threshold * 100).toFixed(0) + "%";
+        document.getElementById("stat-pairs").textContent = countP();
+        drawCells();
+      };
+
+      const mixToggle = document.getElementById("color-mix-toggle");
+      mixToggle.onchange = () => {
+        colorMixEnabled = mixToggle.checked;
+        drawCells();
+      };
+
+      tVal.textContent = (threshold * 100).toFixed(0) + "%"; // Initial set
+    }
+
+    // ── Data Bootstrap ── //
+    function updateFilter() {
+      if (!rawData) return;
+      const getNorm = lbl => lbl.split(":")[0];
+      const filteredLabels = rawData.labels.filter(lbl => selectedNorms.has(getNorm(lbl)));
+      const nT = rawData.labels.length, nF = filteredLabels.length;
+      const fV = new Float32Array(nF * nF);
+      const l2i = Object.fromEntries(rawData.labels.map((l, i) => [l, i]));
+      for (let i = 0; i < nF; i++) {
+        const idI = l2i[filteredLabels[i]];
+        for (let j = 0; j < nF; j++) {
+          const idJ = l2i[filteredLabels[j]];
+          fV[i * nF + j] = rawData.values[idI * nT + idJ];
+        }
+      }
+      render({ labels: filteredLabels, values: fV, n: nF, meta: rawData.meta });
+    }
+
+    loadData().then(data => {
+      rawData = data;
+      const getNorm = lbl => lbl.split(":")[0];
+      const allNorms = [...new Set(rawData.labels.map(getNorm))].filter(Boolean).sort();
+      const normList = document.getElementById("norm-list");
+      allNorms.forEach(norm => {
+        selectedNorms.add(norm);
+        const item = document.createElement("label");
+        item.className = "norm-item";
+        item.innerHTML = `<input type="checkbox" checked> <span>${norm}</span>`;
+        item.querySelector("input").onchange = (e) => {
+          if (e.target.checked) selectedNorms.add(norm);
+          else if (selectedNorms.size > 1) selectedNorms.delete(norm);
+          else { e.target.checked = true; return; }
+          updateFilter();
+        };
+        normList.appendChild(item);
+      });
+      updateFilter();
+    }).catch(console.error);
+  </script>
+</body>
+
+</html>

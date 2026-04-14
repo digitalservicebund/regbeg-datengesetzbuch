@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gesetzes-Interdependenz (Chord Diagram)</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --text: #1a202c;
+      --text-muted: #64748b;
+      --accent: #2563eb;
+      --header-h: 64px;
+    }
+
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      height: var(--header-h);
+      padding: 0 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: #fff;
+      z-index: 10;
+    }
+
+    header h1 { font-size: 1.1rem; font-weight: 700; margin-right: auto; }
+
+    .controls { display: flex; align-items: center; gap: 1.5rem; flex: 1; }
+    .control-group { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--text-muted); }
+    input[type="range"] { accent-color: var(--accent); cursor: pointer; width: 100px; }
+    #threshold-val { font-weight: 600; color: var(--accent); min-width: 2.2rem; }
+
+    /* ── Dropdown Controls ── */
+    .dropdown { position: relative; display: inline-block; }
+    .dropbtn {
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .dropbtn:hover { background: #f1f5f9; border-color: #cbd5e1; }
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 0.5rem;
+      min-width: 220px;
+      max-height: 400px;
+      overflow-y: auto;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      padding: 0.75rem;
+      display: none;
+      z-index: 1100;
+    }
+    .dropdown.open .dropdown-content { display: block; }
+    #norm-list { display: flex; flex-direction: column; gap: 0.4rem; }
+    .norm-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .norm-item:hover { background: var(--surface); }
+    .norm-item input { cursor: pointer; }
+
+    #main { flex: 1; position: relative; display: flex; align-items: center; justify-content: center; background: #fff; }
+    #chart { width: 100%; height: 100%; max-width: 900px; max-height: 900px; }
+
+    /* ── Tooltip ── */
+    #tooltip {
+      position: fixed;
+      pointer-events: none;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 100;
+    }
+
+    #loading { position: absolute; inset: 0; background: #fff; display: flex; align-items: center; justify-content: center; z-index: 20; }
+    .spinner { width: 32px; height: 32px; border: 3px solid #f1f5f9; border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .group-label { font-size: 12px; font-weight: 600; cursor: default; }
+    .ribbon { fill-opacity: 0.65; stroke-width: 0.5; cursor: pointer; transition: opacity 0.2s; }
+    .ribbon:hover { fill-opacity: 0.85; }
+    .dimmed { opacity: 0.1 !important; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" style="text-decoration: none; font-size: 1.2rem; color: var(--text-muted); margin-right: -0.5rem; display: flex; align-items: center; transition: color 0.15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">&larr;</a>
+    <h1>Gesetzes-Interdependenz</h1>
+
+    <div class="controls">
+      <div class="control-group">
+        <label>Schwellenwert</label>
+        <input id="threshold-slider" type="range" min="0" max="1" step="0.01" value="0.85" />
+        <span id="threshold-val">85%</span>
+      </div>
+
+      <div class="dropdown" id="norm-dropdown">
+        <button class="dropbtn" id="drop-toggle">Normen auswählen ▼</button>
+        <div class="dropdown-content">
+          <div id="norm-list"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="main">
+    <div id="loading"><div class="spinner"></div></div>
+    <div id="chart"></div>
+  </div>
+
+  <div id="tooltip"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script>
+    const MATRIX_URL = "data/similarity_matrix.csv";
+    const NORM_COLORS = ["#2563eb", "#d97706", "#059669", "#dc2626", "#7c3aed", "#db2777", "#4b5563", "#0891b2"];
+
+    let threshold = 0.85;
+    let rawData = null;
+    let selectedNorms = new Set();
+
+    // ── UI Handling ── //
+    const dropToggle = document.getElementById("drop-toggle");
+    const dropdown = document.getElementById("norm-dropdown");
+    dropToggle.onclick = (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle("open");
+    };
+    document.addEventListener("click", () => dropdown.classList.remove("open"));
+    dropdown.querySelector(".dropdown-content").onclick = (e) => e.stopPropagation();
+
+    async function loadData() {
+      const text = await fetch(MATRIX_URL).then(r => r.text());
+      const rows = d3.csvParse(text);
+      const labels = rows.map(d => d[""]);
+      const n = labels.length;
+      const values = new Float32Array(n * n);
+      rows.forEach((row, i) => {
+        labels.forEach((lbl, j) => { values[i * n + j] = parseFloat(row[lbl]) || 0; });
+      });
+      return { labels, values, n };
+    }
+
+    function buildChordMatrix(data, thresh) {
+      const getNorm = lbl => lbl.split(":")[0];
+      const allNorms = [...new Set(data.labels.map(getNorm))].filter(Boolean).sort();
+      const norms = allNorms.filter(nm => selectedNorms.has(nm));
+      const nNorms = norms.length;
+      
+      const matrix = Array.from({ length: nNorms }, () => new Array(nNorms).fill(0));
+      
+      const nTotal = data.n;
+      const labels = data.labels;
+      const values = data.values;
+      
+      // 1. Group indices by norm
+      const groups = norms.map(nm => labels.map((l, idx) => getNorm(l) === nm ? idx : -1).filter(idx => idx !== -1));
+
+      for (let i = 0; i < nNorms; i++) {
+        const idcsI = groups[i];
+        let pflichtenSimilarToOthers = new Set();
+
+        for (let j = 0; j < nNorms; j++) {
+          if (i === j) continue;
+          const idcsJ = groups[j];
+          let matchingCount = 0;
+
+          idcsI.forEach(idxI => {
+            let isSimilarToAnyInJ = false;
+            for (let idxJ of idcsJ) {
+              if (values[idxI * nTotal + idxJ] >= thresh) {
+                isSimilarToAnyInJ = true;
+                break;
+              }
+            }
+            if (isSimilarToAnyInJ) {
+              matchingCount++;
+              pflichtenSimilarToOthers.add(idxI);
+            }
+          });
+          matrix[i][j] = matchingCount;
+        }
+        
+        matrix[i][i] = idcsI.length - pflichtenSimilarToOthers.size;
+      }
+      
+      return { matrix, norms, groupTotals: groups.map(g => g.length) };
+    }
+
+    function render(data) {
+      document.getElementById("loading").style.display = "none";
+      const { matrix, norms, groupTotals } = buildChordMatrix(data, threshold);
+      
+      const container = document.getElementById("chart");
+      container.innerHTML = "";
+      
+      if (norms.length === 0) {
+        container.innerHTML = "<div style='color: var(--text-muted); font-size: 0.9rem; display: flex; align-items: center; justify-content: center; height: 100%;'>Bitte wählen Sie mindestens eine Norm aus.</div>";
+        return;
+      }
+
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      const innerRadius = Math.min(width, height) * 0.5 - 120;
+      const outerRadius = innerRadius + 20;
+
+      const formatValue = (v) => v + (v === 1 ? " Pflicht" : " Pflichten");
+
+      const chord = d3.chord()
+        .padAngle(0.05)
+        .sortSubgroups(d3.descending);
+
+      const arc = d3.arc()
+        .innerRadius(innerRadius)
+        .outerRadius(outerRadius);
+
+      const ribbon = d3.ribbon()
+        .radius(innerRadius);
+
+      const svg = d3.select(container).append("svg")
+        .attr("viewBox", [-width / 2, -height / 2, width, height])
+        .style("width", "100%")
+        .style("height", "100%");
+
+      const chords = chord(matrix);
+
+      const color = d3.scaleOrdinal()
+        .domain(norms)
+        .range(NORM_COLORS);
+
+      const g = svg.append("g");
+
+      // Arcs
+      const group = g.append("g")
+        .selectAll("g")
+        .data(chords.groups)
+        .join("g");
+
+      group.append("path")
+        .attr("fill", d => color(norms[d.index]))
+        .attr("d", arc)
+        .on("mouseover", (event, d) => highlightGroup(d.index))
+        .on("mouseout", resetHighlight);
+
+      // Labels
+      group.append("text")
+        .each(d => { d.angle = (d.startAngle + d.endAngle) / 2; })
+        .attr("dy", ".35em")
+        .attr("class", "group-label")
+        .attr("transform", d => `
+          rotate(${(d.angle * 180 / Math.PI - 90)})
+          translate(${outerRadius + 10})
+          ${d.angle > Math.PI ? "rotate(180)" : ""}
+        `)
+        .attr("text-anchor", d => d.angle > Math.PI ? "end" : "start")
+        .text(d => norms[d.index]);
+
+      // Ribbons
+      const ribbons = g.append("g")
+        .attr("fill-opacity", 0.67)
+        .selectAll("path")
+        .data(chords)
+        .join("path")
+        .attr("class", "ribbon")
+        .attr("d", ribbon)
+        .attr("fill", d => color(norms[d.source.index]))
+        .attr("stroke", d => d3.rgb(color(norms[d.source.index])).darker());
+
+      const tooltip = d3.select("#tooltip");
+
+      ribbons.on("mouseover", (event, d) => {
+        const sourceName = norms[d.source.index];
+        const targetName = norms[d.target.index];
+        let content = "";
+        if (d.source.index === d.target.index) {
+          content = `<b>${sourceName}</b>: ${formatValue(d.source.value)} sind mit keinem anderen Gesetz ähnlich.`;
+        } else {
+          content = `<b>${sourceName} &rarr; ${targetName}</b>: ${formatValue(d.source.value)}<br/>` +
+                    `<b>${targetName} &rarr; ${sourceName}</b>: ${formatValue(d.target.value)}`;
+        }
+        tooltip.style("display", "block").html(content);
+      })
+      .on("mousemove", (event) => {
+        tooltip.style("left", (event.clientX + 15) + "px").style("top", (event.clientY + 15) + "px");
+      })
+      .on("mouseout", () => tooltip.style("display", "none"));
+
+      function highlightGroup(index) {
+        ribbons.classed("dimmed", d => d.source.index !== index && d.target.index !== index);
+      }
+      function resetHighlight() {
+        ribbons.classed("dimmed", false);
+      }
+    }
+
+    const slider = document.getElementById("threshold-slider");
+    const tVal = document.getElementById("threshold-val");
+    slider.oninput = () => {
+      threshold = parseFloat(slider.value);
+      tVal.textContent = (threshold * 100).toFixed(0) + "%";
+      if (rawData) render(rawData);
+    };
+
+    loadData().then(data => {
+      rawData = data;
+      const getNorm = lbl => lbl.split(":")[0];
+      const allNorms = [...new Set(rawData.labels.map(getNorm))].filter(Boolean).sort();
+      const normList = document.getElementById("norm-list");
+      
+      allNorms.forEach(norm => {
+        selectedNorms.add(norm);
+        const item = document.createElement("label");
+        item.className = "norm-item";
+        item.innerHTML = `<input type="checkbox" checked> <span>${norm}</span>`;
+        item.querySelector("input").onchange = (e) => {
+          if (e.target.checked) selectedNorms.add(norm);
+          else selectedNorms.delete(norm);
+          render(rawData);
+        };
+        normList.appendChild(item);
+      });
+
+      tVal.textContent = (threshold * 100).toFixed(0) + "%";
+      render(rawData);
+    });
+
+    window.onresize = () => { if (rawData) render(rawData); };
+  </script>
+</body>
+</html>
