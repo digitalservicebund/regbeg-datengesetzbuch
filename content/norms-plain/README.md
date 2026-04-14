@@ -49,7 +49,7 @@ Aktuelle Gesetzgebungsverfahren oder begleitende Durchführungsbestimmungen (Tex
 | **MDG** (Mobilitätsdatengesetz) | [MDG_Entwurf.txt](./Mobilitätsdatengesetz/MDG_Entwurf.txt) | [Plaintext](./Mobilitätsdatengesetz/MDG_Entwurf_Plaintext.txt) | Entwurf |
 | **FDG** (Forschungsdatengesetz) | [FDG_Eckpunkte.txt](./Forschungsdatengesetz/FDG_Eckpunkte.txt) | [Plaintext](./Forschungsdatengesetz/FDG_Eckpunkte_Plaintext.txt) | Entwurf |
 | **DA-DG** (Data Act-Durchführungsgesetz) | [DA-DG_Entwurf.txt](./DA-DG/DA-DG_Entwurf.txt) | [Plaintext](./DA-DG/DA-DG_Entwurf_Plaintext.txt) | Entwurf |
-| **KI-VO-DG** | [KI-VO-DG_Entwurf.txt](./KI-Verordnung/KI-VO-DG_Entwurf.txt) | [Plaintext](./KI-Verordnung/KI-VO-DG_Entwurf_Plaintext.txt) | Entwurf |
+| **KI-VO-DG** | [KI-VO-DG_Entwurf.txt](./KI-VO/KI-VO-DG_Entwurf.txt) | [Plaintext](./KI-VO/KI-VO-DG_Entwurf_Plaintext.txt) | Entwurf |
 
 ## 4. Ressourcen
 - **PDFs:** Die ursprünglichen Quelldateien befinden sich unter [/PDFs/](./PDFs/).

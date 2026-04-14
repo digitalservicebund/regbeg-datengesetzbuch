@@ -34,4 +34,4 @@
 ## Flankierende Durchführungsgesetze zum EU-Recht
 - [DGG-E](./content/norms-plain/DGG/DGG_Entwurf_Plaintext.txt)
 - [DA-DG](./content/norms-plain/DA-DG/DA-DG_Entwurf_Plaintext.txt)
-- [KI-VO-DG](./content/norms-plain/KI-Verordnung/KI-VO-DG_Entwurf_Plaintext.txt)
+- [KI-VO-DG](./content/norms-plain/KI-VO/KI-VO-DG_Entwurf_Plaintext.txt)
