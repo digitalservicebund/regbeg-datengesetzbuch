@@ -436,10 +436,40 @@
       </div>
 
       <div class="dropdown" id="norm-dropdown">
-        <button class="dropbtn" id="drop-toggle">Normen auswählen ▼</button>
+        <button class="dropbtn" id="drop-toggle">Normen ▼</button>
         <div class="dropdown-content">
           <div id="norm-list"></div>
         </div>
+      </div>
+
+      <div class="dropdown" id="filter-dropdown-art_der_pflicht">
+        <button class="dropbtn">Art der Pflicht ▼</button>
+        <div class="dropdown-content"><div id="filter-list-art_der_pflicht"></div></div>
+      </div>
+
+      <div class="dropdown" id="filter-dropdown-sektor">
+        <button class="dropbtn">Sektor ▼</button>
+        <div class="dropdown-content"><div id="filter-list-sektor"></div></div>
+      </div>
+
+      <div class="dropdown" id="filter-dropdown-wer">
+        <button class="dropbtn">Wer ▼</button>
+        <div class="dropdown-content"><div id="filter-list-wer"></div></div>
+      </div>
+
+      <div class="dropdown" id="filter-dropdown-an_wen">
+        <button class="dropbtn">An wen ▼</button>
+        <div class="dropdown-content"><div id="filter-list-an_wen"></div></div>
+      </div>
+
+      <div class="dropdown" id="filter-dropdown-ausloser_typ">
+        <button class="dropbtn">Auslöser Typ ▼</button>
+        <div class="dropdown-content"><div id="filter-list-ausloser_typ"></div></div>
+      </div>
+
+      <div class="dropdown" id="filter-dropdown-frist_typ">
+        <button class="dropbtn">Frist Typ ▼</button>
+        <div class="dropdown-content"><div id="filter-list-frist_typ"></div></div>
       </div>
 
       <div class="control-group">
@@ -494,24 +524,74 @@
     const MARGIN = { top: 70, right: 30, bottom: 30, left: 90 };
     const NORM_COLORS = ["#2563eb", "#d97706", "#059669", "#dc2626", "#7c3aed", "#db2777", "#4b5563", "#0891b2"];
 
+    const FILTER_FIELDS = [
+      { key: "art_der_pflicht", label: "Art der Pflicht", csvKey: "Art der Pflicht" },
+      { key: "sektor",          label: "Sektor",          csvKey: "Sektor" },
+      { key: "wer",             label: "Wer",             csvKey: "Wer" },
+      { key: "an_wen",          label: "An wen",          csvKey: "An wen" },
+      { key: "ausloser_typ",    label: "Auslöser Typ",    csvKey: "Auslöser Typ" },
+      { key: "frist_typ",       label: "Frist Typ",       csvKey: "Frist Typ" },
+    ];
+
     let threshold = 0.85;
     let colorMixEnabled = true;
     let rawData = null;
     let selectedNorms = new Set();
+    // Map from filter key → Set of selected values (empty Set = all pass)
+    const selectedFilters = Object.fromEntries(FILTER_FIELDS.map(f => [f.key, new Set()]));
     const colorScale = d3.scaleSequential().domain([0, 1]).interpolator(d3.interpolateRgb("#ffffff", "#4b5563"));
     const diagColor = "#f1f5f9";
     const sameLawColor = "#f8fafc"; // Neutral gray for same-law blocks
 
+
+    // ── URL Param Persistence ── //
+    function pushUrlParams() {
+      const params = new URLSearchParams();
+      params.set("t", threshold.toFixed(2));
+      params.set("norms", [...selectedNorms].sort().join(","));
+      FILTER_FIELDS.forEach(f => {
+        const vals = [...selectedFilters[f.key]].sort();
+        if (vals.length) params.set(f.key, vals.join("|"));
+      });
+      history.replaceState(null, "", "?" + params.toString());
+    }
+
+    function readUrlParams() {
+      const params = new URLSearchParams(location.search);
+      if (params.has("t")) threshold = parseFloat(params.get("t")) || 0.85;
+      return {
+        normsFromUrl: params.has("norms") ? params.get("norms").split(",").filter(Boolean) : null,
+        filtersFromUrl: Object.fromEntries(
+          FILTER_FIELDS.map(f => [f.key, params.has(f.key) ? new Set(params.get(f.key).split("|").filter(Boolean)) : new Set()])
+        ),
+      };
+    }
 
     // ── UI Handling ── //
     const dropToggle = document.getElementById("drop-toggle");
     const dropdown = document.getElementById("norm-dropdown");
     dropToggle.onclick = (e) => {
       e.stopPropagation();
+      // Close other dropdowns
+      document.querySelectorAll(".dropdown.open").forEach(o => { if (o !== dropdown) o.classList.remove("open"); });
       dropdown.classList.toggle("open");
     };
-    document.addEventListener("click", () => dropdown.classList.remove("open"));
     dropdown.querySelector(".dropdown-content").onclick = (e) => e.stopPropagation();
+
+    // Wire up all category filter dropdowns
+    FILTER_FIELDS.forEach(f => {
+      const dd = document.getElementById(`filter-dropdown-${f.key}`);
+      dd.querySelector(".dropbtn").onclick = (e) => {
+        e.stopPropagation();
+        document.querySelectorAll(".dropdown.open").forEach(o => { if (o !== dd) o.classList.remove("open"); });
+        dd.classList.toggle("open");
+      };
+      dd.querySelector(".dropdown-content").onclick = (e) => e.stopPropagation();
+    });
+
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown.open").forEach(dd => dd.classList.remove("open"));
+    });
 
     const helpBtn = document.getElementById("help-btn");
     const helpPane = document.getElementById("help-pane");
@@ -638,8 +718,19 @@
         const pos = start * CELL_SIZE, len = (end - start) * CELL_SIZE, col = normColor(norm);
         g.append("rect").attr("x", pos).attr("y", -MARGIN.top).attr("width", len).attr("height", MARGIN.top).attr("fill", col + "1a");
         g.append("rect").attr("x", -MARGIN.left).attr("y", pos).attr("width", MARGIN.left).attr("height", len).attr("fill", col + "1a");
-        g.append("text").attr("x", pos + len / 2).attr("y", -MARGIN.top / 2).attr("text-anchor", "middle").attr("font-size", "20px").attr("font-weight", "600").attr("fill", col).text(norm);
-        g.append("text").attr("x", -MARGIN.left / 2).attr("y", pos + len / 2).attr("text-anchor", "middle").attr("font-size", "20px").attr("font-weight", "600").attr("fill", col).attr("transform", `rotate(-90, ${-MARGIN.left / 2}, ${pos + len / 2})`).text(norm);
+        // Threshold: ~12px per character at 20px font size
+        const naturalW = 12 * norm.length;
+        const cx = pos + len / 2, cy = -MARGIN.top / 2;
+        const lx = -MARGIN.left / 2, ly = pos + len / 2;
+        if (len >= naturalW) {
+          // Enough space: render horizontally / vertically as normal
+          g.append("text").attr("x", cx).attr("y", cy).attr("text-anchor", "middle").attr("dominant-baseline", "middle").attr("font-size", "20px").attr("font-weight", "600").attr("fill", col).text(norm);
+          g.append("text").attr("x", lx).attr("y", ly).attr("text-anchor", "middle").attr("dominant-baseline", "middle").attr("font-size", "20px").attr("font-weight", "600").attr("fill", col).attr("transform", `rotate(-90,${lx},${ly})`).text(norm);
+        } else {
+          // Too narrow: rotate top label -90° so text runs along the band height
+          g.append("text").attr("x", cx).attr("y", cy).attr("text-anchor", "middle").attr("dominant-baseline", "middle").attr("font-size", "20px").attr("font-weight", "600").attr("fill", col).attr("transform", `rotate(-90,${cx},${cy})`).text(norm);
+          g.append("text").attr("x", lx).attr("y", ly).attr("text-anchor", "middle").attr("dominant-baseline", "middle").attr("font-size", "20px").attr("font-weight", "600").attr("fill", col).text(norm);
+        }
       });
 
       // Canvas
@@ -813,6 +904,7 @@
         tVal.textContent = (threshold * 100).toFixed(0) + "%";
         document.getElementById("stat-pairs").textContent = countP();
         drawCells();
+        pushUrlParams();
       };
 
       const mixToggle = document.getElementById("color-mix-toggle");
@@ -827,8 +919,21 @@
     // ── Data Bootstrap ── //
     function updateFilter() {
       if (!rawData) return;
+      pushUrlParams();
       const getNorm = lbl => lbl.split(":")[0];
-      const filteredLabels = rawData.labels.filter(lbl => selectedNorms.has(getNorm(lbl)));
+
+      const filteredLabels = rawData.labels.filter(lbl => {
+        if (!selectedNorms.has(getNorm(lbl))) return false;
+        const m = rawData.meta[lbl];
+        if (!m) return true;
+        return FILTER_FIELDS.every(f => {
+          const sel = selectedFilters[f.key];
+          if (!sel.size) return true; // nothing excluded = all pass
+          const val = (m[f.csvKey] || "").trim();
+          return !sel.has(val); // exclude items whose value is in the set
+        });
+      });
+
       const nT = rawData.labels.length, nF = filteredLabels.length;
       const fV = new Float32Array(nF * nF);
       const l2i = Object.fromEntries(rawData.labels.map((l, i) => [l, i]));
@@ -842,24 +947,121 @@
       render({ labels: filteredLabels, values: fV, n: nF, meta: rawData.meta });
     }
 
+    function updateFilterBtnLabel(field) {
+      const sel = selectedFilters[field.key];
+      const btn = document.querySelector(`#filter-dropdown-${field.key} .dropbtn`);
+      btn.textContent = sel.size ? `${field.label} (${sel.size}) ▼` : `${field.label} ▼`;
+    }
+
     loadData().then(data => {
       rawData = data;
       const getNorm = lbl => lbl.split(":")[0];
+      const { normsFromUrl, filtersFromUrl } = readUrlParams();
+
+      // Apply persisted filter selections
+      FILTER_FIELDS.forEach(f => {
+        if (filtersFromUrl[f.key].size) selectedFilters[f.key] = filtersFromUrl[f.key];
+      });
+
+      // ── Build norm dropdown ── //
       const allNorms = [...new Set(rawData.labels.map(getNorm))].filter(Boolean).sort();
       const normList = document.getElementById("norm-list");
+
+      // Select / Deselect all buttons for norms
+      const normBtnRow = document.createElement("div");
+      normBtnRow.style.cssText = "display:flex;gap:0.4rem;margin-bottom:0.4rem;";
+      normBtnRow.innerHTML = `
+        <button class="dropbtn" style="flex:1;padding:0.25rem 0.5rem;font-size:0.72rem;">Alle auswählen</button>
+        <button class="dropbtn" style="flex:1;padding:0.25rem 0.5rem;font-size:0.72rem;">Alle abwählen</button>
+      `;
+      const normItems = [];
+      normBtnRow.querySelectorAll("button")[0].onclick = () => {
+        normItems.forEach(({ inp, norm }) => { inp.checked = true; selectedNorms.add(norm); });
+        updateFilter();
+      };
+      normBtnRow.querySelectorAll("button")[1].onclick = () => {
+        normItems.forEach(({ inp, norm }) => {
+          if (selectedNorms.size > 1) { inp.checked = false; selectedNorms.delete(norm); }
+        });
+        // Keep at least one
+        if (selectedNorms.size === 0) { normItems[0].inp.checked = true; selectedNorms.add(normItems[0].norm); }
+        updateFilter();
+      };
+      normList.appendChild(normBtnRow);
+
       allNorms.forEach(norm => {
-        selectedNorms.add(norm);
+        const checked = normsFromUrl ? normsFromUrl.includes(norm) : true;
+        if (checked) selectedNorms.add(norm);
         const item = document.createElement("label");
         item.className = "norm-item";
-        item.innerHTML = `<input type="checkbox" checked> <span>${norm}</span>`;
-        item.querySelector("input").onchange = (e) => {
+        item.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""}> <span>${norm}</span>`;
+        const inp = item.querySelector("input");
+        inp.onchange = (e) => {
           if (e.target.checked) selectedNorms.add(norm);
           else if (selectedNorms.size > 1) selectedNorms.delete(norm);
           else { e.target.checked = true; return; }
           updateFilter();
         };
         normList.appendChild(item);
+        normItems.push({ inp, norm });
       });
+
+      // ── Build category filter dropdowns ── //
+      FILTER_FIELDS.forEach(field => {
+        const valSet = new Set();
+        rawData.labels.forEach(lbl => {
+          const m = rawData.meta[lbl];
+          if (m && m[field.csvKey]) {
+            const v = m[field.csvKey].trim();
+            if (v) valSet.add(v);
+          }
+        });
+        const allVals = [...valSet].sort();
+        const listEl = document.getElementById(`filter-list-${field.key}`);
+
+        // Select / Deselect all buttons
+        const btnRow = document.createElement("div");
+        btnRow.style.cssText = "display:flex;gap:0.4rem;margin-bottom:0.4rem;";
+        btnRow.innerHTML = `
+          <button class="dropbtn" style="flex:1;padding:0.25rem 0.5rem;font-size:0.72rem;">Alle auswählen</button>
+          <button class="dropbtn" style="flex:1;padding:0.25rem 0.5rem;font-size:0.72rem;">Alle abwählen</button>
+        `;
+        const valueItems = [];
+        btnRow.querySelectorAll("button")[0].onclick = () => {
+          selectedFilters[field.key].clear();
+          valueItems.forEach(({ inp }) => { inp.checked = true; });
+          updateFilterBtnLabel(field);
+          updateFilter();
+        };
+        btnRow.querySelectorAll("button")[1].onclick = () => {
+          valueItems.forEach(({ inp, val }) => { inp.checked = false; selectedFilters[field.key].add(val); });
+          updateFilterBtnLabel(field);
+          updateFilter();
+        };
+        listEl.appendChild(btnRow);
+
+        allVals.forEach(val => {
+          const item = document.createElement("label");
+          item.className = "norm-item";
+          const checked = !selectedFilters[field.key].has(val);
+          item.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""}> <span>${val}</span>`;
+          const inp = item.querySelector("input");
+          inp.onchange = () => {
+            if (inp.checked) selectedFilters[field.key].delete(val);
+            else selectedFilters[field.key].add(val);
+            updateFilterBtnLabel(field);
+            updateFilter();
+          };
+          listEl.appendChild(item);
+          valueItems.push({ inp, val });
+        });
+
+        updateFilterBtnLabel(field);
+      });
+
+      // Apply persisted threshold
+      document.getElementById("threshold-slider").value = threshold;
+      document.getElementById("threshold-val").textContent = (threshold * 100).toFixed(0) + "%";
       updateFilter();
     }).catch(console.error);
   </script>
