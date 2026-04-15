@@ -176,6 +176,39 @@ HEADING_RE = re.compile(
 )
 
 
+def _split_into_n_parts(text: str, n: int) -> List[str]:
+    """Split *text* into exactly *n* roughly equal parts.
+
+    Splits are made at the nearest ``\\n\\n`` boundary to each target position.
+    Falls back to a hard character split if no paragraph boundary is found nearby.
+    """
+    if n <= 1:
+        return [text]
+    part_size = len(text) // n
+    parts: List[str] = []
+    start = 0
+    for i in range(1, n):
+        target = start + part_size
+        if target >= len(text):
+            break
+        # Search for a \n\n near the target (within ±10 % of part_size)
+        window = max(200, part_size // 10)
+        search_start = max(start, target - window)
+        search_end = min(len(text), target + window)
+        best = text.rfind("\n\n", search_start, target)
+        if best == -1 or best <= start:
+            best = text.find("\n\n", target, search_end)
+        if best == -1 or best <= start:
+            best = target  # hard split
+        else:
+            best += 2  # skip past the \n\n
+        parts.append(text[start:best].strip())
+        start = best
+    if start < len(text):
+        parts.append(text[start:].strip())
+    return [p for p in parts if p]
+
+
 def split_into_chunks(text: str, max_chars: int) -> List[str]:
     """Split norm text into processable chunks.
 
@@ -362,6 +395,7 @@ def _extract_from_norm(
     output_path: Path | None = None,
     skip_chunks: int = 0,
     max_chunks: int | None = None,
+    sub_chunks: int = 1,
 ) -> int:
     """Process one norm file: chunk → LLM → deduplicate → write to CSV.
     
@@ -391,9 +425,32 @@ def _extract_from_norm(
             print(f"  Reached max-chunks limit ({max_chunks}). Stopping for {norm_name}.")
             break
 
-        print(f"  Chunk {i}/{len(chunks)} ({len(chunk):,} chars)…", end=" ", flush=True)
-        items = _extract_from_chunk(chunk, norm_name, task, client, model_name)
-        print(f"→ {len(items)} Einträge gefunden")
+        sub_chunk_list: List[str]
+        if sub_chunks > 1:
+            sub_chunk_list = _split_into_n_parts(chunk, sub_chunks)
+            print(
+                f"  Chunk {i}/{len(chunks)} ({len(chunk):,} chars) "
+                f"→ subdivided into {len(sub_chunk_list)} sub-chunks…"
+            )
+        else:
+            sub_chunk_list = [chunk]
+            print(f"  Chunk {i}/{len(chunks)} ({len(chunk):,} chars)…", end=" ", flush=True)
+
+        items: list = []
+        for si, sub_chunk in enumerate(sub_chunk_list, 1):
+            if sub_chunks > 1:
+                print(
+                    f"    Sub-chunk {si}/{len(sub_chunk_list)} ({len(sub_chunk):,} chars)…",
+                    end=" ",
+                    flush=True,
+                )
+            sub_items = _extract_from_chunk(sub_chunk, norm_name, task, client, model_name)
+            if sub_chunks > 1:
+                print(f"→ {len(sub_items)} Einträge gefunden")
+            items.extend(sub_items)
+
+        if sub_chunks <= 1:
+            print(f"→ {len(items)} Einträge gefunden")
         processed_count += 1
 
         chunk_results: List[dict] = []
@@ -475,6 +532,17 @@ def build_arg_parser(description: str, default_output: Path) -> argparse.Argumen
         default=None,
         help="Custom API key. If omitted, uses discovery logic (env var or 1Password).",
     )
+    parser.add_argument(
+        "--sub-chunks",
+        type=int,
+        default=1,
+        metavar="N",
+        help=(
+            "Split each selected chunk into N roughly equal sub-chunks before sending "
+            "to the LLM. Useful when a chunk causes server timeouts due to size. "
+            "Default: 1 (no subdivision)."
+        ),
+    )
     return parser
 
 
@@ -535,6 +603,7 @@ def run_extraction(task: ExtractionTask) -> None:
             output_path=output_path,
             skip_chunks=args.skip_chunks,
             max_chunks=args.max_chunks,
+            sub_chunks=args.sub_chunks,
         )
         total_results += count
 
