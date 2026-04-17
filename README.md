@@ -30,6 +30,19 @@ To analyze obligations from the downloaded norms, use the script `extract_meldep
 
     uv run scripts/extract_meldepflichten_llm.py --norm DSGVO
 
+## Disclaimer
+
+Before using the results of this repository, keep in mind, that it makes use of LLMs at the core to produce those results.
+
+> [!IMPORTANT]
+> The script `extract_meldepflichten_llm.py` and its base `llm_extract_base.py` process norms and extracts obligations by using an LLM. This can result in wrong extracted obligations due to hallucination or other forms of errors. This project does not ensure completeness or correctness.
+
+> [!IMPORTANT]
+> The script `similarity_pflichten.py` analyses pairs of obligations for similarity using a general [Sentence Transformer](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2). This can lead to false-positives and false-negatives. This project does not ensure correctness of the similarity analysis.
+
+> [!IMPORTANT]
+> The script `qa_meldepflichten_llm.py` performs quality assurance on extracted obligations using both fuzzy matching against a manual checks file and LLM-based evaluation. The LLM scores are estimates and may not reflect true correctness. This project does not ensure the reliability of the QA results.
+
 ## Contributing
 
 [Deutsche sprache weiter unten](#mitwirken)
