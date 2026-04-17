@@ -6,7 +6,7 @@ import csv
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-GENERATED_DIR = BASE_DIR / "content" / "analyzed"
+GENERATED_DIR = BASE_DIR / "docs" / "data"
 OUTPUT_FILE = GENERATED_DIR / "Meldepflichten_LLM_All.csv"
 
 def concat_csvs():
