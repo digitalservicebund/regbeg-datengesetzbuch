@@ -22,7 +22,8 @@ from typing import List, Dict, Any
 
 # Add current folder to path to allow importing from extract script
 sys.path.append(str(Path(__file__).parent))
-from extract_meldepflichten_llm import get_langdock_token, SYSTEM_PROMPT, discover_norm_files, NORMEN_DIR
+from llm_extract_base import get_langdock_token, discover_norm_files, NORMEN_DIR
+from extract_meldepflichten_llm import SYSTEM_PROMPT
 import requests
 
 COLUMNS_TO_EVALUATE = [
@@ -344,7 +345,7 @@ def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], n
 
 def main():
     parser = argparse.ArgumentParser(description="QA limits for extracted Meldepflichten CSV files.")
-    parser.add_argument("--norm", required=True, help="The Norm identifier (e.g., DGA). Automatically maps to content/analyzed/Meldepflichten_LLM_{NORM}.csv")
+    parser.add_argument("--norm", required=True, help="The Norm identifier (e.g., DGA). Automatically maps to ../docs/data/Meldepflichten_LLM_{NORM}.csv")
     parser.add_argument("--seed", type=int, default=42, help="Random seed for sampling rows.")
     parser.add_argument("--manual-checks", default=None, help="Path to JSON file containing manual checks.")
     parser.add_argument("--num-samples", type=int, default=0, help="Number of random rows to cross-check with the LLM.")
