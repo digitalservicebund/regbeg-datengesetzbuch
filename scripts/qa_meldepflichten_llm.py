@@ -71,7 +71,7 @@ def normalize_referenz(ref: str) -> str:
     ref = re.sub(r'[^a-z0-9]', '', ref)
     return ref
 
-def find_context_window(text: str, referenz: str, zitat: str, window_size: int = 8000) -> tuple[str, str]:
+def find_context_window(text: str, referenz: str, zitat: str, window_size: int = 8000) -> tuple[str, str, int]:
     """
     Locate the best context window in the full text using a density-based search.
     """
@@ -112,6 +112,8 @@ def find_context_window(text: str, referenz: str, zitat: str, window_size: int =
         
         method = f"zitat (density match: {best_count} points)"
     
+    density_match_points = best_count if best_count >= 0 else 0
+    
     # Fallback to Referenz parsing if no good zitat cluster found
     if best_center == -1:
         referenz_str = referenz or ""
@@ -136,7 +138,7 @@ def find_context_window(text: str, referenz: str, zitat: str, window_size: int =
                 
     start = max(0, best_center - window_size // 2)
     end = min(len(text), start + window_size)
-    return text[start:end], method
+    return text[start:end], method, density_match_points
 
 def run_manual_checks(csv_rows: List[Dict[str, str]], manual_checks: List[Dict[str, Any]], norm: str):
     print("\n" + "="*60)
@@ -206,12 +208,14 @@ def run_manual_checks(csv_rows: List[Dict[str, str]], manual_checks: List[Dict[s
         avg_score = total_score / len(fields_to_check)
         print(f"  -> Total Validation Score: {avg_score:.1f}%")
 
-def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], norm_text: str, verbose: bool = False):
+def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], norm_text: str, verbose: bool = False, csv_output_path: Path = None):
     print("\n" + "="*60)
     print(f"--- LLM CROSS-CHECKS (Sample Size: {len(sampled_indices)}) ---")
     if not csv_rows or not sampled_indices:
         print("No CSV rows selected for LLM checks.")
         return
+
+    qa_results: List[Dict[str, Any]] = []
 
     token = get_langdock_token()
     # Dynamic tool schema for Anthropic (does not support $defs, so we build it manually)
@@ -246,8 +250,8 @@ def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], n
         # Dynamically extract context window
         zitat = row.get("Zitat") or ""
         referenz = row.get("Referenz") or ""
-        context_window, method = find_context_window(norm_text, referenz, zitat)
-        
+        context_window, method, density_match_points = find_context_window(norm_text, referenz, zitat)
+
         print(f"\nEvaluating Row {row_num}: Norm={row.get('Norm')}, Referenz={referenz}")
         print(f"  Context found via: {method}")
         
@@ -324,16 +328,25 @@ def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], n
             row_score_sum = 0
             
             evals_dict = parsed.column_evaluations.model_dump(by_alias=True)
+            result_row: Dict[str, Any] = {
+                "norm": row.get("Norm", ""),
+                "reference": referenz,
+                "context_found_via": method,
+                "density_match": density_match_points,
+                "valid_meldepflicht": parsed.is_valid_meldepflicht,
+            }
             for col in COLUMNS_TO_EVALUATE:
                 col_eval = evals_dict.get(col, {})
                 reasoning = col_eval.get('reasoning', "Keine Begründung gegeben.")
                 score = col_eval.get('score_percent', 0)
                 print(f"  - {col}: {score}% | {reasoning}")
                 row_score_sum += score
+                result_row[col] = score
             
             row_avg = row_score_sum / len(COLUMNS_TO_EVALUATE) if COLUMNS_TO_EVALUATE else 0
             print(f"  -> Durchschnittliche Zeilenqualität: {row_avg:.1f}%")
             total_score += row_avg
+            qa_results.append(result_row)
                 
         except Exception as e:
             print(f"  [ERROR] LLM Evaluation failed for row {row_num}: {e}")
@@ -342,6 +355,14 @@ def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], n
         avg_score = total_score / len(sampled_indices)
         print("\n" + "="*60)
         print(f"AVERAGE LLM QUALITY SCORE: {avg_score:.1f}%")
+
+    if qa_results and csv_output_path:
+        fieldnames = ["norm", "reference", "context_found_via", "density_match", "valid_meldepflicht"] + COLUMNS_TO_EVALUATE
+        with open(csv_output_path, "w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames, delimiter=";")
+            writer.writeheader()
+            writer.writerows(qa_results)
+        print(f"QA results written to {csv_output_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="QA limits for extracted Meldepflichten CSV files.")
@@ -352,6 +373,7 @@ def main():
     parser.add_argument("--rows", help="Specific row numbers or ranges (e.g., '10-20,35'). Refers to row numbers in the CSV file (2-indexed for first data row).")
     parser.add_argument("--verbose", action="store_true", help="Output the full context window for each row.")
     parser.add_argument("--skip-llm-checks", action="store_true", help="Skip the LLM evaluation phase entirely.")
+    parser.add_argument("--qa-output", default=None, help="Path to write QA results CSV (default: docs/data/QA_LLM_{NORM}.csv).")
     
     args = parser.parse_args()
     
@@ -428,7 +450,8 @@ def main():
         print(f"[WARN] Could not find original text for norm {args.norm} in {NORMEN_DIR}. Context matching may fail.")
     
     if selected_indices and not args.skip_llm_checks:
-        run_llm_checks(csv_rows, selected_indices, norm_text, args.verbose)
+        qa_output_path = Path(args.qa_output) if args.qa_output else root_dir / "docs" / "data" / f"QA_LLM_{args.norm}.csv"
+        run_llm_checks(csv_rows, selected_indices, norm_text, args.verbose, csv_output_path=qa_output_path)
     elif args.skip_llm_checks:
         print("\nSkipping LLM checks as requested.")
 
