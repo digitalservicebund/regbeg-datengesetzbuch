@@ -643,6 +643,7 @@
     const CELL_SIZE = 4;
     const MARGIN = { top: 70, right: 30, bottom: 30, left: 90 };
     const NORM_COLORS = ["#2563eb", "#d97706", "#059669", "#dc2626", "#7c3aed", "#db2777", "#4b5563", "#0891b2"];
+    const DEFAULT_NORMS = new Set(["DSGVO", "BDSG", "TDDDG", "DDG", "DGA"]);
 
     const FILTER_FIELDS = [
       { key: "art_der_pflicht", label: "Art der Pflicht", csvKey: "Art der Pflicht" },
@@ -656,6 +657,7 @@
     let threshold = 0.85;
     let colorMixEnabled = true;
     let rawData = null;
+    const normFetchInFlight = {};
     let selectedNorms = new Set();
     // Map from filter key → Set of selected values (empty Set = all pass)
     const selectedFilters = Object.fromEntries(FILTER_FIELDS.map(f => [f.key, new Set()]));
@@ -741,46 +743,34 @@
       const matrixRows = d3.csvParse(matrixText);
       const labels = matrixRows.map(r => r[""]);
       const n = labels.length;
-      const getNorm = lbl => lbl.split(":")[0];
-      const norms = [...new Set(labels.map(getNorm))].filter(x => x && !x.startsWith("row_"));
-
-      const csvData = await Promise.all(norms.map(async norm => {
-        try {
-          const response = await fetch(`${CSV_BASE_URL}${norm}.csv`);
-          if (!response.ok) {
-            console.warn(`[WARN] Failed to load CSV for ${norm}: ${response.status} ${response.statusText}`);
-            return { norm, rows: [] };
-          }
-          const text = await response.text();
-          const cleanText = text.replace(/^\uFEFF/, ""); // Strip BOM if present
-          return { norm, rows: d3.dsvFormat(";").parse(cleanText) };
-        } catch (e) {
-          console.error(`[ERROR] Fetch error for ${norm}:`, e);
-          return { norm, rows: [] };
-        }
-      }));
-
-      const normFileMap = Object.fromEntries(csvData.map(d => [d.norm, d.rows]));
-      const meta = {};
-      const normCounters = {};
-
-      labels.forEach(lbl => {
-        const norm = getNorm(lbl);
-        if (norm.startsWith("row_")) return;
-        if (typeof normCounters[norm] === "undefined") normCounters[norm] = 0;
-        const localIdx = normCounters[norm]++;
-        const rows = normFileMap[norm] || [];
-        if (rows[localIdx]) {
-          meta[lbl] = { ...rows[localIdx], _localIdx: localIdx };
-        }
-      });
-
       const values = new Float32Array(n * n);
       matrixRows.forEach((row, i) => {
         labels.forEach((lbl, j) => { values[i * n + j] = parseFloat(row[lbl]) || 0; });
       });
+      return { labels, values, n, meta: {} };
+    }
 
-      return { labels, values, n, meta };
+    // ── Lazy norm CSV loader ── //
+    async function ensureNormLoaded(norm) {
+      if (norm in normFetchInFlight) return normFetchInFlight[norm];
+      const getNorm = lbl => lbl.split(":")[0];
+      normFetchInFlight[norm] = (async () => {
+        try {
+          const response = await fetch(`${CSV_BASE_URL}${norm}.csv`);
+          if (!response.ok) { console.warn(`[WARN] Failed to load CSV for ${norm}: ${response.status}`); return; }
+          const text = await response.text();
+          const rows = d3.dsvFormat(";").parse(text.replace(/^\uFEFF/, ""));
+          let localIdx = 0;
+          rawData.labels.forEach(lbl => {
+            if (getNorm(lbl) !== norm) return;
+            if (rows[localIdx]) rawData.meta[lbl] = { ...rows[localIdx], _localIdx: localIdx };
+            localIdx++;
+          });
+        } catch (e) {
+          console.error(`[ERROR] Fetch error for ${norm}:`, e);
+        }
+      })();
+      return normFetchInFlight[norm];
     }
 
     function render({ labels, values, n, meta }) {
@@ -952,6 +942,9 @@
         const ci = Math.floor(my / CELL_SIZE), cj = Math.floor(mx / CELL_SIZE);
         if (ci < 0 || ci >= n || cj < 0 || cj >= n) { tooltip.style.display = "none"; return; }
         const lblI = sortedLabels[ci], lblJ = sortedLabels[cj], score = (ci === cj) ? null : values[sortedIdx[ci] * n + sortedIdx[cj]];
+        // Trigger background load so subsequent hovers/clicks show full meta
+        ensureNormLoaded(getNorm(lblI));
+        if (ci !== cj) ensureNormLoaded(getNorm(lblJ));
         const mI = meta[lblI] || {}, mJ = meta[lblJ] || {};
 
         tooltip.innerHTML = (ci === cj)
@@ -977,12 +970,21 @@
         tooltip.style.left = left + "px";
         tooltip.style.top = top + "px";
       }).on("mouseleave", () => tooltip.style.display = "none")
-        .on("click", (ev) => {
+        .on("click", async (ev) => {
           const [mx, my] = d3.pointer(ev);
           const ci = Math.floor(my / CELL_SIZE), cj = Math.floor(mx / CELL_SIZE);
           if (ci < 0 || ci >= n || cj < 0 || cj >= n) return;
 
           const lblI = sortedLabels[ci], lblJ = sortedLabels[cj], score = (ci === cj) ? null : values[sortedIdx[ci] * n + sortedIdx[cj]];
+
+          // Show loading state while fetching meta if not yet available
+          detailsPane.innerHTML = `<div style="padding:2rem;text-align:center;color:var(--text-muted)">Lade Daten\u2026</div>`;
+          detailsPane.classList.add("show");
+          await Promise.all([
+            ensureNormLoaded(getNorm(lblI)),
+            ...(ci !== cj ? [ensureNormLoaded(getNorm(lblJ))] : []),
+          ]);
+
           const mI = meta[lblI] || {}, mJ = meta[lblJ] || {};
 
           detailsPane.innerHTML = `
@@ -1103,7 +1105,7 @@
       normActionsEl.appendChild(normBtnRow);
 
       allNorms.forEach(norm => {
-        const checked = normsFromUrl ? normsFromUrl.includes(norm) : true;
+        const checked = normsFromUrl ? normsFromUrl.includes(norm) : DEFAULT_NORMS.has(norm);
         if (checked) selectedNorms.add(norm);
         const item = document.createElement("label");
         item.className = "norm-item";
@@ -1121,63 +1123,73 @@
 
       // ── Build category filter sections in sidebar ── //
       const sidebarBody = document.getElementById("filter-sidebar-body");
-      FILTER_FIELDS.forEach(field => {
-        const valSet = new Set();
-        rawData.labels.forEach(lbl => {
-          const m = rawData.meta[lbl];
-          if (m && m[field.csvKey]) {
-            const v = m[field.csvKey].trim();
-            if (v) valSet.add(v);
-          }
-        });
-        const allVals = [...valSet].sort();
 
-        const section = document.createElement("div");
-        section.className = "filter-section";
+      function buildCategoryFilters() {
+        sidebarBody.querySelectorAll(".filter-section:not(#filter-section-norms)").forEach(el => el.remove());
+        FILTER_FIELDS.forEach(field => {
+          const valSet = new Set();
+          rawData.labels.forEach(lbl => {
+            const m = rawData.meta[lbl];
+            if (m && m[field.csvKey]) {
+              const v = m[field.csvKey].trim();
+              if (v) valSet.add(v);
+            }
+          });
+          const allVals = [...valSet].sort();
+          if (!allVals.length) return;
 
-        const titleEl = document.createElement("div");
-        titleEl.className = "filter-section-title";
-        titleEl.textContent = field.label;
-        section.appendChild(titleEl);
+          const section = document.createElement("div");
+          section.className = "filter-section";
 
-        const actions = document.createElement("div");
-        actions.className = "filter-section-actions";
-        actions.innerHTML = `<button>Alle auswählen</button><button>Alle abwählen</button>`;
-        section.appendChild(actions);
+          const titleEl = document.createElement("div");
+          titleEl.className = "filter-section-title";
+          titleEl.textContent = field.label;
+          section.appendChild(titleEl);
 
-        const valueItems = [];
-        actions.querySelectorAll("button")[0].onclick = () => {
-          selectedFilters[field.key].clear();
-          valueItems.forEach(({ inp }) => { inp.checked = true; });
-          updateFilter();
-        };
-        actions.querySelectorAll("button")[1].onclick = () => {
-          valueItems.forEach(({ inp, val }) => { inp.checked = false; selectedFilters[field.key].add(val); });
-          updateFilter();
-        };
+          const actions = document.createElement("div");
+          actions.className = "filter-section-actions";
+          actions.innerHTML = `<button>Alle auswählen</button><button>Alle abwählen</button>`;
+          section.appendChild(actions);
 
-        allVals.forEach(val => {
-          const item = document.createElement("label");
-          item.className = "norm-item";
-          const checked = !selectedFilters[field.key].has(val);
-          item.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""}> <span>${val}</span>`;
-          const inp = item.querySelector("input");
-          inp.onchange = () => {
-            if (inp.checked) selectedFilters[field.key].delete(val);
-            else selectedFilters[field.key].add(val);
+          const valueItems = [];
+          actions.querySelectorAll("button")[0].onclick = () => {
+            selectedFilters[field.key].clear();
+            valueItems.forEach(({ inp }) => { inp.checked = true; });
             updateFilter();
           };
-          section.appendChild(item);
-          valueItems.push({ inp, val });
-        });
+          actions.querySelectorAll("button")[1].onclick = () => {
+            valueItems.forEach(({ inp, val }) => { inp.checked = false; selectedFilters[field.key].add(val); });
+            updateFilter();
+          };
 
-        sidebarBody.appendChild(section);
-      });
+          allVals.forEach(val => {
+            const item = document.createElement("label");
+            item.className = "norm-item";
+            const checked = !selectedFilters[field.key].has(val);
+            item.innerHTML = `<input type="checkbox" ${checked ? "checked" : ""}> <span>${val}</span>`;
+            const inp = item.querySelector("input");
+            inp.onchange = () => {
+              if (inp.checked) selectedFilters[field.key].delete(val);
+              else selectedFilters[field.key].add(val);
+              updateFilter();
+            };
+            section.appendChild(item);
+            valueItems.push({ inp, val });
+          });
+
+          sidebarBody.appendChild(section);
+        });
+      }
 
       // Apply persisted threshold
       document.getElementById("threshold-slider").value = threshold;
       document.getElementById("threshold-val").textContent = (threshold * 100).toFixed(0) + "%";
       updateFilter();
+
+      // Background-preload selected norms' CSVs, then build category filter sections
+      Promise.all([...selectedNorms].map(ensureNormLoaded)).then(() => {
+        buildCategoryFilters();
+      });
     }).catch(console.error);
   </script>
 </body>
