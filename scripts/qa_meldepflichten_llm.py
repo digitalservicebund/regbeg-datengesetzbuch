@@ -18,7 +18,7 @@ import sys
 import re
 from pathlib import Path
 from pydantic import BaseModel, create_model, Field
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Callable, Union
 
 # Add current folder to path to allow importing from extract script
 sys.path.append(str(Path(__file__).parent))
@@ -113,6 +113,13 @@ def find_context_window(text: str, referenz: str, zitat: str, window_size: int =
         method = f"zitat (density match: {best_count} points)"
     
     density_match_points = best_count if best_count >= 0 else 0
+
+    # Only trust the zitat density match if it covers at least 60% of unique zitat words
+    zitat_word_count = int(len(unique_zitat_words))
+    minimum_words = min(5, zitat_word_count)
+    min_required = max(minimum_words, int(zitat_word_count * 0.6))
+    if best_count < min_required:
+        best_center = -1
     
     # Fallback to Referenz parsing if no good zitat cluster found
     if best_center == -1:
@@ -208,7 +215,7 @@ def run_manual_checks(csv_rows: List[Dict[str, str]], manual_checks: List[Dict[s
         avg_score = total_score / len(fields_to_check)
         print(f"  -> Total Validation Score: {avg_score:.1f}%")
 
-def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], norm_text: str, verbose: bool = False, csv_output_path: Path = None):
+def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], norm_text: Union[str, Callable[[Dict[str, str]], str]], verbose: bool = False, csv_output_path: Path = None):
     print("\n" + "="*60)
     print(f"--- LLM CROSS-CHECKS (Sample Size: {len(sampled_indices)}) ---")
     if not csv_rows or not sampled_indices:
@@ -250,7 +257,8 @@ def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], n
         # Dynamically extract context window
         zitat = row.get("Zitat") or ""
         referenz = row.get("Referenz") or ""
-        context_window, method, density_match_points = find_context_window(norm_text, referenz, zitat)
+        row_norm_text = norm_text(row) if callable(norm_text) else norm_text
+        context_window, method, density_match_points = find_context_window(row_norm_text, referenz, zitat)
 
         print(f"\nEvaluating Row {row_num}: Norm={row.get('Norm')}, Referenz={referenz}")
         print(f"  Context found via: {method}")
@@ -333,7 +341,7 @@ def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], n
                 "reference": referenz,
                 "context_found_via": method,
                 "density_match": density_match_points,
-                "valid_meldepflicht": parsed.is_valid_meldepflicht,
+                "valid_meldepflicht": 1 if parsed.is_valid_meldepflicht else 0,
             }
             for col in COLUMNS_TO_EVALUATE:
                 col_eval = evals_dict.get(col, {})
@@ -341,7 +349,7 @@ def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], n
                 score = col_eval.get('score_percent', 0)
                 print(f"  - {col}: {score}% | {reasoning}")
                 row_score_sum += score
-                result_row[col] = score
+                result_row[col] = round(score / 100, 2)
             
             row_avg = row_score_sum / len(COLUMNS_TO_EVALUATE) if COLUMNS_TO_EVALUATE else 0
             print(f"  -> Durchschnittliche Zeilenqualität: {row_avg:.1f}%")
@@ -366,7 +374,7 @@ def run_llm_checks(csv_rows: List[Dict[str, str]], sampled_indices: List[int], n
 
 def main():
     parser = argparse.ArgumentParser(description="QA limits for extracted Meldepflichten CSV files.")
-    parser.add_argument("--norm", required=True, help="The Norm identifier (e.g., DGA). Automatically maps to ../docs/data/Meldepflichten_LLM_{NORM}.csv")
+    parser.add_argument("--norm", default=None, help="The Norm identifier (e.g., DGA). If omitted, all Meldepflichten CSVs in docs/data/ are loaded.")
     parser.add_argument("--seed", type=int, default=42, help="Random seed for sampling rows.")
     parser.add_argument("--manual-checks", default=None, help="Path to JSON file containing manual checks.")
     parser.add_argument("--num-samples", type=int, default=0, help="Number of random rows to cross-check with the LLM.")
@@ -378,23 +386,33 @@ def main():
     args = parser.parse_args()
     
     root_dir = Path(__file__).parent.parent
-    csv_path = root_dir / "docs" / "data" / f"Meldepflichten_LLM_{args.norm}.csv"
-    
-    if not csv_path.exists():
-        print(f"Error: CSV file not found at {csv_path}")
-        sys.exit(1)
+    data_dir = root_dir / "docs" / "data"
+
+    if args.norm:
+        csv_paths = [data_dir / f"Meldepflichten_LLM_{args.norm}.csv"]
+        if not csv_paths[0].exists():
+            print(f"Error: CSV file not found at {csv_paths[0]}")
+            sys.exit(1)
+        default_qa_output = data_dir / f"QA_LLM_{args.norm}.csv"
+    else:
+        csv_paths = sorted(data_dir.glob("Meldepflichten_LLM_*.csv"))
+        if not csv_paths:
+            print(f"Error: No Meldepflichten_LLM_*.csv files found in {data_dir}")
+            sys.exit(1)
+        default_qa_output = data_dir / "QA_LLM_All.csv"
         
     # Read CSV
     csv_rows = []
-    with open(csv_path, "r", encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f, delimiter=";")
-        for row in reader:
-            # Skip rows that are just exact copies of the header
-            if row.get("Referenz") == "Referenz":
-                continue
-            csv_rows.append(row)
-            
-    print(f"Loaded {len(csv_rows)} data rows (skipped potential header duplicates) from {csv_path}")
+    for csv_path in csv_paths:
+        with open(csv_path, "r", encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f, delimiter=";")
+            for row in reader:
+                # Skip rows that are just exact copies of the header
+                if row.get("Referenz") == "Referenz":
+                    continue
+                csv_rows.append(row)
+        
+    print(f"Loaded {len(csv_rows)} data rows (skipped potential header duplicates) from {len(csv_paths)} file(s)")
     
     # Define eligible indices
     eligible_indices = []
@@ -433,25 +451,34 @@ def main():
         if mc_path.exists():
             with open(mc_path, "r", encoding="utf-8") as f:
                 manual_checks = json.load(f)
-            run_manual_checks(csv_rows, manual_checks, args.norm)
+            norms_to_check = [args.norm] if args.norm else list({r.get("Norm") for r in csv_rows if r.get("Norm")})
+            for norm in norms_to_check:
+                run_manual_checks(csv_rows, manual_checks, norm)
         else:
             print(f"[WARN] Manual checks file {mc_path} not found. Skipping.")
             
     # Load the original text for QA context extraction
     norm_text = ""
     # We use discover_norm_files to find the correct text file
-    norm_files = discover_norm_files(NORMEN_DIR, [args.norm])
-    if norm_files:
-        _norm_name, file_path = norm_files[0]
-        with open(file_path, "r", encoding="utf-8") as f:
-            norm_text = f.read()
-        print(f"Loaded {len(norm_text)} characters from original norm text ({file_path.name}).")
-    else:
-        print(f"[WARN] Could not find original text for norm {args.norm} in {NORMEN_DIR}. Context matching may fail.")
+    norms_to_discover = [args.norm] if args.norm else list({r.get("Norm") for r in csv_rows if r.get("Norm")})
+    norm_texts: Dict[str, str] = {}
+    for norm_name in norms_to_discover:
+        norm_files = discover_norm_files(NORMEN_DIR, [norm_name])
+        if norm_files:
+            _norm_name, file_path = norm_files[0]
+            with open(file_path, "r", encoding="utf-8") as f:
+                norm_texts[norm_name] = f.read()
+            print(f"Loaded {len(norm_texts[norm_name])} characters from original norm text ({file_path.name}).")
+        else:
+            print(f"[WARN] Could not find original text for norm {norm_name} in {NORMEN_DIR}. Context matching may fail.")
+    
+    # Build combined norm_text lookup for run_llm_checks — pass per-row lookup via a wrapper
+    def get_norm_text_for_row(row: Dict[str, str]) -> str:
+        return norm_texts.get(row.get("Norm", ""), "")
     
     if selected_indices and not args.skip_llm_checks:
-        qa_output_path = Path(args.qa_output) if args.qa_output else root_dir / "docs" / "data" / f"QA_LLM_{args.norm}.csv"
-        run_llm_checks(csv_rows, selected_indices, norm_text, args.verbose, csv_output_path=qa_output_path)
+        qa_output_path = Path(args.qa_output) if args.qa_output else default_qa_output
+        run_llm_checks(csv_rows, selected_indices, get_norm_text_for_row, args.verbose, csv_output_path=qa_output_path)
     elif args.skip_llm_checks:
         print("\nSkipping LLM checks as requested.")
 
