@@ -200,12 +200,17 @@
       flex: 1;
       overflow: hidden;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
     }
 
     #chart-wrap {
+      flex: 1;
       width: 100%;
-      height: 100%;
       position: relative;
+      min-height: 0;
+      overflow: hidden;
     }
 
     /* ── Tooltip ── */
@@ -515,21 +520,6 @@
       border-color: var(--accent);
     }
 
-    #filter-active-count {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #dc2626;
-      color: #fff;
-      border-radius: 999px;
-      font-size: 0.65rem;
-      font-weight: 700;
-      min-width: 16px;
-      height: 16px;
-      padding: 0 4px;
-      display: none;
-    }
-
     /* ── Loading ── */
     #loading {
       position: absolute;
@@ -588,7 +578,6 @@
     <button id="filter-btn">
       <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 3h13M3 7h9M5 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       Filter
-      <span id="filter-active-count"></span>
     </button>
 
     <div style="position: relative;">
@@ -693,8 +682,6 @@
     const filterBtn = document.getElementById("filter-btn");
     const filterSidebar = document.getElementById("filter-sidebar");
     const filterSidebarClose = document.getElementById("filter-sidebar-close");
-    const filterActiveCount = document.getElementById("filter-active-count");
-
     filterBtn.onclick = () => {
       filterSidebar.classList.toggle("open");
       filterBtn.classList.toggle("active", filterSidebar.classList.contains("open"));
@@ -703,17 +690,6 @@
       filterSidebar.classList.remove("open");
       filterBtn.classList.remove("active");
     };
-
-    function updateFilterActiveCount() {
-      let active = 0;
-      FILTER_FIELDS.forEach(f => { if (selectedFilters[f.key].size) active++; });
-      if (active > 0) {
-        filterActiveCount.textContent = active;
-        filterActiveCount.style.display = "inline-flex";
-      } else {
-        filterActiveCount.style.display = "none";
-      }
-    }
 
     const helpBtn = document.getElementById("help-btn");
     const helpPane = document.getElementById("help-pane");
@@ -777,6 +753,22 @@
       const loader = document.getElementById("loading");
       if (loader) loader.style.display = "none";
 
+      const wrap = document.getElementById("chart-wrap");
+      wrap.querySelectorAll("svg").forEach(s => s.remove());
+      wrap.querySelectorAll(".empty-state").forEach(s => s.remove());
+
+      if (n === 0) {
+        const msg = document.createElement("div");
+        msg.className = "empty-state";
+        msg.style.cssText = "position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:1rem;";
+        msg.textContent = "Keine Pflichten entsprechen den aktiven Filtern.";
+        wrap.appendChild(msg);
+        document.getElementById("stat-n").textContent = "0";
+        document.getElementById("stat-norms").textContent = "0";
+        document.getElementById("stat-pairs").textContent = "0";
+        return;
+      }
+
       const getNorm = lbl => lbl.split(":")[0];
       const norms = [...new Set(labels.map(getNorm))];
       const normIdx = Object.fromEntries(norms.map((nm, i) => [nm, i]));
@@ -795,9 +787,6 @@
         return p;
       };
       document.getElementById("stat-pairs").textContent = countP();
-
-      const wrap = document.getElementById("chart-wrap");
-      wrap.querySelectorAll("svg").forEach(s => s.remove());
 
       const size = n * CELL_SIZE;
       const totalW = size + MARGIN.left + MARGIN.right;
@@ -1042,7 +1031,22 @@
     function updateFilter() {
       if (!rawData) return;
       pushUrlParams();
-      updateFilterActiveCount();
+      if (selectedNorms.size === 0) {
+        document.getElementById("loading").style.display = "none";
+        const wrap = document.getElementById("chart-wrap");
+        wrap.querySelectorAll("svg").forEach(s => s.remove());
+        wrap.querySelectorAll(".empty-state").forEach(s => s.remove());
+        const msg = document.createElement("div");
+        msg.className = "empty-state";
+        msg.style.cssText = "position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:1rem;";
+        msg.textContent = "Bitte wähle mindestens eine Norm aus.";
+        wrap.appendChild(msg);
+        document.getElementById("stat-n").textContent = "–";
+        document.getElementById("stat-norms").textContent = "–";
+        document.getElementById("stat-pairs").textContent = "–";
+        return;
+      }
+
       const getNorm = lbl => lbl.split(":")[0];
 
       const filteredLabels = rawData.labels.filter(lbl => {
@@ -1099,7 +1103,6 @@
       };
       normBtnRow.querySelectorAll("button")[1].onclick = () => {
         normItems.forEach(({ inp, norm }) => { inp.checked = false; selectedNorms.delete(norm); });
-        normItems[0].inp.checked = true; selectedNorms.add(normItems[0].norm);
         updateFilter();
       };
       normActionsEl.appendChild(normBtnRow);
@@ -1113,8 +1116,7 @@
         const inp = item.querySelector("input");
         inp.onchange = (e) => {
           if (e.target.checked) selectedNorms.add(norm);
-          else if (selectedNorms.size > 1) selectedNorms.delete(norm);
-          else { e.target.checked = true; return; }
+          else selectedNorms.delete(norm);
           updateFilter();
         };
         normList.appendChild(item);
@@ -1125,7 +1127,23 @@
       const sidebarBody = document.getElementById("filter-sidebar-body");
 
       function buildCategoryFilters() {
-        sidebarBody.querySelectorAll(".filter-section:not(#filter-section-norms)").forEach(el => el.remove());
+        sidebarBody.querySelectorAll(".filter-section:not(#filter-section-norms), .category-filters-header").forEach(el => el.remove());
+
+        // Header + reset button for category filters
+        const header = document.createElement("div");
+        header.className = "category-filters-header";
+        header.style.cssText = "display:flex;align-items:center;justify-content:space-between;padding-top:0.5rem;border-top:1px solid var(--border);";
+        header.innerHTML = `
+          <span class="filter-section-title" style="margin-bottom:0">Eigenschaften</span>
+          <button id="reset-category-filters" style="font-size:0.7rem;padding:0.2rem 0.5rem;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);cursor:pointer;">Alle auswählen</button>
+        `;
+        sidebarBody.appendChild(header);
+        header.querySelector("#reset-category-filters").onclick = () => {
+          FILTER_FIELDS.forEach(f => selectedFilters[f.key].clear());
+          sidebarBody.querySelectorAll(".filter-section:not(#filter-section-norms) input[type=checkbox]").forEach(inp => { inp.checked = true; });
+          updateFilter();
+        };
+
         FILTER_FIELDS.forEach(field => {
           const valSet = new Set();
           rawData.labels.forEach(lbl => {
@@ -1184,10 +1202,10 @@
       // Apply persisted threshold
       document.getElementById("threshold-slider").value = threshold;
       document.getElementById("threshold-val").textContent = (threshold * 100).toFixed(0) + "%";
-      updateFilter();
 
-      // Background-preload selected norms' CSVs, then build category filter sections
+      // Preload selected norms' CSVs first so category filters are applied correctly on first render
       Promise.all([...selectedNorms].map(ensureNormLoaded)).then(() => {
+        updateFilter();
         buildCategoryFilters();
       });
     }).catch(console.error);
