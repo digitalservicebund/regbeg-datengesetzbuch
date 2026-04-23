@@ -1096,10 +1096,8 @@
         updateFilter();
       };
       normBtnRow.querySelectorAll("button")[1].onclick = () => {
-        normItems.forEach(({ inp, norm }) => {
-          if (selectedNorms.size > 1) { inp.checked = false; selectedNorms.delete(norm); }
-        });
-        if (selectedNorms.size === 0) { normItems[0].inp.checked = true; selectedNorms.add(normItems[0].norm); }
+        normItems.forEach(({ inp, norm }) => { inp.checked = false; selectedNorms.delete(norm); });
+        normItems[0].inp.checked = true; selectedNorms.add(normItems[0].norm);
         updateFilter();
       };
       normActionsEl.appendChild(normBtnRow);
