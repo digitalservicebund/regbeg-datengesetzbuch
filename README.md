@@ -1,58 +1,71 @@
 # Regelungsbegleitung zum Datengesetzbuch
-This repository hosts a collection of data and scripts to analyze *Bestandsrecht* (existing law) from national and union legislation, with a focus on identifying and extracting regulatory obligations.
 
-## Goals
+Dieses Repository beinhaltet eine Sammlung von Daten und Skripten, um nationales Recht und Unionsrecht (*Bestandsrecht*) zu analysieren. Der Fokus liegt dabei auf dem Identifizieren und Extrahieren von Pflichten.
 
-- *Obligations* (e.g. Meldepflichten, Dokumentationspflichten) are identified correctly
-- These obligations are extracted as a table for further automatic or manual work
-- Enable users to do full search, filtering and various analysis on the data
-- We learn more about using LLMs to parse existing law (*Bestandsrecht*).
+## Kontext des Projektes
 
-## Getting started
+Das Projekt wurde im Zuge einer Regelungsbegleitung zum Thema Datengesetzbuch erarbeitet.
 
-### Install dependencies
+"Regelungsbegleitungen" ist ein Angebot des BMDS im Rahmen des Zentrum für Legistik. Interdisziplinäre Teams unterstützen Fachressorts, ihre Rechtsetzungsvorhaben adressatenorientiert, praxisnah und digital gut umsetzbar zu gestalten.
 
-This project uses `uv`. Run
+## Ziele
+
+- *Pflichten* (z.B. Meldepflichten, Dokumentationspflichten) zu identifizieren
+- Diese Pflichten als eine Tabelle zu extrahieren, um automatisierte oder manuelle Arbeit daran anzuschließen
+- Nutzern die Möglichkeit geben, die Pflichten zu suchen, zu filtern und weitere Analysen durchzuführen
+- Exploration von Möglichkeiten Bestandsrecht mit Sprachmodellen zu verarbeiten
+
+## Statische Analyseergebnisse
+
+Im Ordner [docs/data] sind diverse `.csv` Datenblätter mit den extrahierten Pflichten aus den entsprechenden Gesetzen.
+
+Zusätzlich gibt es die Datei [docs/data/Pflichten.xlsx], die alle extrahierten Pflichten als Excel-Datei beinhaltet.
+
+## Skripte benutzen
+
+### Abhängigkeiten installieren
+
+Dieses Projekt verwendet `uv`. Mit folgendem Befehl werden die Abhängigkeiten installiert:
 
     uv sync
 
-to install the dependencies.
+### Verwendung
 
-## Usage
-
-### Convert all downloaded norms
+#### Alle heruntergeladenen Normen konvertieren
 
     uv run scripts/convert_normen.py
 
-### Analyze obligations
+#### Pflichten analysieren
 
-To analyze obligations from the downloaded norms, use the script `extract_meldepflichten_llm.py` like so:
+Um Pflichten aus den heruntergeladenen Normen zu extrahieren, wird das Skript `extract_meldepflichten_llm.py` wie folgt verwendet:
 
     uv run scripts/extract_meldepflichten_llm.py --norm DSGVO
 
-## Disclaimer
+## Haftungsausschluss
 
-Before using the results of this repository, keep in mind, that it makes use of LLMs at the core to produce those results.
-
-> [!IMPORTANT]
-> The script `extract_meldepflichten_llm.py` and its base `llm_extract_base.py` process norms and extracts obligations by using an LLM. This can result in wrong extracted obligations due to hallucination or other forms of errors. This project does not ensure completeness or correctness.
+Vor der Verwendung der Ergebnisse dieses Repositories ist zu beachten, dass bei der Erzeugung dieser Ergebnisse Sprachmodelle (LLMs) eingesetzt werden.
 
 > [!IMPORTANT]
-> The script `similarity_pflichten.py` analyses pairs of obligations for similarity using a general [Sentence Transformer](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2). This can lead to false-positives and false-negatives. This project does not ensure correctness of the similarity analysis.
+> Das Skript `extract_meldepflichten_llm.py` und seine Basis `llm_extract_base.py` verarbeiten Normen und extrahieren Pflichten mithilfe eines Sprachmodells. Dies kann zu fehlerhaft extrahierten Pflichten führen, z.B. durch Halluzinationen oder andere Fehlerquellen. Dieses Projekt gewährleistet keine Vollständigkeit oder Korrektheit.
 
 > [!IMPORTANT]
-> The script `qa_meldepflichten_llm.py` performs quality assurance on extracted obligations using both fuzzy matching against a manual checks file and LLM-based evaluation. The LLM scores are estimates and may not reflect true correctness. This project does not ensure the reliability of the QA results.
+> Das Skript `similarity_pflichten.py` analysiert Paare von Pflichten auf Ähnlichkeit mithilfe eines allgemeinen [Sentence Transformers](https://huggingface.co/sentence-transformers/paraphrase-multilingual-mpnet-base-v2). Dies kann zu falsch-positiven und falsch-negativen Ergebnissen führen. Dieses Projekt gewährleistet keine Korrektheit der Ähnlichkeitsanalyse.
+
+> [!IMPORTANT]
+> Das Skript `qa_meldepflichten_llm.py` kann eine automatisierte Qualitätsbewertung der extrahierten Pflichten durchführen – sowohl mittels unscharfem Abgleich gegen eine manuelle Prüfdatei als auch durch eine LLM-basierte Bewertung. Die LLM-Scores sind Schätzwerte des Sprachmodells und spiegeln möglicherweise nicht die tatsächliche Korrektheit wider. Dieses Projekt gewährleistet keine Verlässlichkeit der Qualitätsbewertung.
+
+## Mitwirken
+
+Jede:r ist herzlich eingeladen, die Entwicklung dieses Projekts mitzugestalten. Du kannst einen Beitrag leisten, indem du Feedback gibst, Probleme beschreibst, Fragen beantwortest, die Dokumentation erweiterst, oder Pull-Requests eröffnest. Bitte befolge immer die Richtlinien und unseren [Verhaltenskodex](CODE_OF_CONDUCT.md).
+
+Um Code beizutragen erstelle einfach einen Pull Request mit deinen Änderungen, dieser wird dann von einer Person aus dem Team überprüft. Durch das Eröffnen eines Pull-Requests erklärst du ausdrücklich, dass du das Recht hast, deinen Beitrag an den DigitalService und die Community unter der vom Projekt gewählten Lizenz zu lizenzieren.
+
+[English version below](#contributing)
+
+---
 
 ## Contributing
-
-[Deutsche sprache weiter unten](#mitwirken)
 
 Everyone is welcome to contribute! You can contribute by giving feedback, adding issues, answering questions, providing documentation or opening pull requests. Please always follow the guidelines and our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 To contribute code, simply open a pull request with your changes and it will be reviewed by someone from the team. By submitting a pull request you declare that you have the right to license your contribution to the DigitalService and the community under the license picked by the project.
-
-## Mitwirken
-
-Jede:r ist herzlich eingeladen, die Entwicklung der _Project_ mitzugestalten. Du kannst einen Beitrag leisten, indem du Feedback gibst, Probleme beschreibst, Fragen beantwortest, die Dokumentation erweiterst, oder Pull-Requests eröffnest. Bitte befolge immer die Richtlinien und unseren [Verhaltenskodex](CODE_OF_CONDUCT.md).
-
-Um Code beizutragen erstelle einfach einen Pull Requests mit deinen Änderungen, dieser wird dann von einer Person aus dem Team überprüft. Durch das Eröffnen eines Pull-Requests erklärst du ausdrücklich, dass du das Recht hast deine Beitrag an den DigitalService und die Community unter der vom Projekt gewählten Lizenz zu lizenzieren.
